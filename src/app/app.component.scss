@@ -1,0 +1,21 @@
+.icontainer {
+    width: 100%;
+    height: 99.9vh;
+  }
+  
+  .sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+.content {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  mat-sidenav {
+    width: 200px;
+  }
