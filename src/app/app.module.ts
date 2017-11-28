@@ -9,10 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { MenuComponent} from './apex/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -8,8 +8,10 @@ import { ApexService } from './shared/service/apex.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
+  showMenu = true;
 
   constructor(private apexService: ApexService) {
       this.apexService.loadIcons();
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-    onResize(event) {
+  onResize(event) {
         if (event.target.innerWidth < 768) {
             this.navMode = 'over';
             this.sidenav.close();
@@ -31,6 +33,6 @@ export class AppComponent implements OnInit {
            this.navMode = 'side';
            this.sidenav.open();
         }
-    }
+  }
 
 }

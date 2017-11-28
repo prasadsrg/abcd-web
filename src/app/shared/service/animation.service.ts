@@ -19,7 +19,7 @@ export class AnimationService {
   ];
   static host = {
       '[@routeAnimation]': 'true',
-      '[style.top]': "'0'",
+      '[style.top]': "'60px'",
       '[style.left]': "'0'",
       '[style.right]': "'0'",
       '[style.bottom]': "'30px'",

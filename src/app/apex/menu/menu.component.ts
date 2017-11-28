@@ -1,5 +1,4 @@
 import { Component, OnInit,ViewChild, HostListener } from '@angular/core';
-import { MatSidenav } from '@angular/material';
 import { Menu } from '../../shared/common/interfaces';
 
 @Component({
@@ -8,8 +7,7 @@ import { Menu } from '../../shared/common/interfaces';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MatSidenav;
-  navMode = 'side';
+
   menuList: any[];
   activeMenuObject: any;
   

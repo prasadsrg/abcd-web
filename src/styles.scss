@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 @import './styles/normalize';
+@import './styles/md';
 @import './styles/si';
 @import './styles/mdicon.css';
+@import './styles/custom';
