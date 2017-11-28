@@ -18,13 +18,9 @@ export class ApexService {
     }
      showMessage(message: string){
         this._snackBarService.open(message, 'x',{ duration: 3000 });
-      //  snackBarRef.onAction().subscribe( data => {console.log(data) ; });
     }
      showLoader(show: Boolean) {
-         //setTimeout(() => {
-             this.loaderEvent.next(show);
-         //}, 100)
-       
+        this.loaderEvent.next(show);       
     }
 
    sessionUserEmit (sessionUser: any) {
@@ -37,8 +33,8 @@ export class ApexService {
 
     loadIcons() {
         this._iconRegistry
-        .addSvgIconSetInNamespace('core',
-        this._domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
+            .addSvgIconSetInNamespace('core',
+            this._domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
     }
 
 }
