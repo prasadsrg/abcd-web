@@ -6,7 +6,7 @@
 <!-- <main>
   <router-outlet></router-outlet>
 </main> -->
-<mat-toolbar color="primary" class="header">
+<mat-toolbar color="primary" class="header" *ngIf="false">
 
     <button mat-icon-button (click)="sidenav.toggle()">
     
@@ -15,7 +15,7 @@
                 </button>
 
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-fab-container">
+<mat-sidenav-container class="sidenav-fab-container" *ngIf="false">
     <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true">
         <div class="scrolling-content side-bar-content">
             <ul class="nav nav-tabs">
@@ -35,8 +35,9 @@
         </div>
     </mat-sidenav>
 
-    <div class="scrolling-content">
-        <router-outlet></router-outlet>
-    </div>
+
 
 </mat-sidenav-container>
+<div class="scrolling-content">
+    <router-outlet></router-outlet>
+</div>
