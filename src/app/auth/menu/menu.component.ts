@@ -20,38 +20,42 @@ export class MenuComponent implements OnInit {
 
 
   ngOnInit() {
-    if (window.innerWidth < 768) {
-      this.navMode = 'over';
-    }
+    // if (window.innerWidth < 768) {
+    //   this.navMode = 'over';
+    //   console.log('dasdas')
+      
+    // }
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-      if (event.target.innerWidth < 768) {
-          this.navMode = 'over';
-          this.sidenav.close();
-      }
-      if (event.target.innerWidth > 768) {
-         this.navMode = 'side';
-         this.sidenav.open();
-      }
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  //     if (event.target.innerWidth < 768) {
+  //         this.navMode = 'over';
+  //         this.sidenav.close();
+  //         console.log('hasdfj')
+  //     }
+  //     if (event.target.innerWidth > 768) {
+  //        this.navMode = 'side';
+  //        this.sidenav.open();
+
+  //     }
+  // }
   menus() {
     return [
      
       {
-        "_id": null,
+        "id": null,
         "name": "Home",
         "link": "/",
         "icon": "alarm"
       },
       {
-        "_id": null,
+        "id": null,
         "name": "Login",
         "link": "/auth/login",
         "icon": "accessibility"
       },
       {
-        "_id": null,
+        "id": null,
         "name": "Register",
         "link": "/auth/register",
         "icon": "alarm"
