@@ -1,11 +1,11 @@
 
 
-<mat-nav-list>
+<mat-nav-list id="nav">
     
         <ng-template let-item ngFor [ngForOf]="menuList">
             <mat-list-item [ngClass]="{ 'activatedObject': activeMenuObject == item.name }">
-                <mat-icon md-list-icon svgIcon="core:{{item.icon}}" routerLink="{{item.link}}"></mat-icon>
-                <!-- <a  routerLink="{{item.link}}"> {{item.name}} </a> -->
+                <mat-icon md-list-icon class="padding-side" svgIcon="core:{{item.icon}}"></mat-icon>
+                <a  routerLink="{{item.link}}"> {{item.name}} </a>
             </mat-list-item>
         </ng-template>
       
