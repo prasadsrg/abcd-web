@@ -1,5 +1,7 @@
 import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
-import { MatSidenav } from "@angular/material";
+import { MatSidenav } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,11 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
 
-  constructor(
-  ) { }
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry
+      .addSvgIconSetInNamespace('core',
+      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
+   }
 
   ngOnInit() {
     if (window.innerWidth < 768) {

@@ -7,14 +7,18 @@
   <router-outlet></router-outlet>
 </main> -->
 <mat-sidenav-container class="icontainer">
-  <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true" >
-    <ul class="nav nav-tabs">
-      <li routerLinkActive="active" ><a routerLink="/">Home</a></li>
-      <li routerLinkActive="active"><a routerLink="/auth/login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="/auth/register">Register</a></li>
-  </ul>
-  </mat-sidenav>
-  <!-- <mat-toolbar color="primary">
+    <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true">
+        <ul class="nav nav-tabs">
+            <li routerLinkActive="active"><a routerLink="/">Home</a></li>
+            <li routerLinkActive="active"><a routerLink="/auth/login">Login</a></li>
+            <li routerLinkActive="active"><a routerLink="/auth/register">Register</a></li>
+            <mat-icon svgIcon="core:alarm"></mat-icon>
+            <mat-icon svgIcon="core:accessibility"></mat-icon>
+            <mat-icon svgIcon="core:alarm"></mat-icon>
+        </ul>
+
+    </mat-sidenav>
+    <!-- <mat-toolbar color="primary">
     
                 <button md-icon-button (click)="sidenav.toggle()">
     
@@ -23,9 +27,8 @@
                 </button>
     
             </mat-toolbar> -->
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
 
 </mat-sidenav-container>
-
