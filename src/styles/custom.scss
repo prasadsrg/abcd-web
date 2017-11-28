@@ -5,7 +5,9 @@
 .spacer {
     flex: 1 1 auto;
 }
+
 sub {
+<<<<<<< HEAD
     color : darkorange!important;
 }
 
@@ -13,4 +15,42 @@ sub {
 .activatedObject .mat-list-item-content {
     color: #fff;
     background-color: #778594 !important;
+=======
+    color: darkorange!important;
+}
+
+.login-card {
+    width: 600px !important;
+    // height: 524px !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    box-shadow: 2px 6px 16px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+.parent-container {
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    .child-container {
+        align-self: center;
+        border-radius: 8px;
+    }
+}
+.button-container{
+    width: 70%;
+    border-radius: 100px !important;
+    background-color: #a3b3c2 !important;
+    box-shadow: 0 6px 8px 0 rgba(212, 26, 48, 0.5) !important;
+    padding:5px !important; 
+    span{
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+     }
+>>>>>>> be3d4b3e7a3eeded6e9b73ecd52a0ed99d68891d
 }
