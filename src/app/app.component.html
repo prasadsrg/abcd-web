@@ -3,13 +3,11 @@
         <mat-icon class="md-24">menu</mat-icon>
     </button>
 </mat-toolbar>
-<mat-sidenav-container class="sidenav-fab-container">
-    <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true">
-        <div class="scrolling-content side-bar-content">
-            <app-menu></app-menu>
-        </div>
+<mat-sidenav-container >
+    <mat-sidenav #sidenav  [mode]="navMode" opened="true">
+        <app-menu></app-menu>
     </mat-sidenav>
+    <mat-sidenav-content>
+            <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>
-<div class="scrolling-content">
-    <router-outlet></router-outlet>
-</div>
