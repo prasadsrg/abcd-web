@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Props } from '../common/props';
+import { Props } from '../../apex/common/props';
 import { AppService } from '../../shared/service/app.service';
 
 @Injectable()
