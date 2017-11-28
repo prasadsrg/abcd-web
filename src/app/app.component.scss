@@ -18,10 +18,11 @@
 //   }
   mat-sidenav {
     width: 58px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
   }
 .header {
   height: 58px !important;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 }
 .mat-drawer-container {
   background-color: #f6f9fc;
@@ -40,11 +41,10 @@
 .glass {
   position: relative;
   padding: 10px 0;
-  border-bottom: 1px solid;
-  border-bottom-color: #ccc;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(42,53,64, 0.7);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  // border-bottom: 1px solid;
+  // border-bottom-color: #ccc;
+  background-color: rgba(256,256,256, 1);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
   height: 180px;
 }
 

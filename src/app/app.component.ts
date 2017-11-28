@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+import { ApexService } from './shared/service/apex.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +11,8 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry
-      .addSvgIconSetInNamespace('core',
-      sanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
+  constructor(private apexService: ApexService) {
+      this.apexService.loadIcons();
    }
 
   ngOnInit() {

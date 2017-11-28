@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
-import {SharedModule} from './shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
@@ -17,7 +18,8 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-    SharedModule,
+    SharedModule.forRoot(),
+    HttpClientModule,
     AuthModule,
     HomeModule
   ],

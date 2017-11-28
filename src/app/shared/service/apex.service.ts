@@ -35,4 +35,10 @@ export class ApexService {
          this.menuEvent.next(menu);
     }
 
+    loadIcons() {
+        this._iconRegistry
+        .addSvgIconSetInNamespace('core',
+        this._domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
+    }
+
 }
