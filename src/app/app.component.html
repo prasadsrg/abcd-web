@@ -6,26 +6,34 @@
 <!-- <main>
   <router-outlet></router-outlet>
 </main> -->
-<mat-sidenav-container class="icontainer">
-  <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true" >
-    <ul class="nav nav-tabs">
-      <li routerLinkActive="active" ><a routerLink="/">Home</a></li>
-      <li routerLinkActive="active"><a routerLink="/auth/login">Login</a></li>
-      <li routerLinkActive="active"><a routerLink="/auth/register">Register</a></li>
-  </ul>
-  </mat-sidenav>
-  <!-- <mat-toolbar color="primary">
+<mat-toolbar color="primary" class="glass header">
     
-                <button md-icon-button (click)="sidenav.toggle()">
+                <button mat-icon-button (click)="sidenav.toggle()">
     
                     <mat-icon class="md-24" >menu</mat-icon>
     
                 </button>
     
-            </mat-toolbar> -->
-  <div class="content">
+            </mat-toolbar>
+<mat-sidenav-container class="sidenav-fab-container">
+  <mat-sidenav #sidenav class="sidenav-content" mode="side" opened="true">
+    <div class="scrolling-content side-bar-content">
+      <ul class="nav nav-tabs">
+        <li routerLinkActive="active">
+          <a routerLink="/">Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/auth/login">Login</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/auth/register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+
+  <div class="scrolling-content">
     <router-outlet></router-outlet>
   </div>
 
 </mat-sidenav-container>
-
