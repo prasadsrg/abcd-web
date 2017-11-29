@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
 
@@ -22,7 +23,8 @@ import { MenuComponent} from './apex/menu/menu.component';
     SharedModule.forRoot(),
     HttpClientModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
