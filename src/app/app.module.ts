@@ -14,7 +14,8 @@ import { MenuComponent} from './apex/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent, MenuComponent
+    AppComponent, 
+    MenuComponent
   ],
   imports: [
     BrowserModule,
