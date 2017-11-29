@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+import {LoginService} from './login/login.service';
 
 const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
     LoginComponent, 
     RegisterComponent
   ],
+  providers: [LoginService],
   exports: [RouterModule]
 })
 export class AuthModule { }

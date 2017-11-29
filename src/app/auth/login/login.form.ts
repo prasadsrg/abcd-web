@@ -1,7 +1,7 @@
-import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { FormGroup} from '@angular/forms';
 import { AppFormGroup } from '../../shared/common/app.form';
 
-export class MyForm extends AppFormGroup {
+export class LoginForm extends AppFormGroup {
     static init() {
         return this.getFormGroup();
     }

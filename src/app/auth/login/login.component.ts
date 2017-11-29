@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, HostListener} from '@angular/core';
-import { MyForm } from './login.form';
+import { LoginForm } from './login.form';
 import { AnimationService } from '../../shared/service/animation.service';
 import { User } from '../../apex/entities/user'; 
 
@@ -11,15 +11,15 @@ import { User } from '../../apex/entities/user';
 
 })
 export class LoginComponent  {
-  myForm: any = MyForm.init();
+  myForm: any = LoginForm.init();
   auth: User;
   showorhide: string;
   isVisible: string;
   error: any;
 
   constructor() {
-     MyForm.edit(this.myForm);
-     this.init();
+    LoginForm.edit(this.myForm);
+    this.init();
   }
 
 
