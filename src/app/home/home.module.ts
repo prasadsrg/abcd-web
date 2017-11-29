@@ -5,12 +5,13 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: LandingpageComponent },
-  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes, { useHash: true }), SharedModule.forRoot()
+    CommonModule, 
+    RouterModule.forRoot(routes, { useHash: true }), 
+    SharedModule.forRoot()
   ],
   declarations: [LandingpageComponent],
   exports: [RouterModule]

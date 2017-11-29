@@ -5,8 +5,8 @@ html {
     touch-action: manipulation;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-     overflow:hidden;
-     min-width: 320px;
+    overflow: hidden;
+    min-width: 320px;
 }
 
 ::-moz-selection {
@@ -23,11 +23,11 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    ;
     margin: 8px 0;
     padding: 0;
 }
-
 
 input:focus {
     outline: none !important;
@@ -38,7 +38,7 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow:hidden;
+    overflow: hidden;
     min-width: 319px;
     font-size: 14px !important;
     font-family: Roboto, sans-serif;
@@ -56,22 +56,39 @@ img {
     max-width: 100%!important;
 }
 
-
-
-h1, h2, h3, h4, h5, h6, p, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
     color: inherit;
     padding: 0;
-     margin: 0;
+    margin: 0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-weight: 300;
 }
 
-h5, h6, p, span {
+h5,
+h6,
+p,
+span {
     font-weight: 400;
 }
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -.02em;
@@ -98,12 +115,9 @@ h3 {
 }
 
 h4 {
-
     font-size: 24px;
-
     line-height: 32px;
-   letter-spacing: -.01em;
-
+    letter-spacing: -.01em;
 }
 
 h5 {
@@ -113,14 +127,13 @@ h5 {
     letter-spacing: .02em;
 }
 
-
-
 h6 {
     font-size: 16px;
     letter-spacing: .04em;
 }
 
-h6, p {
+h6,
+p {
     font-weight: 400;
     line-height: 24px;
 }
@@ -146,9 +159,9 @@ aside {
         z-index: 1;
     }
     main {
-        display: block; 
+        display: block;
         flex-grow: 1;
-        flex-shrink: 1; 
+        flex-shrink: 1;
         overflow: auto;
         padding: 0 4px;
         section {
@@ -156,33 +169,46 @@ aside {
             padding: 8px;
             background-color: white;
             box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            h6{
+            h6 {
                 border-bottom: 1px solid #eee;
-                padding:8px 4px 4px 4px;
+                padding: 8px 4px 4px 4px;
             }
         }
     }
-    
     footer {
         margin-top: -4.5rem;
         padding: 1rem;
     }
 }
-.padding-side{
+
+.padding-side {
     padding: 0px 4px !important;
 }
+
 .padding-height {
     padding: 4px 0px!important;
 }
+
 .padding {
     padding: 4px !important;
 }
+
 .right {
     float: right;
 }
+
 .left {
     float: left;
 }
+
+.padding-nill {
+    padding: 0px !important;
+}
+
+.margin-nill {
+    margin: 0px !important;
+}
+
 input[type="search"] {
     border: 0;
     font-size: 24px;
@@ -191,6 +217,7 @@ input[type="search"] {
     width: 100%;
     padding: 8px;
 }
+
 .title {
     color: inherit;
     font-size: 1rem;
