@@ -11,6 +11,7 @@ export class LoginService {
         
      }
      login(data: any) {
+         console.log(data);
          //this.http.post(this.host);
      }
 }
