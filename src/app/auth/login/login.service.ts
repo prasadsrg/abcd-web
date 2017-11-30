@@ -12,7 +12,7 @@ export class LoginService {
      }
      login(data: any) {
          data.grpcode = Storage.pid;
-         console.log(this.host);
+         this.appService.showLoader(true);
          return this.http.post(this.host+this.auth_url, {data: data});
      }
 }

@@ -75,7 +75,10 @@ export class AppService {
      setSessionItem(key: string, value: any){
         return Storage.setSessionItem(key, value);
     }
-     showMessage(message: string) {
+    showLoader(show: boolean){
+        this.apexService.showLoader(show);
+    }
+    showMessage(message: string) {
         this.apexService.showMessage(message);
     }
     sessionUserEmit(data: any){
