@@ -1,5 +1,5 @@
 
 export class User {
-    userId: string;
+    userId: string = "support@digitallynctech.com";
     password: string;
 }

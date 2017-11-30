@@ -31,7 +31,9 @@ export class LoginComponent  {
 
     this.auth = new User();
   }
-  login(){
-    this.loginService.login(this.auth);
+  signInEmail(){
+    this.loginService.login(this.auth).subscribe( data => {
+      console.log(data);
+    })
   }
 }
