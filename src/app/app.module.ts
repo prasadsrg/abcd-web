@@ -9,8 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
+import { VehicleModule } from './vehicle/vehicle.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { MenuComponent} from './apex/menu/menu.component';
     HttpClientModule,
     AuthModule,
     HomeModule,
-    ProfileModule
+    ProfileModule,
+    VehicleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

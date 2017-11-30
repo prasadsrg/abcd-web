@@ -9,4 +9,12 @@ sub {
     color : darkorange!important;
 }
 
+.mat-fab-position-bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
 
+.fixed {
+    position: fixed !important;
+}
