@@ -7,23 +7,56 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
+
 import { Observable } from 'rxjs/Observable';
 
-import {Storage } from '../utils/storage';
-
+import { Storage } from '../utils/storage';
+import { ApexService } from './apex.service';
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
   CONTENT_TYPE: string = "application/x-www-form-urlencoded";
   // CONTENT_TYPE : string = "application/json";
-  constructor() {}
+  constructor() {
+
+  }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("Interceptor: "+ this.CONTENT_TYPE);
     request = request.clone({
       setHeaders: {
-        'Content-Type': this.CONTENT_TYPE
+        'Content-Type': this.CONTENT_TYPE,
+        'Authorization': `${this.getToken()}`
       }
     });
-    console.log(request);
-    return next.handle(request);
+    return next.handle(request).map(
+      (resp: HttpResponse<any>) => {
+        if (resp && resp.type == 4) {
+          if (resp.body && resp.body.status) {
+            console.log(resp.body.status);
+            if (resp.body.status == 1) {
+              // let returnData =  new Observable( observer => {
+              //   observer.next(resp.body.data);
+              //   observer.complete();
+              // });
+              return resp.clone({
+                body: resp.body.data
+              });
+            } else {
+              this.errorMessage(resp.body.error);
+              return null;
+            }
+          } else {
+            return resp;
+          }
+        }
+      });
+  }
+
+
+
+  public getToken(): string {
+    return Storage.getJWT();
+  }
+  errorMessage(err: any) {
+    let message = err.message ? err.message : err;
+    //this.apexService.showMessage(message);
   }
 }
