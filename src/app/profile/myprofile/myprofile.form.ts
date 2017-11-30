@@ -7,7 +7,7 @@ export class MyProfileForm extends AppFormGroup {
     }
     static edit(group: FormGroup) {
 
-        group.addControl("auth_userId", this.getController(null, this.TYPE_EMAIL, null, 50));
-        group.addControl("auth_password", this.getController(null, this.TYPE_DATA, null, 50));
+        group.addControl('auth_userId', this.getController(null, this.TYPE_EMAIL, null, 50));
+        group.addControl('auth_password', this.getController(null, this.TYPE_DATA, null, 50));
     }
 }
