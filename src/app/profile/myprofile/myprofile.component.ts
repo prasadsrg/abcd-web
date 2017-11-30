@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../shared/service/animation.service';
+import { MyProfileForm } from './myprofile.form';
 
 @Component({
   selector: 'app-myprofile',
@@ -7,10 +8,17 @@ import { AnimationService } from '../../shared/service/animation.service';
   styleUrls: ['./myprofile.component.scss']
 })
 export class MyprofileComponent implements OnInit {
-
-  constructor() { }
+  myForm: any = MyProfileForm.init();
+  constructor() {
+    MyProfileForm.edit(this.myForm);
+    // this.init();
+   }
 
   ngOnInit() {
   }
+  // init() {
+
+  //   this.auth = new User();
+  // }
 
 }
