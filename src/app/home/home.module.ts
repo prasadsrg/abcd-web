@@ -12,10 +12,10 @@ import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
 
 const routes: Routes = [
-  { path: '/profile/search', component: ProfileSearchComponent },
-  { path: '/profile/edit', component: ProfileEditComponent },
-  { path: '/profile/myprofile', component: MyprofileComponent },
-  { path: '/my/settings', component: SettingsComponent },
+  { path: 'profile/search', component: ProfileSearchComponent },
+  { path: 'profile/edit', component: ProfileEditComponent },
+  { path: 'profile/myprofile', component: MyprofileComponent },
+  { path: 'my/settings', component: SettingsComponent },
 ];
 
 @NgModule({
@@ -24,7 +24,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }), 
     SharedModule.forRoot()
   ],
-  declarations: [ProfileSearchComponent, ProfileEditComponent, MyprofileComponent],
+  declarations: [
+    ProfileSearchComponent, 
+    ProfileEditComponent, 
+    MyprofileComponent,
+    SettingsComponent
+  ],
   exports: [RouterModule],
   providers:[ProfileService, SettingsService]
 })

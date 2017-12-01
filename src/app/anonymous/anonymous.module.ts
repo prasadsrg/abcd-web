@@ -35,7 +35,16 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }), 
     SharedModule.forRoot()
   ],
-  declarations: [LandingpageComponent, ForgotpasswordComponent, ContactusComponent, SolutionsComponent, ProductsComponent],
-  providers: [PageService]
+  declarations: [
+    LandingpageComponent, 
+    ForgotpasswordComponent, 
+    ContactusComponent, 
+    SolutionsComponent, 
+    ProductsComponent,
+    LoginComponent,
+    ForgotpasswordComponent,
+    RegisterComponent
+  ],
+  providers: [PageService, AuthService]
 })
 export class AnonymousModule { }

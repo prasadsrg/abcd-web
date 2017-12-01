@@ -1,5 +1,5 @@
 import { FormGroup} from '@angular/forms';
-import { AppFormGroup } from '../../shared/common/app.form';
+import { AppFormGroup } from '../../../shared/common/app.form';
 
 export class LoginForm extends AppFormGroup {
     static init() {

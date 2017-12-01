@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AnonymousModule } from './anonymous/anonymous.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
-import { ReportsModule } from './reports/resports.module';
+import { ReportsModule } from './reports/reports.module';
 
 @NgModule({
   declarations: [
