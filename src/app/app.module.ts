@@ -7,11 +7,10 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AuthModule } from './auth/auth.module';
-import { ProfileModule } from './profile/profile.module';
+import { AnonymousModule } from './anonymous/anonymous.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { ReportsModule } from './reports/resports.module';
 
 @NgModule({
   declarations: [
@@ -24,10 +23,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CommonModule,
     SharedModule.forRoot(),
     HttpClientModule,
-    AuthModule,
+    AnonymousModule,
     HomeModule,
-    ProfileModule,
-    DashboardModule
+    ReportsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

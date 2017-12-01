@@ -7,12 +7,12 @@ export class Props {
     REST_TYPE_DELETE: string = "DELETE";
 
 
-    static LANDING_PAGE = '/auth';
-    static SIGN_IN_PAGE = '/sign/singin';
-    static SIGN_UP_PAGE = '/sign/singup';
-    static FORGOT_PASSWORD_PAGE = '/sign/forgotpassword';
-    static ADMIN_DASHBOARD_PAGE = '/dashboard/admin';
-    static USER_DASHBOARD_PAGE = '/user/dashboard';
+    static LANDING_PAGE = '/';
+    static SIGN_IN_PAGE = '/auth/login';
+    static SIGN_UP_PAGE = '/sign/register';
+    static FORGOT_PASSWORD_PAGE = '/auth/forgotpassword';
+    static ADMIN_DASHBOARD_PAGE = '/dashboard/admindashboard';
+    static USER_DASHBOARD_PAGE = '/dashboard/userdashboard';
     static MY_PROFILE_PAGE = '/myprofile';
     
     static ROLE_DATA_LOAD_URL = "/roles";
