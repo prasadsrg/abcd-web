@@ -1,11 +1,15 @@
 <aside>
-  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
-    <span class="padding toolbar-title">Add Vehicle </span>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="padding">
+    <span class="padding toolbar-title">
+      <h5>Add Vehicle</h5>
+    </span>
+
     <button class="" mat-mini-fab color="default" (click)="onSave()" id="save">
       <mat-icon color="accent">save</mat-icon>
     </button>
   </div>
   <main>
+    <hr>
 
 
     <!-- <button color="default" (click)="onClose()">
@@ -14,10 +18,16 @@
     <form novalidate autocomplete='off'>
       <div fxLayout="row wrap" fxLayoutAlign="start start">
         <mat-form-field fxFlex="100">
-          <input matInput value="Sushi" placeholder="Name">
+          <input matInput placeholder="Vehicle No.">
         </mat-form-field>
         <mat-form-field fxFlex="100">
-          <input matInput value="Sushi" placeholder="Name">
+          <input matInput placeholder="Owner Name">
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input matInput placeholder="User Name">
+        </mat-form-field>
+        <mat-form-field fxFlex="100">
+          <input matInput placeholder="District">
         </mat-form-field>
       </div>
     </form>

@@ -7,10 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import {LoginService} from './login/login.service';
-
+import{ResetPasswordComponent} from './resetpassword/resetpassword.component';
+import{ResetPasswordService} from './resetpassword/resetpassword.service'
 const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
+  { path: 'auth/resetpassword', component: ResetPasswordComponent },
 ];
 
 @NgModule({
@@ -19,9 +21,10 @@ const routes: Routes = [
   ],
   declarations: [
     LoginComponent, 
-    RegisterComponent
+    RegisterComponent,
+    ResetPasswordComponent
   ],
-  providers: [LoginService],
+  providers: [LoginService,ResetPasswordService],
   exports: [RouterModule]
 })
 export class AuthModule { }
