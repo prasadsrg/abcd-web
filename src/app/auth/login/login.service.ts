@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Props } from '../../apex/common/props';
 import { AppService } from '../../shared/service/app.service';
 import { HttpClient } from '@angular/common/http';
-
+import { Storage }from '../../shared/utils/storage';
 @Injectable()
 export class LoginService {
     private host = Props.API_END_POINT;
@@ -11,7 +11,8 @@ export class LoginService {
         
      }
      login(data: any) {
-         console.log(data);
-         //this.http.post(this.host);
+         data.grpcode = Storage.pid;
+         this.appService.showLoader(true);
+         return this.http.post(this.host+this.auth_url, {data: data});
      }
 }

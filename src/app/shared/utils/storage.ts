@@ -1,7 +1,7 @@
 /** Storage  */
 export class Storage {
 
-    static pid: string = 'dl';
+    static pid: string = 'DLTECH';
     static setLocalItem(key:string, val: any){
         key = this.pid+'-'+key;
         if(val) {

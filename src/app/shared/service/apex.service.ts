@@ -3,7 +3,7 @@ import {Injectable, Output, EventEmitter} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+
 
 
 @Injectable()
@@ -13,10 +13,11 @@ export class ApexService {
      menuEvent:  EventEmitter<any>  = new EventEmitter( );
      loaderEvent: EventEmitter<any>  = new EventEmitter( );
 
-    constructor(private _iconRegistry: MatIconRegistry, private _domSanitizer: DomSanitizer, private _snackBarService: MatSnackBar){
+    constructor(private _domSanitizer: DomSanitizer, private _snackBarService: MatSnackBar ){
 
     }
      showMessage(message: string){
+         console.log("error-message: "+ message);
         this._snackBarService.open(message, 'x',{ duration: 3000 });
       //  snackBarRef.onAction().subscribe( data => {console.log(data) ; });
     }
@@ -34,11 +35,7 @@ export class ApexService {
     menuEmit(menu: any){
          this.menuEvent.next(menu);
     }
-
-    loadIcons() {
-        this._iconRegistry
-        .addSvgIconSetInNamespace('core',
-        this._domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/core-icon-set.svg'));
+    bypassURL(url: string){
+        return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
     }
-
 }
