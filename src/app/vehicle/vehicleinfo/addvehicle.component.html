@@ -1,24 +1,24 @@
 <aside>
-  <mat-toolbar id="page-side-header">
-    <span class="padding">Vehicle Information</span>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <span class="padding toolbar-title">Add Vehicle </span>
     <button class="" mat-mini-fab color="default" (click)="onSave()" id="save">
-      <mat-icon color="accent" >save</mat-icon>
+      <mat-icon color="accent">save</mat-icon>
     </button>
-  </mat-toolbar>
+  </div>
   <main>
 
 
     <!-- <button color="default" (click)="onClose()">
         close</button> -->
 
-    <form novalidate autocomplete='off' >
-      <div fxLayout="row wrap" fxLayoutAlign="start start" >
+    <form novalidate autocomplete='off'>
+      <div fxLayout="row wrap" fxLayoutAlign="start start">
         <mat-form-field fxFlex="100">
-          <input matInput  value="Sushi" placeholder="Name" >
+          <input matInput value="Sushi" placeholder="Name">
         </mat-form-field>
         <mat-form-field fxFlex="100">
-            <input matInput  value="Sushi" placeholder="Name">
-          </mat-form-field>
+          <input matInput value="Sushi" placeholder="Name">
+        </mat-form-field>
       </div>
     </form>
   </main>
