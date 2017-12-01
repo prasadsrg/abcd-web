@@ -33,7 +33,8 @@ export class LoginComponent  {
   }
   signInEmail(){
     this.loginService.login(this.auth).subscribe( data => {
-      console.log(data);
+      this.loginService.storageSave(data);
+      this.loginService.navigateAdmin();
     })
   }
 }

@@ -15,7 +15,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes, { useHash: true }), SharedModule.forRoot()
+    CommonModule, 
+    RouterModule.forRoot(routes, { useHash: true }), 
+    SharedModule.forRoot()
   ],
   declarations: [
     LoginComponent, 

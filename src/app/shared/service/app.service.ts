@@ -84,6 +84,9 @@ export class AppService {
     sessionUserEmit(data: any){
         this.apexService.sessionUserEmit(data);
     }
+    menuEmit(data: any){
+        this.apexService.menuEmit(data);
+    }
      getBranch(): any {
         return Storage.getBranch();
     }

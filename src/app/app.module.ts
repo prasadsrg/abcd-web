@@ -11,6 +11,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MenuComponent} from './apex/menu/menu.component';
     HttpClientModule,
     AuthModule,
     HomeModule,
-    ProfileModule
+    ProfileModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
