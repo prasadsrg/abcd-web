@@ -7,10 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 import {LoginService} from './login/login.service';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
+  { path: 'auth/forgotpassword', component: ForgotpasswordComponent },
 ];
 
 @NgModule({
@@ -21,7 +23,7 @@ const routes: Routes = [
   ],
   declarations: [
     LoginComponent, 
-    RegisterComponent
+    RegisterComponent, ForgotpasswordComponent
   ],
   providers: [LoginService],
   exports: [RouterModule]
