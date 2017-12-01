@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding, HostListener} from '@angular/core';
 import { LoginForm } from './login.form';
 import { AnimationService } from '../../shared/service/animation.service';
+import { LoginService } from './login.service';
 import { User } from '../../apex/entities/user'; 
 
 
@@ -17,7 +18,7 @@ export class LoginComponent  {
   isVisible: string;
   error: any;
 
-  constructor() {
+  constructor(private loginService: LoginService) {
     LoginForm.edit(this.myForm);
     this.init();
   }
@@ -29,5 +30,10 @@ export class LoginComponent  {
   init() {
 
     this.auth = new User();
+  }
+  signInEmail(){
+    this.loginService.login(this.auth).subscribe( data => {
+      console.log(data);
+    })
   }
 }

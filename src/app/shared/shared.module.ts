@@ -1,5 +1,7 @@
 import { NgModule, ModuleWithProviders } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppInterceptor } from './service/app.interceptor';
 import { CommonModule } from '@angular/common';
 import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
@@ -50,7 +52,16 @@ export class SharedModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: SharedModule,
-            providers: [ApexService, ReportService, AppService],
+            providers: [
+                ApexService, 
+                ReportService, 
+                AppService,
+                { 
+                    provide: HTTP_INTERCEPTORS, 
+                    useClass: AppInterceptor, 
+                    multi: true 
+                } 
+            ],
         };
     }
 }
