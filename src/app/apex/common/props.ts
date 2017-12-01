@@ -13,7 +13,7 @@ export class Props {
     static FORGOT_PASSWORD_PAGE = '/auth/forgotpassword';
     static ADMIN_DASHBOARD_PAGE = '/dashboard/admindashboard';
     static USER_DASHBOARD_PAGE = '/dashboard/userdashboard';
-    static MY_PROFILE_PAGE = '/myprofile';
+    static MY_PROFILE_PAGE = 'profile/myprofile';
     
     static ROLE_DATA_LOAD_URL = "/roles";
     static BRANCH_DATA_LOAD_URL = "/branches";
