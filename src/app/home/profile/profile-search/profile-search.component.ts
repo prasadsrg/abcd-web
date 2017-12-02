@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-search.component.scss']
 })
 export class ProfileSearchComponent implements OnInit {
-
+  dataList: any[] = [];
   constructor() { }
 
   ngOnInit() {
+    this.changeData(1000);
+  }
+
+  changeData(maxLength){
+    this.dataList = [];
+    for(let i=0; i< maxLength; i++) {
+      this.dataList.push(i);
+    }
   }
 
 }

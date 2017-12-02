@@ -6,12 +6,15 @@ import { CommonModule } from '@angular/common';
 import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 import { AppImgUploadComponent } from "./component/app.imgupload.component";
 import { AppImgLoadComponent } from "./component/app.imgload.component";
 import { FormMessagesComponent } from "./component/form.messages.component";
+import { InfiniteListComponent } from './component/infinite.list.component';
+
+
 import { FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe } from './utils/pipes';
 
 import { 
@@ -34,8 +37,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
+        InfiniteScrollModule,
     ],
-    declarations: [FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe, FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent],
+    declarations: [ 
+        FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe, 
+        FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, InfiniteListComponent
+    ],
     exports: [
         CommonModule,FormsModule, ReactiveFormsModule, FlexLayoutModule, 
         FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe, FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent,
@@ -44,6 +51,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
+        InfiniteScrollModule, InfiniteListComponent
     
     ]
 
