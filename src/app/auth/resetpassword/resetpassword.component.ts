@@ -17,6 +17,8 @@ export class ResetPasswordComponent implements OnInit {
 
   ngOnInit() {
   }
- 
+  auth_confirmpassword(){
+    
+  }
 
 }

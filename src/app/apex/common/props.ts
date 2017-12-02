@@ -11,7 +11,7 @@ export class Props {
     static SIGN_IN_PAGE = '/sign/singin';
     static SIGN_UP_PAGE = '/sign/singup';
     static FORGOT_PASSWORD_PAGE = '/sign/forgotpassword';
-    static ADMIN_DASHBOARD_PAGE = '/dashboard';
+    static ADMIN_DASHBOARD_PAGE = '/dashboard/admin';
     static USER_DASHBOARD_PAGE = '/user/dashboard';
     static MY_PROFILE_PAGE = '/myprofile';
     

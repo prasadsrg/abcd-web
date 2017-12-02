@@ -12,6 +12,7 @@ import { ProfileModule } from './profile/profile.module';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 
@@ -29,7 +30,8 @@ import { MenuComponent} from './apex/menu/menu.component';
     AuthModule,
     HomeModule,
     ProfileModule,
-    VehicleModule
+    VehicleModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
