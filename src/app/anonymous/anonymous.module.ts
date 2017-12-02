@@ -10,6 +10,7 @@ import { PageService } from './pages/page.service';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ForgotpasswordComponent } from './auth/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './auth/resetpassword/resetpassword.component';
 
 import { AuthService } from './auth/auth.service';
 import { ContactusComponent } from './pages/contactus/contactus.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: 'auth/forgotpassword', component: ForgotpasswordComponent },
+  { path: 'auth/resetpassword', component: ResetpasswordComponent },
 ];
 
 
@@ -43,6 +45,7 @@ const routes: Routes = [
     ProductsComponent,
     LoginComponent,
     ForgotpasswordComponent,
+    ResetpasswordComponent,
     RegisterComponent
   ],
   providers: [PageService, AuthService]
