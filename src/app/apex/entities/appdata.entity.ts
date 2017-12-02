@@ -4,6 +4,6 @@ export class AppData{
     code:string;
     active:boolean = true;
     grpcode:string;
-    updatedBy:string =  'system',
+    updatedBy:string =  'system';
     updatedOn:Date;
 }
