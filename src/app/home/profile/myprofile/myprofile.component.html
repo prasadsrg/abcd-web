@@ -24,7 +24,7 @@
                                         <h5 fxFlex="100 " style="text-align: left;">Personal Details</h5>
                                         <div fxLayout="row wrap" fxFlex="100 ">
                                             <mat-form-field fxFlex="40" class="margin8">
-                                                <input matInput placeholder="Name" required [formControl]="myForm.controls.myprofile_name">
+                                                <input matInput placeholder="Name" required [formControl]="myForm.controls.myprofile_name" [(ngModel)]="profile.name">
                                                 <mat-hint>
                                                     <form-messages [control]="myForm.controls.myprofile_name"> </form-messages>
                                                 </mat-hint>
@@ -91,7 +91,7 @@
 
                                         <div fxLayout="row wrap" fxFlex="100 ">
                                             <mat-form-field fxFlex="40" class="margin8">
-                                                <input matInput placeholder="zipcode" required [formControl]="myForm.controls.myprofile_zipocode">
+                                                <input matInput placeholder="zipcode" required [formControl]="myForm.controls.myprofile_zipcode">
                                                 <mat-hint>
                                                     <form-messages [control]="myForm.controls.myprofile_zipcode"> </form-messages>
                                                 </mat-hint>
