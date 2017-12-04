@@ -11,6 +11,8 @@ import { AnonymousModule } from './anonymous/anonymous.module';
 import { HomeModule } from './home/home.module';
 import { MenuComponent} from './apex/menu/menu.component';
 import { ReportsModule } from './reports/reports.module';
+import { MasterModule } from './masterdata/masterdata.module';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ReportsModule } from './reports/reports.module';
     HttpClientModule,
     AnonymousModule,
     HomeModule,
-    ReportsModule
+    ReportsModule,
+    MasterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
