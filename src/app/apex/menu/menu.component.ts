@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild, HostListener } from '@angular/core';
 import { Menu } from '../../shared/common/interfaces';
+import { ApexService } from '../../shared/service/apex.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,11 +8,11 @@ import { Menu } from '../../shared/common/interfaces';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  private _menuSubscription: any;
   menuList: any[];
   activeMenuObject: any;
   
-  constructor() { 
+  constructor(private apexService: ApexService,) { 
     console.log(this.menus());
     this.menuList = this.menus();
   }
@@ -23,6 +24,10 @@ export class MenuComponent implements OnInit {
     //   console.log('dasdas')
       
     // }
+    this._menuSubscription = this.apexService.menuEvent;
+    this._menuSubscription.subscribe(data => {
+      console.log(data);
+    });
   }
   // @HostListener('window:resize', ['$event'])
   // onResize(event) {

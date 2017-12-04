@@ -4,6 +4,7 @@ import { ApexService } from './shared/service/apex.service';
 import { MatIconRegistry } from '@angular/material';
 import { Util } from './shared/utils/util';
 import { AppService } from './shared/service/app.service';
+import { Storage } from './shared/utils/storage';
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,6 @@ export class AppComponent implements OnInit {
     });
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       console.log(data);
-     // this.menuChange(data);
     });
     if (window.innerWidth < 768) {
       this.navMode = 'over';
