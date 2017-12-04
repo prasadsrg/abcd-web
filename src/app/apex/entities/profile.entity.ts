@@ -1,18 +1,15 @@
+import { Address } from './address.entity';
 export class Profile {
-    id: string;
-    name: string = 'Anonymous';
+    id: String;
+    name: String = 'Anonymous';
     mobile: number;
     email: any;
     aadhar: number;
     password: any = '1234';
-    role: string = 'User';
-    address_id: any;
+    role: String = 'User';
+    address: Address = new Address();
     branchId: any;
     imgId: any;
-    active: boolean = true;
+    active: Boolean = true;
     grpcode: any;
-    createdBy: string = 'system';
-    createdOn: any;
-    updatedBy: string = 'system'
-    updatedOn: Date;
 }
