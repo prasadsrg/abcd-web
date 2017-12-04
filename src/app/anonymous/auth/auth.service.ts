@@ -7,7 +7,9 @@ import { ApexService } from '../../shared/service/apex.service';
 @Injectable()
 export class AuthService {
     private host = Props.API_END_POINT;
-    private auth_url = 'auth'
+    private auth_url = 'auth';
+    private forgotPassword_url = '';
+    private resetPassword_url = '';
     constructor(private http: HttpClient, private appService: AppService)    {
         
      }
@@ -15,6 +17,16 @@ export class AuthService {
          data.grpcode = Storage.pid;
          this.appService.showLoader(true);
          return this.http.post(this.host+this.auth_url, {data: data});
+     }
+     forgotPassword(data:any) {
+         data.grpcode = Storage.pid;
+         this.appService.showLoader(true);
+         return this.http.post(this.host+this.forgotPassword_url, {data: data})
+     }
+     resetPassword(data:any){
+        data.grpcode = Storage.pid;
+        this.appService.showLoader(true);
+        return this.http.post(this.host+this.resetPassword_url, {data: data})
      }
      storageSave(data: any){
         console.log(data);
@@ -36,5 +48,14 @@ export class AuthService {
 
      navigateAdmin(){
          this.appService.navigate(Props.ADMIN_DASHBOARD_PAGE, []);
+     }
+     navigateForgotPassword(){
+        this.appService.navigate(Props.FORGOT_PASSWORD_PAGE, []);
+     }
+     navigateResetPassword(){
+         this.appService.navigate(Props.RESET_PASSWORD_PAGE, []);
+     }
+     navigateSignin(){
+         this.appService.navigate(Props.SIGN_IN_PAGE,[])
      }
 }

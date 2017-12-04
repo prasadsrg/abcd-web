@@ -11,6 +11,7 @@ export class Props {
     static SIGN_IN_PAGE = '/auth/login';
     static SIGN_UP_PAGE = '/sign/register';
     static FORGOT_PASSWORD_PAGE = '/auth/forgotpassword';
+    static RESET_PASSWORD_PAGE = '/auth/resetpassword';
     static ADMIN_DASHBOARD_PAGE = '/dashboard/admindashboard';
     static USER_DASHBOARD_PAGE = '/dashboard/userdashboard';
     static MY_PROFILE_PAGE = 'profile/myprofile';

@@ -21,6 +21,8 @@ export class LoginComponent  {
   constructor(private authService: AuthService) {
     LoginForm.edit(this.myForm);
     this.init();
+    this.showorhide = "password";
+    this.isVisible = "show";
   }
 
 
@@ -31,10 +33,21 @@ export class LoginComponent  {
 
     this.auth = new User();
   }
+  showPassword(){
+    this.showorhide = "password";
+     this.isVisible = "show"
+ }
+ hidePassword(){
+   this.showorhide = "text";
+    this.isVisible = "hide"
+ }
   signInEmail(){
     this.authService.login(this.auth).subscribe( data => {
       this.authService.storageSave(data);
       this.authService.navigateAdmin();
     })
+  }
+  forgotPassword(){
+    this.authService.navigateForgotPassword();
   }
 }

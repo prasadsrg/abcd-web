@@ -2,6 +2,8 @@ import { Component, ViewChild, OnInit, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { ApexService } from './shared/service/apex.service';
 import { MatIconRegistry } from '@angular/material';
+import { Util } from './shared/utils/util';
+import { AppService } from './shared/service/app.service';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +18,12 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
   showMenu = true;
+  sessionUser: any;
 
-  constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry) {
+  constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
+      this.sessionUsers();
+      
    }
 
   ngOnInit() {
@@ -34,6 +39,10 @@ export class AppComponent implements OnInit {
     if (window.innerWidth < 768) {
       this.navMode = 'over';
     }
+  }
+  sessionUsers(){
+    this.appService.getSessionUser();
+    // console.log()
   }
 
   loadIcons(){

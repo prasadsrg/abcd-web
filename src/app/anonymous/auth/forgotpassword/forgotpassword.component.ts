@@ -2,6 +2,7 @@ import { Component, OnInit , HostListener } from '@angular/core';
 import { ForgotPasswordForm } from './forgotpassword.form';
 import { AnimationService } from '../../../shared/service/animation.service';
 import { User } from '../../../apex/entities/user';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -14,7 +15,8 @@ export class ForgotpasswordComponent implements OnInit {
   showorhide: string;
   isVisible: string;
   error: any;
-  constructor() { 
+  auth: User;
+  constructor(private authService: AuthService) { 
     ForgotPasswordForm.edit(this.myForm);
     this.init();
   }
@@ -22,7 +24,12 @@ export class ForgotpasswordComponent implements OnInit {
   ngOnInit() {
   }
   init() {
-    //this.auth = new User();
+    this.auth = new User();
   }
-
+  resetPassword(){
+    this.authService.forgotPassword(this.auth).subscribe( data => {
+      this.authService.storageSave(data);
+      this.authService.navigateResetPassword();
+    })
+  }
 }
