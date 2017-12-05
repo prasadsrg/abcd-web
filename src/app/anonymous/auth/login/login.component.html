@@ -5,21 +5,25 @@
             <!--class="row center-xs parent-container padding"-->
             <mat-card class="login-card padding-nill">
                 <mat-card-content>
-                    <div fxLayout="row wrap" fxLayoutAlign="start start">
+                    <div fxLayout="row wrap" fxLayoutAlign="center center">
 
-                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" fxHide.sm fxHide.xs style="background: url(../../../../assets/images/login-banner.png) no-repeat center center; background-size: cover;height:400px; padding: 1rem;">
+                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" fxHide.sm fxHide.xs >
                             <!-- <br><br><br><br> -->
-                            <h1 style="color:white ">Welcome</h1>
-                            <P style="color:white ">Multi-Carrier Shipping Software Solutions Multi-Carrier, Multi-Modal, and Multi-Platform Shipping Software </P>
+                          <mat-card  fxLayout="row wrap" fxLayoutAlign="start center" style="box-shadow: none;" style="background: url(../../../../assets/images/login-banner.png) no-repeat center center; background-size: cover;height:400px; padding: 1rem;">
+                                <h1 style="color:white ">Welcome</h1>
+                                <P style="color:white ">Multi-Carrier Shipping Software Solutions Multi-Carrier, Multi-Modal, and Multi-Platform Shipping Software </P>
+                          </mat-card>
+                                   
+                           
                         </div>
                         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
                             <mat-card style="box-shadow: none;">
                                 <mat-card-content>
                                     <form [formGroup]="myForm" novalidate autocomplete='off'>
-                                        <div fxLayout="row wrap" fxLayoutAlign="start start">
-                                            <h3 fxFlex="100 " style="text-align: left;">Sign In</h3>
-                                            <p fxFlex="100 " style="font-size: 12px;font-weight: 300;line-height: 1.33;text-align: left;color: #2a3540;">Hello there! Sign in and start managing your shipping items</p>
-                                            <div fxLayout="row wrap" fxFlex="100 ">
+                                        <div fxLayout="row wrap" fxLayoutAlign="center end">
+                                            <h3 fxFlex="100 ">Sign In</h3>
+                                            <p fxFlex="100 " style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540;">Hello there! Sign in and start managing your shipping items</p>
+                                            <div fxLayout="row wrap" fxLayoutAlign="center end" >
                                                     <mat-form-field fxFlex="100 ">
                                                         <input matInput placeholder="User Name or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">
                                                         <mat-hint>
@@ -38,12 +42,12 @@
                                         </div>
                                     </form>
                                 </mat-card-content>
-                                <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center center ">
+                                <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center end ">
                                     <div fxFlex="100" fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
                                         <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="signInEmail()">Sign In Now</button>
                                     </div>
-                                    <div fxFlex="100" fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                        <p class="padding">Forgot Password? <a (click)="forgotPassword()" href="#" style="text-decoration:none;color:black">Reset</a></p>
+                                    <div fxFlex="100" fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center end" style="padding-top:12px">
+                                        <a class="padding"  href="#" (click)="forgotPassword()" style="text-decoration:none;color:black">Forgot Password?</a>
                                     </div>
                                 </mat-card-actions>
                             </mat-card>

@@ -6,7 +6,8 @@ export class ResetPasswordForm extends AppFormGroup {
         return this.getFormGroup();
     }
     static edit(group: FormGroup) {
-
+        group.addControl("resetpassword_email", this.getController(null, this.TYPE_EMAIL, null, 50));
+        group.addControl("resetpassword_token", this.getController(null, this.TYPE_NUMBER, null, 50));
         group.addControl("resetpassword_userId", this.getController(null, this.TYPE_PASSWORD, null, 50));
         group.addControl("confirmpassword_userId", this.getController(null, this.TYPE_PASSWORD, null, 50));
     }
