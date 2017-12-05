@@ -15,6 +15,7 @@ export class Props {
     static ADMIN_DASHBOARD_PAGE = '/dashboard/admindashboard';
     static USER_DASHBOARD_PAGE = '/dashboard/userdashboard';
     static MY_PROFILE_PAGE = 'profile/myprofile';
+    static PROFILE_EDIT_PAGE = 'profile/edit';
     
     static ROLE_DATA_LOAD_URL = "/roles";
     static BRANCH_DATA_LOAD_URL = "/branches";

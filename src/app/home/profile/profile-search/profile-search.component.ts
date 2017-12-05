@@ -1,18 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AnimationService } from '../../../shared/service/animation.service';
+import { ApexService } from './../../../shared/service/apex.service';
+import { ProfileService } from './../profile.service';
+import { Profile } from '../../../apex/entities/profile.entity';
 @Component({
   selector: 'app-profile-search',
   templateUrl: './profile-search.component.html',
   styleUrls: ['./profile-search.component.scss']
 })
 export class ProfileSearchComponent implements OnInit {
-  dataList: any[] = [];
-  constructor() { }
+  dataList: Profile[] = [];
+  profile: Profile = new Profile();
+  constructor(private profileService: ProfileService, private apexservice: ApexService) {
+    this.search();
+   }
 
   ngOnInit() {
     this.changeData(1000);
   }
-
+  search() {
+    this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
+      this.dataList = data;
+      console.log(this.dataList);
+    })
+  }
+  editProfile(id:any){
+      this.profileService.navigateProfileEdit(id);
+  }
   changeData(maxLength){
     this.dataList = [];
     for(let i=0; i< maxLength; i++) {
