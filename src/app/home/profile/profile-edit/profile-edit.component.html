@@ -15,13 +15,13 @@
                             <div fxLayout="row wrap" fxLayoutAlign="start start">
                                 <h5 fxFlex="100 " style="text-align: left;">Personal Details</h5>
                                 <div fxLayout="row wrap" fxFlex="100">
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="45" class="margin8">
                                         <input matInput placeholder="Name" required [formControl]="myForm.controls.profile_name">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_name"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="45" class="margin8">
                                         <input matInput type="text" placeholder="Email" required [formControl]="myForm.controls.profile_email">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_email "> </form-messages>
@@ -31,13 +31,13 @@
                             </div>
                             <div fxLayout="row wrap" fxLayoutAlign="start start">
                                 <div fxLayout="row wrap" fxFlex="100 ">
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="45" class="margin8">
                                         <input matInput placeholder="Mobile" required [formControl]="myForm.controls.profile_mobile">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_mobile"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="45" class="margin8">
                                         <input matInput type="text" placeholder="Password " required [formControl]="myForm.controls.profile_password">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_password "> </form-messages>
@@ -51,54 +51,49 @@
             </div>
 
             <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
-                <div fxFlex.xs="0" fxFlex.sm="0" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20"></div>
-                <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80">
+                <!-- <div fxFlex.xs="0" fxFlex.sm="0" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20"></div> -->
+                <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
                     <mat-card class="margin8">
                         <mat-card-content>
                             <div fxLayout="row wrap" fxLayoutAlign="start start">
                                 <h5 fxFlex="100" style="text-align: left;">Address Details</h5>
                                 <div fxLayout="row wrap" fxFlex="100 ">
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput placeholder="Lane" required [formControl]="myForm.controls.profile_lane">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_lane"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput type="text" placeholder="city" required [formControl]="myForm.controls.profile_city">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_city"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                </div>
-                            </div>
-                            <div fxLayout="row wrap" fxLayoutAlign="start start">
-
-                                <div fxLayout="row wrap" fxFlex="100 ">
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput placeholder="state" required [formControl]="myForm.controls.profile_state">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_state"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="40" class="margin8">
-                                        <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.profile_country">
-                                        <mat-hint>
-                                            <form-messages [control]="myForm.controls.profile_country"> </form-messages>
-                                        </mat-hint>
-                                    </mat-form-field>
                                 </div>
                             </div>
                             <div fxLayout="row wrap" fxLayoutAlign="start start">
 
                                 <div fxLayout="row wrap" fxFlex="100 ">
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="30" class="margin8">
+                                        <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.profile_country">
+                                        <mat-hint>
+                                            <form-messages [control]="myForm.controls.profile_country"> </form-messages>
+                                        </mat-hint>
+                                    </mat-form-field>
+                                    <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput placeholder="zipcode" required [formControl]="myForm.controls.profile_zipocode">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_zipcode"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="40" class="margin8">
+                                    <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput type="text" placeholder="Aadhar Number" required [formControl]="myForm.controls.profile_aadhar">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_aadhar"> </form-messages>
