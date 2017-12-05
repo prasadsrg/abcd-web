@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../../shared/service/animation.service';
+import { ApexService } from './../../../shared/service/apex.service';
+
 import { MyProfileForm } from './myprofile.form';
+
 import { ProfileService } from './../profile.service';
+
 import { Profile } from '../../../apex/entities/profile.entity';
 @Component({
   selector: 'app-myprofile',
@@ -11,7 +15,7 @@ import { Profile } from '../../../apex/entities/profile.entity';
 export class MyprofileComponent implements OnInit {
   profile: Profile = new Profile();
   myForm: any = MyProfileForm.init();
-  constructor(private profileService: ProfileService) {
+  constructor(private profileService: ProfileService, private apexservice: ApexService) {
     MyProfileForm.edit(this.myForm);
     this.entity(this.profileService.getCurrentProfileId());
    }
@@ -35,10 +39,10 @@ export class MyprofileComponent implements OnInit {
     // const data:any = {
     //   data : this.profile
     // }
-    this.profileService.saveProfile(this.profile).subscribe( (data: Profile) => {
+    this.profileService.saveProfile(this.profile).subscribe( (data) => {
       console.log(data);
-    })
-    
+      this.apexservice.showMessage(data.message);
+    });
   }
 
 }
