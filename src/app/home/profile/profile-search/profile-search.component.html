@@ -1,27 +1,39 @@
 <aside>
-    <div fxLayout="row">
-        <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Mobile</th>
-                        <th scope="col">Aadhar Number</th>
-                        <th scope="col">Role</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editProfile(item.id)">
-                        <td data-label="Invoice Number">{{item.name}}</td>
-                        <td data-label="Name">{{item.email}}</td>
-                        <td data-label="Mobile">{{item.mobile}}</td>
-                        <td data-label="Invoice Date">{{item.aadhar}}</td>
-                        <td data-label="Total Amount">{{item.role}}</td>
-                    </tr>
-                </tbody>
-            </table>
+    <main>
+        <div fxLayout="row">
+            <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
+                <h4>User Management</h4>
+                <mat-tab-group>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon>user</mat-icon> All Users <span style="font-weight: bold;padding: 20px;font-size: 38px;">{{dataList.length}}</span>
+                        </ng-template>
 
-        </infinite-list>
-    </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile</th>
+                                    <th scope="col">Aadhar Number</th>
+                                    <th scope="col">Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editProfile(item.id)">
+                                    <td data-label="Invoice Number">{{item.name}}</td>
+                                    <td data-label="Name">{{item.email}}</td>
+                                    <td data-label="Mobile">{{item.mobile}}</td>
+                                    <td data-label="Invoice Date">{{item.aadhar}}</td>
+                                    <td data-label="Total Amount">{{item.role}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </mat-tab>
+                </mat-tab-group>
+            </infinite-list>
+        </div>
+    </main>
 </aside>
