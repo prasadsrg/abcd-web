@@ -3,13 +3,13 @@
     <main class="padding">
         <form [formGroup]="myForm" novalidate autocomplete='off'>
             <div fxLayout="row wrap" fxLayoutAlign="center center" class=" padding">
-                <div fxFlex.xs="100" fxFlex.sm="40" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
-                    <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" >
-                            <img fxFlex="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Circle-icons-profle.svg/1000px-Circle-icons-profle.svg.png" height="120px">
-                            <h6 fxFlex="100"><b>{{profile.name}}</b></h6>
-                        <P fxFlex="100">{{profile.email}}</P>
-                    </mat-card>
-                </div>
+                    <div fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
+                            <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="start start">
+                                    <img fxFlex="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Circle-icons-profle.svg/1000px-Circle-icons-profle.svg.png" height="120px">
+                                <h6><b>{{profile.name}}</b></h6>
+                                <P>{{profile.email}}</P>
+                            </mat-card>
+                        </div>
                 <div fxFlex.xs="100" fxFlex.sm="60" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80">
                     <mat-card class="margin8">
                         <mat-card-content>
