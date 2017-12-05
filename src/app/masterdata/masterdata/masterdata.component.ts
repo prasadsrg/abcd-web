@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationService } from '../shared/service/animation.service';
-import { MasterService } from './masterdata.service';
-import { ApexData } from '../apex/entities/apexdata.entity';
+import { AnimationService } from '../../shared/service/animation.service';
+import { MasterService } from './../masterdata.service';
+import { ApexData } from '../../apex/entities/apexdata.entity';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { ApexData } from '../apex/entities/apexdata.entity';
   styleUrls: ['./masterdata.component.scss']
 })
 export class MasterDataComponent implements OnInit {
-    masterData:ApexData;
+    masterData: ApexData;
   
-  constructor(private masterService:MasterService) {
+  constructor(private masterService: MasterService) {
    
     // this.init();
    }
@@ -23,7 +23,7 @@ export class MasterDataComponent implements OnInit {
 
   //   this.auth = new User();
   // }
-  masterdata(){
+  masterdata() {
     this.masterService.login(this.masterData).subscribe( data => {
     //   this.masterService.storageSave(data);
     })

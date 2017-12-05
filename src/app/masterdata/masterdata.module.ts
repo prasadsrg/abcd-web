@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
 
 import { Routes, RouterModule } from '@angular/router';
-import { MasterDataComponent } from './masterdata.component';
+import { MasterDataComponent } from './masterdata/masterdata.component';
 import { MasterService } from './masterdata.service';
 
 
@@ -14,14 +14,14 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    CommonModule, 
-    RouterModule.forRoot(routes, { useHash: true }), 
+    CommonModule,
+    RouterModule.forRoot(routes, { useHash: true }),
     SharedModule.forRoot()
   ],
   declarations: [
     MasterDataComponent
   ],
   exports: [RouterModule],
-  providers:[MasterService]
+  providers: [ MasterService]
 })
 export class MasterModule { }
