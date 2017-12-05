@@ -1,6 +1,6 @@
 <aside>
     <article>
-        <h3 class="padding">Profile</h3>
+        <h4 class="padding" >Profile</h4>
     </article>
     <main class="padding">
         <form [formGroup]="myForm" novalidate autocomplete='off'>
@@ -102,7 +102,7 @@
                             </div>
                             <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center center ">
                                 <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" style="background-color:#44c767;color:#fff">Save Details</button>
+                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">Save Details</button>
                                 </div>
                             </mat-card-actions>
                         </mat-card-content>
