@@ -16,7 +16,7 @@ export class ProfileSearchComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.changeData(1000);
+    // this.changeData(1000);
   }
   search() {
     this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
@@ -27,11 +27,11 @@ export class ProfileSearchComponent implements OnInit {
   editProfile(id:any){
       this.profileService.navigateProfileEdit(id);
   }
-  changeData(maxLength){
-    this.dataList = [];
-    for(let i=0; i< maxLength; i++) {
-      this.dataList.push(i);
-    }
-  }
+  // changeData(maxLength){
+  //   this.dataList = [];
+  //   for(let i=0; i< maxLength; i++) {
+  //     this.dataList.push(i);
+  //   }
+  // }
 
 }
