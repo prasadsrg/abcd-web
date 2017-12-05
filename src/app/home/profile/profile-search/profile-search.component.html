@@ -1,27 +1,27 @@
 <aside>
-  <div fxLayout="row"> 
-      <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
-                  <table>
-                      <thead >
-                          <tr>
-                            <th scope="col">Invoice Number</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Mobile</th>
-                            <th scope="col">Invoice Date</th>
-                            <th scope="col">Total Amount</th>
-                          </tr>
-                        </thead>       
-                      <tbody>    
-                        <tr *ngFor="let item of scrollList" >
-                          <td data-label="Invoice Number">{{item}}</td>
-                          <td   data-label="Name">{{item}}</td>
-                          <td data-label="Mobile">{{item}}</td>
-                          <td data-label="Invoice Date">{{item}}</td>
-                          <td data-label="Total Amount">{{item}}</td>
-                        </tr>
-                  </tbody>
-              </table>
-      
-      </infinite-list>
-     </div>
+    <div fxLayout="row">
+        <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Aadhar Number</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editProfile(item.id)">
+                        <td data-label="Invoice Number">{{item.name}}</td>
+                        <td data-label="Name">{{item.email}}</td>
+                        <td data-label="Mobile">{{item.mobile}}</td>
+                        <td data-label="Invoice Date">{{item.aadhar}}</td>
+                        <td data-label="Total Amount">{{item.role}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </infinite-list>
+    </div>
 </aside>

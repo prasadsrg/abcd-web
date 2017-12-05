@@ -9,14 +9,19 @@
                 <form [formGroup]="myForm" novalidate autocomplete='off'>
                 <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
                     <!--class="row center-xs parent-container padding"-->
+<<<<<<< HEAD
                    
 
                     <div fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
+=======
+                    <div fxFlex.xs="100" fxFlex.sm="40" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
+>>>>>>> a0cd7166cb0e32fb715a4e6023f2088853b9229c
                         <mat-card class="margin8">
                             <h6><b>{{profile.name}}</b></h6>
                             <P>{{profile.email}}</P>
                         </mat-card>
                     </div>
+<<<<<<< HEAD
                    
                        
 
@@ -26,6 +31,12 @@
                                         <mat-card class="margin8">
                                                 <mat-card-content>
                                                         
+=======
+                    <div fxFlex.xs="100" fxFlex.sm="60" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80">
+                        <mat-card class="margin8">
+                            <mat-card-content>
+                                <form [formGroup]="myForm" novalidate autocomplete='off'>
+>>>>>>> a0cd7166cb0e32fb715a4e6023f2088853b9229c
                                     <div fxLayout="row wrap" fxLayoutAlign="start start">
                                         <h5 fxFlex="100 " style="text-align: left;">Personal Details</h5>
                                         <div fxLayout="row wrap" fxFlex="100 ">
@@ -84,9 +95,9 @@
                                         
                                     
 
-                                       
-                                            <mat-form-field fxFlex="30" class="margin8">
-                                                <input matInput placeholder="state" required [formControl]="myForm.controls.myprofile_state" [(ngModel)]="profile.address.state" >
+                                        <div fxLayout="row wrap" fxFlex="100 ">
+                                            <mat-form-field fxFlex="40" class="margin8">
+                                                <input matInput placeholder="state" required [formControl]="myForm.controls.myprofile_state" [(ngModel)]="profile.address.state">
                                                 <mat-hint>
                                                     <form-messages [control]="myForm.controls.myprofile_state"> </form-messages>
                                                 </mat-hint>
