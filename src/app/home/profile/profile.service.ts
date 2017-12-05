@@ -22,9 +22,17 @@ export class ProfileService {
     this.url = this.host+"profile/"+data;
     return this.http.get(this.url);
   }
+  searchProfile(data: any) {
+    this.appService.showLoader(true);
+    this.url = this.host+"profile/";
+    return this.http.post(this.url, {data: data});
+  }
   saveProfile(data: any) {
     this.appService.showLoader(true);
     this.url = this.host+"profile/";
     return this.http.put(this.url, {data: data});
   }
+  navigateProfileEdit(id:any){
+         this.appService.navigate(Props.PROFILE_EDIT_PAGE, [{id:id}]);
+     }
 }

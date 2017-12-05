@@ -21,7 +21,6 @@ export class MyprofileComponent implements OnInit {
    }
 
   ngOnInit() {
-   
   }
   // init() {
 
@@ -31,14 +30,9 @@ export class MyprofileComponent implements OnInit {
   entity(id: string){
     this.profileService.getProfile(id).subscribe( (data: Profile) => {
       this.profile = data;
-      console.log(this.profile)
     })
   }
   saveEntity() {
-    console.log(this.profile)
-    // const data:any = {
-    //   data : this.profile
-    // }
     this.profileService.saveProfile(this.profile).subscribe( (data) => {
       console.log(data);
       this.apexservice.showMessage(data.message);

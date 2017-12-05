@@ -16,13 +16,13 @@
                                 <h5 fxFlex="100 " style="text-align: left;">Personal Details</h5>
                                 <div fxLayout="row wrap" fxFlex="100">
                                     <mat-form-field fxFlex="45" class="margin8">
-                                        <input matInput placeholder="Name" required [formControl]="myForm.controls.profile_name">
+                                        <input matInput placeholder="Name" required [formControl]="myForm.controls.profile_name" [(ngModel)]="profile.name">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_name"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="45" class="margin8">
-                                        <input matInput type="text" placeholder="Email" required [formControl]="myForm.controls.profile_email">
+                                        <input matInput type="text" placeholder="Email" required [formControl]="myForm.controls.profile_email" [(ngModel)]="profile.email">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_email "> </form-messages>
                                         </mat-hint>
@@ -32,13 +32,13 @@
                             <div fxLayout="row wrap" fxLayoutAlign="start start">
                                 <div fxLayout="row wrap" fxFlex="100 ">
                                     <mat-form-field fxFlex="45" class="margin8">
-                                        <input matInput placeholder="Mobile" required [formControl]="myForm.controls.profile_mobile">
+                                        <input matInput placeholder="Mobile" required [formControl]="myForm.controls.profile_mobile" [(ngModel)]="profile.mobile">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_mobile"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="45" class="margin8">
-                                        <input matInput type="text" placeholder="Password " required [formControl]="myForm.controls.profile_password">
+                                        <input matInput type="text" placeholder="Password " required [formControl]="myForm.controls.profile_password" [(ngModel)]="profile.password">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_password "> </form-messages>
                                         </mat-hint>
@@ -59,19 +59,19 @@
                                 <h5 fxFlex="100" style="text-align: left;">Address Details</h5>
                                 <div fxLayout="row wrap" fxFlex="100 ">
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput placeholder="Lane" required [formControl]="myForm.controls.profile_lane">
+                                        <input matInput placeholder="Lane" required [formControl]="myForm.controls.profile_lane" [(ngModel)]="profile.address.lane">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_lane"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput type="text" placeholder="city" required [formControl]="myForm.controls.profile_city">
+                                        <input matInput type="text" placeholder="city" required [formControl]="myForm.controls.profile_city" [(ngModel)]="profile.address.city">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_city"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput placeholder="state" required [formControl]="myForm.controls.profile_state">
+                                        <input matInput placeholder="state" required [formControl]="myForm.controls.profile_state" [(ngModel)]="profile.address.state">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_state"> </form-messages>
                                         </mat-hint>
@@ -82,19 +82,19 @@
 
                                 <div fxLayout="row wrap" fxFlex="100 ">
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.profile_country">
+                                        <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.profile_country" [(ngModel)]="profile.address.country">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_country"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput placeholder="zipcode" required [formControl]="myForm.controls.profile_zipocode">
+                                        <input matInput placeholder="zipcode" required [formControl]="myForm.controls.profile_zipcode" [(ngModel)]="profile.address.zipcode">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_zipcode"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
                                     <mat-form-field fxFlex="30" class="margin8">
-                                        <input matInput type="text" placeholder="Aadhar Number" required [formControl]="myForm.controls.profile_aadhar">
+                                        <input matInput type="text" placeholder="Aadhar Number" required [formControl]="myForm.controls.profile_aadhar" [(ngModel)]="profile.aadhar">
                                         <mat-hint>
                                             <form-messages [control]="myForm.controls.profile_aadhar"> </form-messages>
                                         </mat-hint>
@@ -103,7 +103,7 @@
                             </div>
                             <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center center ">
                                 <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="signInEmail()">Save Details</button>
+                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()">Save Details</button>
                                 </div>
                             </mat-card-actions>
                         </mat-card-content>
