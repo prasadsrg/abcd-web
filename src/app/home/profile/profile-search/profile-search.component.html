@@ -1,8 +1,11 @@
 <aside>
+    <article>
+        <h4>User Management</h4>
+    </article>
     <main>
         <div fxLayout="row">
             <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
-                <h4>User Management</h4>
+
                 <mat-tab-group>
                     <mat-tab>
                         <ng-template mat-tab-label>
