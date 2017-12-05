@@ -52,40 +52,40 @@ export class MenuComponent implements OnInit {
       },
       {
         "id": null,
-        "name": "Register",
-        "link": "/auth/register",
+        "name": "Location",
+        "link": "/profile/myprofile",
         "icon": "icon-density-map"
       },
       
       {
         "id": null,
         "name": "Register",
-        "link": "/auth/register",
+        "link": "/profile/myprofile",
         "icon": "icon-trip-activity"
       },
       {
         "id": null,
         "name": "Register",
-        "link": "/auth/register",
+        "link": "/profile/myprofile",
         "icon": "icon-package-status"
       },
       {
         "id": null,
         "name": "Register",
-        "link": "/auth/register",
+        "link": "/profile/myprofile",
         "icon": "icon-location"
       },
       
       {
         "id": null,
         "name": "Register",
-        "link": "/auth/register",
+        "link": "/profile/search",
         "icon": "icon-profile"
       },
       {
         "id": null,
         "name": "Register",
-        "link": "/auth/register",
+        "link": "/profile/myprofile",
         "icon": "icon-vehicle-activity"
       },
       {
