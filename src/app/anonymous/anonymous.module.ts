@@ -19,7 +19,7 @@ import { ProductsComponent } from './pages/products/products.component';
 
 
 const routes: Routes = [
-  { path: '', component: LandingpageComponent },
+  { path: '', component: LoginComponent },
   { path: 'page/landingpage', component: LandingpageComponent },
   { path: 'page/contactus', component: ContactusComponent },
   { path: 'page/solutions', component: SolutionsComponent },
