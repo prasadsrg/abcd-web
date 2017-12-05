@@ -8,6 +8,7 @@ import { ProfileSearchComponent } from './profile/profile-search/profile-search.
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { MyprofileComponent } from './profile/myprofile/myprofile.component';
 import { ProfileService} from './profile/profile.service';
+import {MatTableModule} from '@angular/material/table';
 
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
@@ -24,6 +25,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule, 
+    MatTableModule,
     RouterModule.forRoot(routes, { useHash: true }), 
     SharedModule.forRoot()
   ],
