@@ -44,25 +44,57 @@ export class MenuComponent implements OnInit {
   // }
   menus() {
     return [
-     
       {
         "id": null,
         "name": "Home",
         "link": "/",
-        "icon": "icon-profile"
-      },
-      {
-        "id": null,
-        "name": "Login",
-        "link": "/auth/login",
-        "icon": "icon-location"
+        "icon": "icon-dashboard"
       },
       {
         "id": null,
         "name": "Register",
         "link": "/auth/register",
-        "icon": "icon-dashboard"
+        "icon": "icon-density-map"
+      },
+      
+      {
+        "id": null,
+        "name": "Register",
+        "link": "/auth/register",
+        "icon": "icon-trip-activity"
+      },
+      {
+        "id": null,
+        "name": "Register",
+        "link": "/auth/register",
+        "icon": "icon-package-status"
+      },
+      {
+        "id": null,
+        "name": "Register",
+        "link": "/auth/register",
+        "icon": "icon-location"
+      },
+      
+      {
+        "id": null,
+        "name": "Register",
+        "link": "/auth/register",
+        "icon": "icon-profile"
+      },
+      {
+        "id": null,
+        "name": "Register",
+        "link": "/auth/register",
+        "icon": "icon-vehicle-activity"
+      },
+      {
+        "id": null,
+        "name": "Register",
+        "link": "menuaccess",
+        "icon": "icon-menu-access"
       }
+      
     ]
   }
   // navigate(item) {

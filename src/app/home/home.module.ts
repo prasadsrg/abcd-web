@@ -1,3 +1,4 @@
+import { MenuAccessComponent } from './menuaccess/menuaccess.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
@@ -10,12 +11,14 @@ import { ProfileService} from './profile/profile.service';
 
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
+import { MenuAccessService } from './menuaccess/menuaccess.service';
 
 const routes: Routes = [
   { path: 'profile/search', component: ProfileSearchComponent },
   { path: 'profile/edit', component: ProfileEditComponent },
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
+  { path: 'menuaccess', component: MenuAccessComponent },
 ];
 
 @NgModule({
@@ -28,9 +31,10 @@ const routes: Routes = [
     ProfileSearchComponent, 
     ProfileEditComponent, 
     MyprofileComponent,
-    SettingsComponent
+    SettingsComponent,
+    MenuAccessComponent
   ],
   exports: [RouterModule],
-  providers:[ProfileService, SettingsService]
+  providers:[ProfileService, SettingsService,MenuAccessService]
 })
 export class HomeModule { }
