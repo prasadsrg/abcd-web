@@ -17,9 +17,14 @@ export class ProfileService {
   getCurrentProfileId(){
     return Storage.getSessionUser().id;
   }
-  getProfile(data: any){
+  getProfile(data: any) {
     this.appService.showLoader(true);
     this.url = this.host+"profile/"+data;
     return this.http.get(this.url);
+  }
+  saveProfile(data: any) {
+    this.appService.showLoader(true);
+    this.url = this.host+"profile/";
+    return this.http.put(this.url, {data: data});
   }
 }
