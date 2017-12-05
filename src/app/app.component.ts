@@ -23,8 +23,9 @@ export class AppComponent implements OnInit {
 
   constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
-      this.sessionUsers();
-      
+      // this.getCurrentProfileId();
+      this.sessionUser = Storage.getSessionUser();
+      console.log(this.sessionUser);
    }
 
   ngOnInit() {
@@ -35,14 +36,11 @@ export class AppComponent implements OnInit {
     });
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       console.log(data);
+      this.sessionUser = Storage.getSessionUser();
     });
     if (window.innerWidth < 768) {
       this.navMode = 'over';
     }
-  }
-  sessionUsers(){
-    this.appService.getSessionUser();
-    // console.log()
   }
 
   loadIcons(){
