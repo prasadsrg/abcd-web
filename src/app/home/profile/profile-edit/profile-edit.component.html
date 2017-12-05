@@ -2,11 +2,12 @@
     <h3 class="padding">Profile</h3>
     <main class="padding">
         <form [formGroup]="myForm" novalidate autocomplete='off'>
-            <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" class=" padding">
                 <div fxFlex.xs="100" fxFlex.sm="40" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
-                    <mat-card class="margin8">
-                        <h6><b>Hari Poorna Kalahasti</b></h6>
-                        <P>hkalahasti@digitallynctech.com</P>
+                    <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" >
+                            <img fxFlex="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Circle-icons-profle.svg/1000px-Circle-icons-profle.svg.png" height="120px">
+                            <h6 fxFlex="100"><b>{{profile.name}}</b></h6>
+                        <P fxFlex="100">{{profile.email}}</P>
                     </mat-card>
                 </div>
                 <div fxFlex.xs="100" fxFlex.sm="60" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80">
@@ -76,11 +77,7 @@
                                             <form-messages [control]="myForm.controls.profile_state"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                </div>
-                            </div>
-                            <div fxLayout="row wrap" fxLayoutAlign="start start">
-
-                                <div fxLayout="row wrap" fxFlex="100 ">
+                                    
                                     <mat-form-field fxFlex="30" class="margin8">
                                         <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.profile_country" [(ngModel)]="profile.address.country">
                                         <mat-hint>
@@ -103,7 +100,7 @@
                             </div>
                             <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center center ">
                                 <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()">Save Details</button>
+                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" style="background-color:#44c767;color:#fff">Save Details</button>
                                 </div>
                             </mat-card-actions>
                         </mat-card-content>
