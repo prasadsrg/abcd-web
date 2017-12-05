@@ -49,19 +49,19 @@ export class MenuComponent implements OnInit {
         "id": null,
         "name": "Home",
         "link": "/",
-        "icon": "alarm"
+        "icon": "icon-profile"
       },
       {
         "id": null,
         "name": "Login",
         "link": "/auth/login",
-        "icon": "accessibility"
+        "icon": "icon-location"
       },
       {
         "id": null,
         "name": "Register",
         "link": "/auth/register",
-        "icon": "alarm"
+        "icon": "icon-dashboard"
       }
     ]
   }
