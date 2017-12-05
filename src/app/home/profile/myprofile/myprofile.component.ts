@@ -35,12 +35,8 @@ export class MyprofileComponent implements OnInit {
   saveEntity() {
     this.profileService.saveProfile(this.profile).subscribe( (data) => {
       console.log(data);
-<<<<<<< HEAD
-      // this.apexservice.showMessage(data.message);
-=======
       // const message = data.message
       //this.apexservice.showMessage(data.message);
->>>>>>> 309df1400d0ef3d3c3fbe8b6f566f7b8326ad2ea
     });
   }
 
