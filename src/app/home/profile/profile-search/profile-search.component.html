@@ -1,36 +1,44 @@
 <aside>
     <article>
         <h4>User Management</h4>
+        
     </article>
     <main>
         <div fxLayout="row">
             <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
+                    
 
                 <mat-tab-group>
-                    <mat-tab>
+                    <mat-tab >
                         <ng-template mat-tab-label>
                             <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> All Users <span style="font-weight: bold;padding: 20px;font-size: 38px;">{{dataList.length}}</span>
                         </ng-template>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Mobile</th>
-                                    <th scope="col">Aadhar Number</th>
-                                    <th scope="col">Role</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editProfile(item.id)">
-                                    <td data-label="Invoice Number">{{item.name}}</td>
-                                    <td data-label="Name">{{item.email}}</td>
-                                    <td data-label="Mobile">{{item.mobile}}</td>
-                                    <td data-label="Invoice Date">{{item.aadhar}}</td>
-                                    <td data-label="Total Amount">{{item.role}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                       <app-profile-allusers [allusers] = "dataList" ></app-profile-allusers>
+
+
+                    </mat-tab>
+                    <mat-tab (click)="tab()">
+                        <ng-template mat-tab-label>
+                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Super Admin <span style="font-weight: bold;padding: 20px;font-size: 38px;">{{dataList.length}}</span>
+                        </ng-template>
+             
+                       <app-profile-superadmin [superadmin]="superadmin"></app-profile-superadmin>
+
+
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Admin <span style="font-weight: bold;padding: 20px;font-size: 38px;">{{dataList.length}}</span>
+                        </ng-template>   
+                       <app-profile-admin [admin]="admin"></app-profile-admin>
+
+
+                    </mat-tab>
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Users <span style="font-weight: bold;padding: 20px;font-size: 38px;">{{dataList.length}}</span>
+                        </ng-template>
+                       <app-profile-user [user]="user"></app-profile-user>
 
 
                     </mat-tab>
