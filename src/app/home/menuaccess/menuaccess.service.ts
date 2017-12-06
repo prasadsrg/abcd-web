@@ -26,6 +26,7 @@ export class MenuAccessService {
   }
   getRolesDataLoad(data:any){
     this.url = this.host+"appmenu/"+data;
+    this.appService.showLoader(true);    
     return this.http.get(this.url);
 
   }
