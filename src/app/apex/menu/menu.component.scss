@@ -1,5 +1,31 @@
 
-.activatedObject .mat-list-item-content {
-    color: #fff;
-    background-color: #778594 !important;
+.activatedObject{
+    color: #557DBF;
+    // background-color: #AFAFAF !important;
+}
+.mat-list-item-content{
+    padding:0px 10px !important;
+}
+.mat-list-option .mat-list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 9px !important;
+    position: relative;
+    height: inherit;
+}
+
+.mat-list-item .mat-list-item-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 9px !important;
+    position: relative;
+    height: inherit;
+}
+.active{
+    background: #AFAFAF;
+   
 }

@@ -5,7 +5,9 @@ a {
 .pointer {
     cursor: pointer;
 }
-
+.outline-none{
+    outline: none;
+}
 .center {
     position: absolute;
     top: 50%;
@@ -13,7 +15,9 @@ a {
     transform: translate(-50%, -50%);
     padding: 1em;
 }
-
+.text-center{
+    text-align: center;
+}
 .font-white {
     color: white !important;
 }

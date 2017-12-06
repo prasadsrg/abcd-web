@@ -58,5 +58,12 @@ export class AppComponent implements OnInit {
            this.sidenav.open();
         }
   }
+  logout(){
+    Storage.clearSession();
+    sessionStorage.clear();
+    this.apexService.sessionUserEmit(null);
+    this.appService.navigate('auth/login', []);
+  }
+  
 
 }
