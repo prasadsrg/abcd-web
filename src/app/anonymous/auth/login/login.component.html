@@ -21,8 +21,8 @@
                                 <mat-card-content>
                                     <form [formGroup]="myForm" novalidate autocomplete='off'>
                                         <div fxLayout="row wrap" fxLayoutAlign="center end">
-                                            <h3 fxFlex="100 ">Sign In</h3>
-                                            <p fxFlex="100 " style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540;">Hello there! Sign in and start managing your shipping items</p>
+                                            <h3 fxFlex="100 " class="text-center">Sign In</h3>
+                                            <p fxFlex="100 " style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540; text-align:center">Hello there! Sign in and start managing your shipping items</p>
                                             <div fxLayout="row wrap" fxLayoutAlign="center end">
                                                 <mat-form-field fxFlex="100 ">
                                                     <input matInput placeholder="User Name or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">

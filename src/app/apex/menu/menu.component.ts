@@ -1,6 +1,8 @@
 import { Component, OnInit,ViewChild, HostListener } from '@angular/core';
 import { Menu } from '../../shared/common/interfaces';
 import { ApexService } from '../../shared/service/apex.service';
+import { RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -11,10 +13,13 @@ export class MenuComponent implements OnInit {
   private _menuSubscription: any;
   menuList: any[];
   activeMenuObject: any;
+  isActive:boolean = false;
+  states:any = {};
   
   constructor(private apexService: ApexService,) { 
     console.log(this.menus());
     this.menuList = this.menus();
+    this.states.activeItem = 'item1'
   }
 
 
@@ -45,53 +50,53 @@ export class MenuComponent implements OnInit {
   menus() {
     return [
       {
-        "id": null,
+        "id": 'Item1',
         "name": "Home",
         "link": "/",
         "icon": "icon-dashboard"
       },
       {
-        "id": null,
+        "id": 'Item2',
         "name": "Location",
         "link": "/profile/myprofile",
         "icon": "icon-density-map"
       },
       
       {
-        "id": null,
+        "id": 'Item3',
         "name": "Register",
         "link": "/profile/myprofile",
         "icon": "icon-trip-activity"
       },
       {
-        "id": null,
+        "id": 'Item4',
         "name": "Register",
         "link": "/profile/myprofile",
         "icon": "icon-package-status"
       },
       {
-        "id": null,
+        "id": 'Item5',
         "name": "Register",
         "link": "/profile/myprofile",
         "icon": "icon-location"
       },
       
       {
-        "id": null,
+        "id": 'Item6',
         "name": "Register",
         "link": "/profile/search",
         "icon": "icon-profile"
       },
       {
-        "id": null,
+        "id": 'Item7',
         "name": "Register",
         "link": "/profile/myprofile",
         "icon": "icon-vehicle-activity"
       },
       {
-        "id": null,
+        "id": 'Item8',
         "name": "Register",
-        "link": "menuaccess",
+        "link": "/menuaccess",
         "icon": "icon-menu-access"
       }
       
@@ -103,5 +108,7 @@ export class MenuComponent implements OnInit {
   //   console.log(item.url)
   // }
 
- 
+  activeMenu(){
+    this.isActive = true;
+  }
 }

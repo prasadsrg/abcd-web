@@ -1,28 +1,37 @@
 <mat-progress-bar mode="indeterminate" *ngIf="showLoader" color="warn" style="position: fixed; width: 100%"></mat-progress-bar>
 <div *ngIf="sessionUser">
 
-    <mat-toolbar color="primary" class="header" style="	background-color: #2a3540;" fxLayout="row" fxLayoutAlign="space-between center">
-        <div fxLayout="row" fxLayoutAlign="start start">
-            <h1>APNA
-                <span style="color:red">TANKER</span>
-            </h1>
-            <button mat-icon-button (click)="sidenav.toggle()" style="padding-bottom:18px">
-            <mat-icon class="md-24">menu</mat-icon>
+  <mat-toolbar color="primary" class="header" style="	background-color: #2a3540;" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <span>
+        <button mat-icon-button (click)="sidenav.toggle()" style="padding-bottom:18px">
+          <mat-icon class="md-24">menu</mat-icon>
         </button>
-        </div>
+        <img src="../assets/images/APNATANKER.png" alt="logo-brand" sty>
+      </span>
+    </div>
 
-        <div>
-            {{sessionUser.name}}
-        </div>
+    <div  fxLayout="row" fxLayoutAlign="space-between center">
+       
+      <span mat-button [matMenuTriggerFor]="menu" class="pointer" style="border-radius:50%;border:1px solid;width:46px;height:46px;padding: 6px 0px 0px 9px;">
+          <!-- <img src="" alt="" > -->
+          AT
+      </span>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item>My Profile</button>
+        <button mat-menu-item (click)="logout()">Log Out</button>
+      </mat-menu>
+    </div>
+   
 
-    </mat-toolbar>
+  </mat-toolbar>
 </div>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav [mode]="navMode" opened="true" *ngIf="sessionUser">
-        <app-menu></app-menu>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
+  <mat-sidenav #sidenav [mode]="navMode" opened="true" *ngIf="sessionUser">
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
