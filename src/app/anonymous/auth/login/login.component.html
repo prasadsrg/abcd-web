@@ -7,14 +7,14 @@
                 <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center center">
 
-                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" fxHide.sm fxHide.xs >
+                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50" fxHide.sm fxHide.xs>
                             <!-- <br><br><br><br> -->
-                          <mat-card  fxLayout="row wrap" fxLayoutAlign="start center" style="box-shadow: none;" style="background: url(../../../../assets/images/login-banner.png) no-repeat center center; background-size: cover;height:400px; padding: 1rem;">
+                            <mat-card fxLayout="row wrap" fxLayoutAlign="start center" style="box-shadow: none;" style="background: url(../../../../assets/images/login-banner.png) no-repeat center center; background-size: cover;height:400px; padding: 1rem;">
                                 <h1 style="color:white ">Welcome</h1>
                                 <P style="color:white ">Multi-Carrier Shipping Software Solutions Multi-Carrier, Multi-Modal, and Multi-Platform Shipping Software </P>
-                          </mat-card>
-                                   
-                           
+                            </mat-card>
+
+
                         </div>
                         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="50" fxFlex.lg="50" fxFlex.xl="50">
                             <mat-card style="box-shadow: none;">
@@ -23,22 +23,22 @@
                                         <div fxLayout="row wrap" fxLayoutAlign="center end">
                                             <h3 fxFlex="100 ">Sign In</h3>
                                             <p fxFlex="100 " style="font-size: 12px;font-weight: 300;line-height: 1.33;color: #2a3540;">Hello there! Sign in and start managing your shipping items</p>
-                                            <div fxLayout="row wrap" fxLayoutAlign="center end" >
-                                                    <mat-form-field fxFlex="100 ">
-                                                        <input matInput placeholder="User Name or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">
-                                                        <mat-hint>
-                                                            <form-messages [control]="myForm.controls.auth_userId "> </form-messages>
-                                                        </mat-hint>
-                                                    </mat-form-field>
-                                                    <mat-form-field fxFlex="100">
-                                                        <input matInput type="{{showorhide}}" placeholder="Password " required [formControl]="myForm.controls.auth_password" [(ngModel)]="auth.password">
-                                                        <mat-icon *ngIf="isVisible=='hide'" (click)="showPassword() " matSuffix style="color:black">visibility_off</mat-icon>
-                                                        <mat-icon *ngIf="isVisible=='show'" (click)="hidePassword() " matSuffix style="color:black">visibility</mat-icon>
-                                                        <mat-hint>
-                                                            <form-messages [control]="myForm.controls.auth_password "> </form-messages>
-                                                        </mat-hint>
-                                                    </mat-form-field>
-                                                </div>
+                                            <div fxLayout="row wrap" fxLayoutAlign="center end">
+                                                <mat-form-field fxFlex="100 ">
+                                                    <input matInput placeholder="User Name or Email " required [formControl]="myForm.controls.auth_userId" [(ngModel)]="auth.userId">
+                                                    <mat-hint>
+                                                        <form-messages [control]="myForm.controls.auth_userId "> </form-messages>
+                                                    </mat-hint>
+                                                </mat-form-field>
+                                                <mat-form-field fxFlex="100">
+                                                    <input matInput type="{{showorhide}}" placeholder="Password " required [formControl]="myForm.controls.auth_password" [(ngModel)]="auth.password">
+                                                    <mat-icon *ngIf="isVisible=='hide'" (click)="showPassword() " matSuffix class="pointer" style="color:black">visibility_off</mat-icon>
+                                                    <mat-icon *ngIf="isVisible=='show'" (click)="hidePassword() " matSuffix class="pointer" style="color:black">visibility</mat-icon>
+                                                    <mat-hint>
+                                                        <form-messages [control]="myForm.controls.auth_password "> </form-messages>
+                                                    </mat-hint>
+                                                </mat-form-field>
+                                            </div>
                                         </div>
                                     </form>
                                 </mat-card-content>
@@ -47,7 +47,7 @@
                                         <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="signInEmail()">Sign In Now</button>
                                     </div>
                                     <div fxFlex="100" fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center end" style="padding-top:12px">
-                                        <a class="padding"  href="#" (click)="forgotPassword()" style="text-decoration:none;color:black">Forgot Password?</a>
+                                        <a class="padding" (click)="forgotPassword()" style="text-decoration:none;color:black">Forgot Password?</a>
                                     </div>
                                 </mat-card-actions>
                             </mat-card>
