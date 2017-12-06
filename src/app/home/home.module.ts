@@ -15,6 +15,11 @@ import { MasterDataComponent} from './masterdata/masterdata/masterdata.component
 import { SettingsService} from './settings/settings.service';
 import { MenuAccessService } from './menuaccess/menuaccess.service';
 import { MasterService } from './masterdata/masterdata.service';
+import { ProfileAdminComponent } from './profile/profile-search/profile-admin.component';
+import { ProfileSuperAdminComponent} from './profile/profile-search/profile-superadmin.component';
+import { ProfileUserComponent } from './profile/profile-search/profile-user.component';
+import { ProfileAllUsersComponent } from './profile/profile-search/profile-allusers.component';
+
 
 
 
@@ -40,7 +45,11 @@ const routes: Routes = [
     MyprofileComponent,
     SettingsComponent,
     MenuAccessComponent,
-    MasterDataComponent
+    MasterDataComponent,
+    ProfileAdminComponent,
+    ProfileSuperAdminComponent,
+    ProfileUserComponent,
+    ProfileAllUsersComponent
   ],
   exports: [RouterModule],
   providers: [ ProfileService, SettingsService, MenuAccessService, MasterService]
