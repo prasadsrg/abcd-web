@@ -1,55 +1,43 @@
 <aside>
-  <div style="padding:30px;">
-    <h4 style="padding-bottom:10px;">Menu</h4>
-
-    <mat-chip-list>
-      <mat-chip color="accent" *ngFor="let item of rolesList; let i = index" (click)="dataLoad(item, i)" class="margin-side description-font">
-        {{item.name}}
-      </mat-chip>
-    </mat-chip-list>
-  </div>
-  <main>
-    <div class="example-container mat-elevation-z8">
-      <mat-table #table [dataSource]="dataSource">
-
-        <!--- Note that these columns can be defined in any order.
-                    The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Position Column -->
-
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="Name">
-          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <form [formGroup]="myForm" novalidate autocomplete='off'>
-              <mat-form-field>
-                <input matInput required [formControl]="myForm.controls.menuaccess_name" [(ngModel)]="element.name">
-                <mat-hint>
-                  <form-messages [control]="myForm.controls.menuaccess_name "> </form-messages>
-                </mat-hint>
-              </mat-form-field>
-            </form>
-          </mat-cell>
-
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="Priority">
-          <mat-header-cell *matHeaderCellDef>  Priority </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="Active">
-          <mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <mat-checkbox [(ngModel)]="element.active"></mat-checkbox>
-          </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
-    </div>
-
-  </main>
+    <article>
+        <h4>Menu</h4>
+    </article>
+    <main>
+        <mat-tab-group>
+            <mat-tab *ngFor="let item of rolesList; let i = index" (selectedTabChange)="dataLoad(item, i)">
+                <ng-template mat-tab-label>
+                    <span style="font-weight: bold;padding: 20px;font-size: 17px;">{{item.name}}</span>
+                </ng-template>
+                <div class="example-container mat-elevation-z8">
+                    <mat-table #table [dataSource]="dataSource">
+                        <ng-container matColumnDef="Name">
+                            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <form [formGroup]="myForm" novalidate autocomplete='off'>
+                                    <mat-form-field>
+                                        <input matInput required [formControl]="myForm.controls.menuaccess_name" [(ngModel)]="element.name">
+                                        <mat-hint>
+                                            <form-messages [control]="myForm.controls.menuaccess_name"> </form-messages>
+                                        </mat-hint>
+                                    </mat-form-field>
+                                </form>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Priority">
+                            <mat-header-cell *matHeaderCellDef> Priority </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Active">
+                            <mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <mat-checkbox [(ngModel)]="element.active"></mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </main>
 </aside>
