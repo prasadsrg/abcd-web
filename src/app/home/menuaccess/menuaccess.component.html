@@ -3,11 +3,11 @@
         <h4>Menu</h4>
     </article>
     <main>
-        <mat-tab-group>
-            <mat-tab *ngFor="let item of rolesList; let i = index" (selectedTabChange)="dataLoad(item, i)">
-                <ng-template mat-tab-label>
+        <mat-tab-group (selectedTabChange)="tabChanged($event,index)">
+            <mat-tab *ngFor="let item of rolesList; let i = index" label="{{item.name}}">
+                <!-- <ng-template mat-tab-label>
                     <span style="font-weight: bold;padding: 20px;font-size: 17px;">{{item.name}}</span>
-                </ng-template>
+                </ng-template> -->
                 <div class="example-container mat-elevation-z8">
                     <mat-table #table [dataSource]="dataSource">
                         <ng-container matColumnDef="Name">
