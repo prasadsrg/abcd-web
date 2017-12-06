@@ -53,7 +53,7 @@ export class MenuComponent implements OnInit {
         "id": 'Item1',
         "name": "Home",
         "link": "/",
-        "icon": "icon-dashboard"
+        "icon": "admin_dashboard"
       },
       {
         "id": 'Item2',
@@ -97,7 +97,7 @@ export class MenuComponent implements OnInit {
         "id": 'Item8',
         "name": "Register",
         "link": "/menuaccess",
-        "icon": "icon-menu-access"
+        "icon": "menu_access"
       }
       
     ]

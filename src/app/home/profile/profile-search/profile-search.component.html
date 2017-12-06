@@ -8,25 +8,25 @@
                 <mat-tab-group>
                     <mat-tab style="background-color: #00c0ef !important;">
                         <ng-template mat-tab-label>
-                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> All Users <span style="font-weight: bold;padding:0px 20px;font-size: 38px;">{{dataList.length}}</span>
+                            <mat-icon class="tab-icon">supervisor_account</mat-icon> All Users <span class="user-count">{{dataList.length}}</span>
                         </ng-template>
                         <app-profile-allusers [allusers]="dataList"></app-profile-allusers>
                     </mat-tab>
                     <mat-tab (click)="tab()">
                         <ng-template mat-tab-label>
-                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Super Admin <span style="font-weight: bold;padding:0px 20px;font-size: 38px;">{{superadmin.length}}</span>
+                            <mat-icon class="tab-icon">supervisor_account</mat-icon> Super Admin <span class="user-count">{{superadmin.length}}</span>
                         </ng-template>
                         <app-profile-superadmin [superadmin]="superadmin"></app-profile-superadmin>
                     </mat-tab>
                     <mat-tab>
                         <ng-template mat-tab-label>
-                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Admin <span style="font-weight: bold;padding:0px 20px;font-size: 38px;">{{admin.length}}</span>
+                            <mat-icon>supervisor_account</mat-icon> Admin <span class="user-count">{{admin.length}}</span>
                         </ng-template>
                         <app-profile-admin [admin]="admin"></app-profile-admin>
                     </mat-tab>
                     <mat-tab>
                         <ng-template mat-tab-label>
-                            <mat-icon style="color: black;font-size: 24px;margin: 12px;">supervisor_account</mat-icon> Users <span style="font-weight: bold;padding:0px 20px;font-size: 38px;">{{user.length}}</span>
+                            <mat-icon class="tab-icon">supervisor_account</mat-icon> Users <span class="user-count">{{user.length}}</span>
                         </ng-template>
                         <app-profile-user [user]="user"></app-profile-user>
                     </mat-tab>

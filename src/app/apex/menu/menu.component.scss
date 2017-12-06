@@ -22,10 +22,21 @@
     height: inherit;
 }
 
+.mat-nav-list .mat-list-item {
+    height: 60px;
+    width: 60px;
+    border-bottom: 1px solid #c6d0da;
+}
+
 .menu-icon {
-    width: 37px !important;
-    height: 30px !important;
+    // width: 37px !important;
+    // height: 30px !important;
     outline: none !important;
+}
+
+.mat-icon-button {
+    height: 60px !important;
+    width: 60px;
 }
 
 .inactive {
