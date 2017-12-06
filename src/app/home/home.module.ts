@@ -11,8 +11,12 @@ import { ProfileService} from './profile/profile.service';
 import {MatTableModule} from '@angular/material/table';
 
 import { SettingsComponent } from './settings/settings/settings.component';
+import { MasterDataComponent} from './masterdata/masterdata/masterdata.component';
 import { SettingsService} from './settings/settings.service';
 import { MenuAccessService } from './menuaccess/menuaccess.service';
+import { MasterService } from './masterdata/masterdata.service';
+
+
 
 const routes: Routes = [
   { path: 'profile/search', component: ProfileSearchComponent },
@@ -20,23 +24,25 @@ const routes: Routes = [
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessComponent },
+  { path: 'masterdata',  component: MasterDataComponent}
 ];
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     MatTableModule,
-    RouterModule.forRoot(routes, { useHash: true }), 
+    RouterModule.forRoot(routes, { useHash: true }),
     SharedModule.forRoot()
   ],
   declarations: [
-    ProfileSearchComponent, 
-    ProfileEditComponent, 
+    ProfileSearchComponent,
+    ProfileEditComponent,
     MyprofileComponent,
     SettingsComponent,
-    MenuAccessComponent
+    MenuAccessComponent,
+    MasterDataComponent
   ],
   exports: [RouterModule],
-  providers:[ProfileService, SettingsService, MenuAccessService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, MasterService]
 })
 export class HomeModule { }
