@@ -7,11 +7,17 @@ import { ApexService } from '../../shared/service/apex.service';
 @Injectable()
 export class AuthService {
     private host = Props.API_END_POINT;
-    private auth_url = 'auth';
-    private forgotPassword_url = '';
-    private resetPassword_url = '';
+    private auth_url = '/auth';
+    private forgotPassword_url = '/auth/forgotpassword';
+    private resetPassword_url = '/auth/resetpassword';
     constructor(private http: HttpClient, private appService: AppService)    {
         
+     }
+     getParamUserId(){
+        return this.appService.getParam('userId');
+     }
+     showMessage(message: string){
+         this.appService.showMessage(message);
      }
      login(data: any) {
          data.grpcode = Storage.pid;
@@ -19,14 +25,15 @@ export class AuthService {
          return this.http.post(this.host+this.auth_url, {data: data});
      }
      forgotPassword(data:any) {
+         delete data.userId;
          data.grpcode = Storage.pid;
          this.appService.showLoader(true);
-         return this.http.post(this.host+this.forgotPassword_url, {data: data})
+         return this.http.put(this.host+this.forgotPassword_url, {data: data})
      }
      resetPassword(data:any){
         data.grpcode = Storage.pid;
         this.appService.showLoader(true);
-        return this.http.post(this.host+this.resetPassword_url, {data: data})
+        return this.http.put(this.host+this.resetPassword_url, {data: data})
      }
      storageSave(data: any){
         console.log(data);
@@ -52,8 +59,8 @@ export class AuthService {
      navigateForgotPassword(){
         this.appService.navigate(Props.FORGOT_PASSWORD_PAGE, []);
      }
-     navigateResetPassword(){
-         this.appService.navigate(Props.RESET_PASSWORD_PAGE, []);
+     navigateResetPassword(data: any){
+         this.appService.navigate(Props.RESET_PASSWORD_PAGE, [{userId: data.email}]);
      }
      navigateSignin(){
          this.appService.navigate(Props.SIGN_IN_PAGE,[])

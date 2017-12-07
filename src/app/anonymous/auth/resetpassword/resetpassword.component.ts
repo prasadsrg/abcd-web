@@ -25,10 +25,11 @@ export class ResetpasswordComponent implements OnInit {
   }
   init() {
     this.auth = new User();
+    this.auth.email = this.authService.getParamUserId();
   }
   resetPassword(){
-    this.authService.resetPassword(this.auth).subscribe( data => {
-      this.authService.storageSave(data);
+    this.authService.resetPassword(this.auth).subscribe( (data: any) => {
+      this.authService.showMessage(data);
       this.authService.navigateSignin();
     })
   }

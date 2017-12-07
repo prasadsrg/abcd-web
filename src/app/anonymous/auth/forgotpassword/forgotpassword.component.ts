@@ -27,9 +27,9 @@ export class ForgotpasswordComponent implements OnInit {
     this.auth = new User();
   }
   resetPassword(){
-    this.authService.forgotPassword(this.auth).subscribe( data => {
-      this.authService.storageSave(data);
-      this.authService.navigateResetPassword();
+    this.authService.forgotPassword(this.auth).subscribe( (data: any) => {
+      this.authService.showMessage(data);
+      this.authService.navigateResetPassword(this.auth);
     })
   }
 }
