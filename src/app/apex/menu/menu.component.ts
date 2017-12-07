@@ -59,39 +59,32 @@ export class MenuComponent implements OnInit {
         "id": 'Item2',
         "name": "Location",
         "link": "/profile/myprofile",
-        "icon": "icon-density-map"
+        "icon": "trip_activity"
       },
       
       {
         "id": 'Item3',
         "name": "Register",
         "link": "/profile/myprofile",
-        "icon": "icon-trip-activity"
+        "icon": "package_status"
       },
       {
         "id": 'Item4',
         "name": "Register",
         "link": "/profile/myprofile",
-        "icon": "icon-package-status"
+        "icon": "vechile_activity"
       },
       {
         "id": 'Item5',
         "name": "Register",
         "link": "/profile/myprofile",
-        "icon": "icon-location"
-      },
-      
-      {
-        "id": 'Item6',
-        "name": "Register",
-        "link": "/profile/search",
-        "icon": "icon-profile"
+        "icon": "density_map"
       },
       {
         "id": 'Item7',
         "name": "Register",
         "link": "/profile/myprofile",
-        "icon": "icon-vehicle-activity"
+        "icon": "profile"
       },
       {
         "id": 'Item8',
