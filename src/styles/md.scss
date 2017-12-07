@@ -34,4 +34,6 @@ md-divider {
         border-bottom: 0px solid #ccc;
     }
 }
-
+.mat-drawer {
+    min-width: unset !important;
+}
