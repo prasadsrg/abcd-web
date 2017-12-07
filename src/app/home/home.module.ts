@@ -19,6 +19,9 @@ import { ProfileAdminComponent } from './profile/profile-search/profile-admin.co
 import { ProfileSuperAdminComponent} from './profile/profile-search/profile-superadmin.component';
 import { ProfileUserComponent } from './profile/profile-search/profile-user.component';
 import { ProfileAllUsersComponent } from './profile/profile-search/profile-allusers.component';
+import { ConsumerComponent } from './consumer/consumer/consumer.component';
+import { ConsumerService } from './consumer/consumer.service';
+import { ConsumerEditComponent } from './consumer/consumer/consumer-edit.component';
 
 
 
@@ -29,12 +32,14 @@ const routes: Routes = [
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessComponent },
-  { path: 'masterdata',  component: MasterDataComponent}
+  { path: 'masterdata',  component: MasterDataComponent},
+  { path: 'consumer',  component: ConsumerComponent},
+  { path: 'consumer-edit',  component: ConsumerEditComponent}
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     MatTableModule,
     RouterModule.forRoot(routes, { useHash: true }),
     SharedModule.forRoot()
@@ -49,9 +54,11 @@ const routes: Routes = [
     ProfileAdminComponent,
     ProfileSuperAdminComponent,
     ProfileUserComponent,
-    ProfileAllUsersComponent
+    ProfileAllUsersComponent,
+    ConsumerComponent,
+    ConsumerEditComponent
   ],
   exports: [RouterModule],
-  providers: [ ProfileService, SettingsService, MenuAccessService, MasterService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, MasterService, ConsumerService]
 })
 export class HomeModule { }

@@ -1,13 +1,11 @@
 import {Address} from './address.entity'
-export class consumer {
+export class Consumer {
     id:string;
     name:string;
     mobile:number;
     email:any;
     aadhar:any;
-    address:any =  new Address();
+    address:Address =  new Address();
     active:boolean = true;
     grpcode:any;
-    updatedBy :string = 'system';
-    updateddate:Date;
 }

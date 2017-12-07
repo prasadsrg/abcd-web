@@ -19,7 +19,8 @@ export class Props {
     
     static ROLE_DATA_LOAD_URL = "/roles";
     static BRANCH_DATA_LOAD_URL = "/branches";
-
+    static CONSUMER_EDIT_PAGE = 'consumer-edit';
+    static CONSUMER_PAGE = 'consumer';
 
 
 } 
