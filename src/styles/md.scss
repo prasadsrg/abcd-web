@@ -37,3 +37,11 @@ md-divider {
 .mat-drawer {
     min-width: unset !important;
 }
+.fab-bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
+.fab-placeholder {
+    top: 24px !important;
+}
