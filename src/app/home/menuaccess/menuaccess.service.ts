@@ -35,4 +35,9 @@ export class MenuAccessService {
     this.url = this.host+"/appmenu/"+data;
     return this.http.get(this.url);
   }
+  saveMenuAccess(data: any){
+    this.appService.showLoader(true);
+    this.url = this.host+"/appmenu";
+    return this.http.put(this.url,data);
+  }
 }
