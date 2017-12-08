@@ -1,0 +1,86 @@
+<aside>
+        
+  <article>
+        <div fxLayout="row" fxLayoutAlign="space-between center" >
+                <h4 class="padding-side">Menu</h4>
+                 <button mat-mini-fab (click)="menusave()" class="fab-placeholder">
+                     <mat-icon style="color:#fff">send</mat-icon>
+                 </button>
+                 </div>
+  </article>
+  <main>
+   
+    <mat-tab-group (selectedTabChange)="tabChanged($event,index)">
+         
+      <mat-tab *ngFor="let item of rolesList; let i = index" label="{{item.name}}">
+        <!-- <ng-template mat-tab-label>
+                    <span style="font-weight: bold;padding: 20px;font-size: 17px;">{{item.name}}</span>
+                </ng-template> -->
+        <div class="example-container mat-elevation-z8">
+          <!-- <mat-table #table [dataSource]="dataSource">
+                        <ng-container matColumnDef="Name">
+                            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <form [formGroup]="myForm" novalidate autocomplete='off'>
+                                    <mat-form-field>
+                                        <input matInput required [formControl]="myForm.controls.menuaccess_name" [(ngModel)]="element.name">
+                                        <mat-hint>
+                                            <form-messages [control]="myForm.controls.menuaccess_name"> </form-messages>
+                                        </mat-hint>
+                                    </mat-form-field>
+                                </form>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Priority">
+                            <mat-header-cell *matHeaderCellDef> Priority </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.priority}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="Active">
+                            <mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
+                            <mat-cell *matCellDef="let element">
+                                <mat-checkbox [(ngModel)]="element.active"></mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table> -->
+          <mat-list>
+            <mat-card fxLayout="row" fxLayoutAlign="space-between center" style="background-color:#f5f5f5;">
+              <mat-list-item fxFlex="30">
+                <span>Name</span>
+              </mat-list-item>
+              <mat-list-item fxFlex="30">
+                <span>Priority</span>
+              </mat-list-item>
+              <mat-list-item fxFlex="30">
+                <span>Active</span>
+              </mat-list-item>
+
+            </mat-card>
+            <mat-card fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let item of menuList">
+              <mat-list-item fxFlex="35">
+                <form [formGroup]="myForm" novalidate autocomplete='off'>
+                  <mat-form-field>
+                    <input matInput required [formControl]="myForm.controls.menuaccess_name" [(ngModel)]="item.name">
+                    <mat-hint>
+                      <form-messages [control]="myForm.controls.menuaccess_name"> </form-messages>
+                    </mat-hint>
+                  </mat-form-field>
+                </form>
+              </mat-list-item>
+              <mat-list-item fxFlex="35">{{item.priority}}</mat-list-item>
+              <mat-list-item fxFlex="30">
+                <mat-checkbox [(ngModel)]="item.active" ></mat-checkbox>
+
+              </mat-list-item>
+
+            </mat-card>
+          </mat-list>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </main>
+
+</aside>
+

@@ -5,7 +5,7 @@ import { ProfileForm } from './profile.form';
 
 import { ProfileService } from './../profile.service';
 
-import { Profile } from '../../../apex/entities/profile.entity';
+import { Profile } from '../../../apex/entities/profile';
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
