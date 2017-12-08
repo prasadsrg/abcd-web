@@ -21,6 +21,8 @@ export class Props {
     static BRANCH_DATA_LOAD_URL = "/branches";
     static CONSUMER_EDIT_PAGE = 'consumer-edit';
     static CONSUMER_PAGE = 'consumer';
+    static MASTER_EDIT_PAGE = 'masterdata-edit';
+    static MASTER_PAGE  ='masterdata'
 
 
 } 

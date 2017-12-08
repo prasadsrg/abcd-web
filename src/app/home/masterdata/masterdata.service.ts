@@ -13,9 +13,28 @@ export class MasterService {
     constructor(private http: HttpClient, private appService: AppService)    {
         
      }
+     getParamId(){
+      return this.appService.getParam('id');
+    }
      searchMasterdata(data: any) {
         this.appService.showLoader(true);
-        this.url = this.host + "appdata/";
+        this.url = this.host + "/appdata";
         return this.http.post(this.url, {data: data});
       }
+      getMasterdata(data: any) {
+        this.appService.showLoader(true);
+        this.url = this.host+"/appdata/"+data;
+        return this.http.get(this.url);
+      }
+      saveMasterdata(data: any) {
+        this.appService.showLoader(true);
+        this.url = this.host+"/appdata/";
+        return this.http.put(this.url, {data: data});
+      }
+      navigateMasterEdit(id:any){
+        this.appService.navigate(Props.MASTER_EDIT_PAGE, [{id: id}]);
+    }
+    navigateMaster(){
+      this.appService.navigate(Props.MASTER_PAGE, []);
+    }
 }

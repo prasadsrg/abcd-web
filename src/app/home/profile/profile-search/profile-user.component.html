@@ -12,11 +12,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editProfile(item.id)">
-            <td data-label="Invoice Number">{{item.name}}</td>
-            <td data-label="Name">{{item.email}}</td>
+            <td data-label="Name">{{item.name}}</td>
+            <td data-label="Email">{{item.email}}</td>
             <td data-label="Mobile">{{item.mobile}}</td>
-            <td data-label="Invoice Date">{{item.aadhar}}</td>
-            <td data-label="Total Amount">{{item.role}}</td>
+            <td data-label="Aadhar Number">{{item.aadhar}}</td>
+            <td data-label="Role">{{item.role}}</td>
         </tr>
     </tbody>
 </table>
