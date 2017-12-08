@@ -1,15 +1,15 @@
 import { SessionUser } from './../../shared/common/interfaces';
-import { Component, OnInit,ViewChild, HostListener,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Output, EventEmitter } from '@angular/core';
 import { Menu } from '../../shared/common/interfaces';
 import { MenuAccessForm } from './menuaccess.form';
 
 
 
 import { ApexService } from '../../shared/service/apex.service';
-import{MenuAccessService} from './menuaccess.service';
+import { MenuAccessService } from './menuaccess.service';
 import { Storage } from './../../shared/utils/storage';
-import {AppMenu} from './../../apex/entities/appmenu.entity'
-import {MatTableDataSource,MatTabChangeEvent} from '@angular/material';
+import { AppMenu } from './../../apex/entities/appmenu.entity'
+import { MatTableDataSource, MatTabChangeEvent } from '@angular/material';
 
 
 @Component({
@@ -19,28 +19,31 @@ import {MatTableDataSource,MatTabChangeEvent} from '@angular/material';
 })
 export class MenuAccessComponent implements OnInit {
   sessionUser: any;
-  menuaccess:AppMenu = new AppMenu();
-  rolesList:any[] = [];
-  menuRoleslistData:any[]=[];
+  menuaccess: AppMenu = new AppMenu();
+  rolesList: any[] = [];
+  menuList: any[] = [];
   selectedIndex = 0;
-  displayedColumns = ['Name','Priority','Active'];
+  displayedColumns = ['Name', 'Priority', 'Active'];
   myForm: any = MenuAccessForm.init();
-  dataSource = new MatTableDataSource(this.menuRoleslistData);
+  savedata = {
+    data:null
+  };
+  // dataSource = new MatTableDataSource(this.menuRoleslistData);
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent>
-  constructor(private apexService: ApexService,private menuaccessservice: MenuAccessService) { 
+  constructor(private apexService: ApexService, private menuaccessservice: MenuAccessService) {
     this.sessionUser = Storage.getSessionUser();
     MenuAccessForm.edit(this.myForm);
     this.dataLoadRoles();
-   this.dataSource = new MatTableDataSource(this.menuRoleslistData); 
-   
+    // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
+
   }
-  dataLoadRoles(){
-    this.menuaccessservice.getMenuDataLoad().subscribe((data:any)=>{
-    this.rolesList = data;
-    if (this.rolesList.length > 0) {
-      this.tabChanged(this.rolesList[0], 0);
-   }
-    console.log(this.rolesList)
+  dataLoadRoles() {
+    this.menuaccessservice.getMenuDataLoad().subscribe((data: any) => {
+      this.rolesList = data;
+      if (this.rolesList.length > 0) {
+        this.tabChanged(this.rolesList[0], 0);
+      }
+      console.log(this.rolesList)
     })
   }
   // dataLoad(searchObj: any, index) {
@@ -48,7 +51,7 @@ export class MenuAccessComponent implements OnInit {
   //   searchObj = {};
   //   searchObj.role = this.rolesList[this.selectedIndex].id;
   //   console.log(searchObj.role);
-    
+
   //   this.menuaccessservice.getRolesDataLoad(searchObj.role).subscribe((data:any)=>{
   //     this.menuRoleslistData = data;
   //     this.dataSource = new MatTableDataSource(this.menuRoleslistData);
@@ -56,26 +59,36 @@ export class MenuAccessComponent implements OnInit {
   //   })
   // }
   ngOnInit() {
-  
-    };
-    // ngOnChanges(changes: any) {
-      
-           
-    //   }
-  
-    public tabChanged(tabChangeEvent: MatTabChangeEvent,index): void {
-      console.log(tabChangeEvent.tab.textLabel);
-       
-    this.menuaccessservice.getRolesDataLoad(tabChangeEvent.tab.textLabel).subscribe((data:any)=>{
-      this.menuRoleslistData = data;
-      this.dataSource = new MatTableDataSource(this.menuRoleslistData);
-      console.log(this.menuRoleslistData);
+
+  };
+  // ngOnChanges(changes: any) {
+
+
+  //   }
+
+  public tabChanged(tabChangeEvent: MatTabChangeEvent, index): void {
+    console.log(tabChangeEvent.tab.textLabel);
+
+    this.menuaccessservice.getRolesDataLoad(tabChangeEvent.tab.textLabel).subscribe((data: any) => {
+      this.menuList = data;
+      // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
+      console.log(this.menuList);
     })
-      // this.dataLoad(tabChangeEvent.tab.textLabel, 0)
+    // this.dataLoad(tabChangeEvent.tab.textLabel, 0)
   }
-    // tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
-    //   console.log('tabChangeEvent => ', tabChangeEvent);
-    //   console.log('index => ', tabChangeEvent.index);
-    // }
-  
-    }
+  // tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+  //   console.log('tabChangeEvent => ', tabChangeEvent);
+  //   console.log('index => ', tabChangeEvent.index);
+  // }
+  menusave(){
+    
+    console.log(this.menuList);
+    this.savedata.data = this.menuList;
+    console.log(this.savedata);
+    
+    this.menuaccessservice.saveMenuAccess(this.savedata).subscribe((data:any)=>{
+      console.log(data);
+    })
+  }
+
+}
