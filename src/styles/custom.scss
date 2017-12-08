@@ -54,8 +54,9 @@ table tr {
 
 table td,
 table th {
-    padding: .625em;
-    text-align: center
+    padding: 12px;
+    text-align: center;
+    background-color: #ffffff;
 }
 
 table th {
@@ -79,7 +80,7 @@ table th {
         overflow: hidden;
         padding: 0;
         position: absolute;
-        width: 1px
+        width: 1px;
     }
     table tr {
         display: block;
@@ -115,4 +116,11 @@ infinite-list {
     align-items: stretch;
     align-content: stretch;
     background: rgba(255, 255, 255, .1);
+}
+.margin8 {
+    margin: 8px;
+}
+
+.padding10 {
+    padding: 10px;
 }

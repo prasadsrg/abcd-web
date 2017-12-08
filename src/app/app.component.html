@@ -1,29 +1,21 @@
 <mat-progress-bar mode="indeterminate" *ngIf="showLoader" color="warn" style="position: fixed; width: 100%"></mat-progress-bar>
 <div *ngIf="sessionUser">
-
-    <mat-toolbar color="primary" class="header" style="	background-color:white;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-toolbar color="primary" class="header" style="background-color:white;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="row" fxLayoutAlign="start start">
             <span>
-        <button mat-icon-button (click)="sidenav.toggle()" style="width:60px;height:60px;margin-left:-16px;border-bottom:1px solid #c6d0da;border-right:1px solid #c6d0da;border-radius:0%">
-          <mat-icon class="md-24" style="color:#5f6f81">menu</mat-icon>
-        </button>
-        <img src="../assets/images/APNATANKER.png" alt="logo-brand" sty>
-      </span>
+            <button mat-icon-button (click)="sidenav.toggle()" style="width:60px;height:60px;margin-left:-16px;border-bottom:1px solid #c6d0da;border-right:1px solid #c6d0da;border-radius:0%">
+            <mat-icon class="md-24" style="color:#5f6f81">menu</mat-icon>
+            </button>
+            <img src="../assets/images/APNATANKER.png" alt="logo-brand" sty>
+        </span>
         </div>
-
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-
-            <span mat-button [matMenuTriggerFor]="menu" class="pointer" style="border-radius:50%;border:1px solid;width:46px;height:46px;padding: 6px 0px 0px 9px;">
-          <!-- <img src="" alt="" > -->
-          AT
-      </span>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <span mat-button [matMenuTriggerFor]="menu" class="pointer myProfile">{{concatString}}</span>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
-                <button mat-menu-item>My Profile</button>
+                <button mat-menu-item (click)=myProfile()>My Profile</button>
                 <button mat-menu-item (click)="logout()">Log Out</button>
             </mat-menu>
         </div>
-
-
     </mat-toolbar>
 </div>
 

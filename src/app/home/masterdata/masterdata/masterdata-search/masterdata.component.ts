@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationService } from '../../../shared/service/animation.service';
-import { MasterService } from './../masterdata.service';
-import { ApexData } from '../../../apex/entities/apexdata.entity';
+import { AnimationService } from '../../../../shared/service/animation.service';
+import { MasterService } from './../../masterdata.service';
+import { ApexData } from '../../../../apex/entities/apexdata.entity';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { ApexData } from '../../../apex/entities/apexdata.entity';
 })
 export class MasterDataComponent implements OnInit {
     masterData: any =  ApexData;
-
+    masterDataList:any;
   
   constructor(private masterService: MasterService) {
     this.searchMasterdata();
@@ -27,8 +27,16 @@ export class MasterDataComponent implements OnInit {
   // }
   searchMasterdata() {
     this.masterService.searchMasterdata(this.masterData).subscribe( data => {
-     this.masterData = data;
-     console.log(this.masterData)
+     this.masterDataList = data;
+     console.log(this.masterDataList)
     })
+  }
+  editMaster(item: ApexData){
+    if (!item) {
+      item = new ApexData();
+      this.masterService.navigateMasterEdit(null);
+    }else {
+      this.masterService.navigateMasterEdit(item);
+    }
   }
 }

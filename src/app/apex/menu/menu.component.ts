@@ -51,57 +51,47 @@ export class MenuComponent implements OnInit {
     return [
       {
         "id": 'Item1',
-        "name": "Home",
-        "link": "/",
+        "name": "Dashboard",
+        "link": "/dashboard/admindashboard",
         "icon": "admin_dashboard"
       },
       {
         "id": 'Item2',
-        "name": "Location",
-        "link": "/profile/myprofile",
+        "name": "Trip Activity",
+        "link": "/dashboard/admindashboard",
         "icon": "trip_activity"
       },
       
       {
         "id": 'Item3',
-        "name": "Register",
-        "link": "/profile/myprofile",
+        "name": "Package Status",
+        "link": "/dashboard/admindashboard",
         "icon": "package_status"
       },
       {
         "id": 'Item4',
-        "name": "Register",
-        "link": "/profile/myprofile",
+        "name": "Vechile Activity",
+        "link": "/dashboard/admindashboard",
         "icon": "vechile_activity"
       },
       {
         "id": 'Item5',
-        "name": "Register",
-        "link": "/profile/myprofile",
+        "name": "Density Map",
+        "link": "/dashboard/admindashboard",
         "icon": "density_map"
       },
       {
         "id": 'Item7',
-        "name": "Register",
-        "link": "/profile/myprofile",
+        "name": "User Profiles",
+        "link": "/profile/search",
         "icon": "profile"
       },
       {
         "id": 'Item8',
-        "name": "Register",
+        "name": "Menu Access",
         "link": "/menuaccess",
         "icon": "menu_access"
       }
-      
     ]
-  }
-  // navigate(item) {
-  //   this.activeMenuObject = item.name;
-  //   event.stopPropagation();
-  //   console.log(item.url)
-  // }
-
-  activeMenu(){
-    this.isActive = true;
   }
 }
