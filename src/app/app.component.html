@@ -10,8 +10,8 @@
         </span>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-            <span mat-button [matMenuTriggerFor]="menu" class="pointer myProfile">AT</span>
-            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+            <span fxLayoutAlign="center center" class="my-profile" [matMenuTriggerFor]="menu"  >{{menuLetter}}</span>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false" >
                 <button mat-menu-item (click)=myProfile()>My Profile</button>
                 <button mat-menu-item (click)="logout()">Log Out</button>
             </mat-menu>
