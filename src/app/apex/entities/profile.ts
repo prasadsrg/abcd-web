@@ -1,4 +1,4 @@
-import { Address } from './address.entity';
+import { Address } from './address';
 export class Profile {
     id: String;
     name: String = 'Anonymous';
