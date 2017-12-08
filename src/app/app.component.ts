@@ -16,14 +16,15 @@ export class AppComponent implements OnInit {
   showLoader: boolean = false;
   private _userSubscription: any;
   private _loaderSubscription: any;
+  concat:string;
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
   showMenu = true;
   sessionUser: any;
-
+  username : String;
+  concatString : any = '';
   constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
-      // this.getCurrentProfileId();
       this.sessionUser = Storage.getSessionUser();
       console.log(this.sessionUser);
    }
@@ -41,8 +42,7 @@ export class AppComponent implements OnInit {
     if (window.innerWidth < 768) {
       this.navMode = 'over';
     }
-  }
-
+  }  
   loadIcons(){
         this._iconRegistry.addSvgIconSetInNamespace('core',
           this.apexService.bypassURL('/assets/icons/app-icons.svg'));    
@@ -64,6 +64,7 @@ export class AppComponent implements OnInit {
     this.apexService.sessionUserEmit(null);
     this.appService.navigate('auth/login', []);
   }
-  
-
+  myProfile() {
+    this.appService.navigate('profile/myprofile', []);
+  }
 }
