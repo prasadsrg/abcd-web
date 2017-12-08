@@ -1,14 +1,11 @@
-import { SessionUser } from './../../shared/common/interfaces';
+import { SessionUser } from './../../../shared/common/interfaces';
 import { Component, OnInit, ViewChild, HostListener, Output, EventEmitter } from '@angular/core';
-import { Menu } from '../../shared/common/interfaces';
-import { MenuAccessForm } from './menuaccess.form';
-
-
-
-import { ApexService } from '../../shared/service/apex.service';
-import { MenuAccessService } from './menuaccess.service';
-import { Storage } from './../../shared/utils/storage';
-import { AppMenu } from './../../apex/entities/appmenu.entity'
+import { Menu } from '../../../shared/common/interfaces';
+import { MenuAccessForm } from './../menuaccess.form';
+import { ApexService } from '../../../shared/service/apex.service';
+import { MenuAccessService } from './../menuaccess.service';
+import { Storage } from './../../../shared/utils/storage';
+import { AppMenu } from './../../../apex/entities/appmenu';
 import { MatTableDataSource, MatTabChangeEvent } from '@angular/material';
 
 
