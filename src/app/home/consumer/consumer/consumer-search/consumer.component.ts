@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationService } from '../../../shared/service/animation.service';
-import { ConsumerService } from './../consumer.service';
-import { Consumer } from '../../../apex/entities/consumer.entity';
+import { AnimationService } from '../../../../shared/service/animation.service';
+import { ConsumerService } from './../../consumer.service';
+import { Consumer } from '../../../../apex/entities/consumer';
 @Component({
   selector: 'app-consumer',
   templateUrl: './consumer.component.html',

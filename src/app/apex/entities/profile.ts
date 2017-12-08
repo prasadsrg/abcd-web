@@ -1,5 +1,6 @@
-import { Address } from './address.entity';
-import { Img } from './img.entity';
+
+import { Img } from './img';
+import { Address } from './address';
 export class Profile {
     id: String;
     name: String = 'Anonymous';

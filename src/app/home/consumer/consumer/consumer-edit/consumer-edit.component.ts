@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimationService } from '../../../shared/service/animation.service';
-import { ApexService } from './../../../shared/service/apex.service';
-import { ConsumerForm } from '.././consumer.form';
+import { AnimationService } from '../../../../shared/service/animation.service';
+import { ApexService } from './../../../../shared/service/apex.service';
+import { ConsumerForm } from '../../consumer.form';
 
-import { ConsumerService } from './../consumer.service';
+import { ConsumerService } from './../../consumer.service';
 
-import { Consumer } from '../../../apex/entities/consumer.entity';
+import { Consumer } from '../../../../apex/entities/consumer';
 @Component({
   selector: 'app-consumer-edit',
   templateUrl: './consumer-edit.component.html',
-  styleUrls: ['./consumer.component.scss']
+  // styleUrls: ['./../consumer.component.scss']
 })
 export class ConsumerEditComponent implements OnInit {
   consumer: Consumer = new Consumer();

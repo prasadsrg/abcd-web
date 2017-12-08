@@ -6,8 +6,8 @@ import { MyProfileForm } from './myprofile.form';
 
 import { ProfileService } from './../profile.service';
 
-import { Profile } from '../../../apex/entities/profile.entity';
-import { Img } from '../../../apex/entities/img.entity';
+import { Profile } from '../../../apex/entities/profile';
+import { Img } from '../../../apex/entities/img';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',

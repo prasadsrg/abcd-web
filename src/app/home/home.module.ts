@@ -1,4 +1,4 @@
-import { MenuAccessComponent } from './menuaccess/menuaccess.component';
+import { MenuAccessComponent } from './menuaccess/menuaccsess-search/menuaccess.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
@@ -16,9 +16,9 @@ import { ProfileAdminComponent } from './profile/profile-search/profile-admin.co
 import { ProfileSuperAdminComponent} from './profile/profile-search/profile-superadmin.component';
 import { ProfileUserComponent } from './profile/profile-search/profile-user.component';
 import { ProfileAllUsersComponent } from './profile/profile-search/profile-allusers.component';
-import { ConsumerComponent } from './consumer/consumer/consumer.component';
+import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
-import { ConsumerEditComponent } from './consumer/consumer/consumer-edit.component';
+import { ConsumerEditComponent } from './consumer/consumer/consumer-edit/consumer-edit.component';
 import { MasterDataComponent } from './masterdata/masterdata/masterdata-search/masterdata.component';
 import { MasterdataEditComponent } from './masterdata/masterdata/masterdata-edit/masterdata.edit.component';
 

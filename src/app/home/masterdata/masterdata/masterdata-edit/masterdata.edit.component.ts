@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../../../shared/service/animation.service';
 import { ApexService } from './../../../../shared/service/apex.service';
-import { AppData } from '../../../../apex/entities/appdata.entity';
+import { AppData } from '../../../../apex/entities/appdata';
 import { MasterService } from '../../masterdata.service';
 import { MasterdataForm } from '../masterdata.form';
 
