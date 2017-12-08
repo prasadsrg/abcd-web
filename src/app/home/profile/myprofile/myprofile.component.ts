@@ -7,6 +7,7 @@ import { MyProfileForm } from './myprofile.form';
 import { ProfileService } from './../profile.service';
 
 import { Profile } from '../../../apex/entities/profile.entity';
+import { Img } from '../../../apex/entities/img.entity';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -30,6 +31,9 @@ export class MyprofileComponent implements OnInit {
   entity(id: string){
     this.profileService.getProfile(id).subscribe( (data: Profile) => {
       this.profile = data;
+      if(!this.profile.img){
+          this.profile.img = new Img();
+      }
     })
   }
   saveEntity() {

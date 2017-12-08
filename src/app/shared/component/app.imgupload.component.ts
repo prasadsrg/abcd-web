@@ -12,7 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-imgupload',
+  selector: 'img-upload',
 
   template: `  <div class="imgupload">
               <input type="file" class="upload" accept="*" (change)="changeListener($event)">

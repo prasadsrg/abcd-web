@@ -11,14 +11,14 @@
                 <form [formGroup]="myForm" novalidate autocomplete='off'>
                     <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
                         <!--class="row center-xs parent-container padding"-->
-                        <div fxFlex.xs="100" fxFlex.sm="30" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20">
-                            <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="start start">
-                                <img fxFlex="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Circle-icons-profle.svg/1000px-Circle-icons-profle.svg.png" height="120px">
-                                <h6><b>{{profile.name}}</b></h6>
-                                <P>{{profile.email}}</P>
+                        <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="33.3333" fxFlex.md="25" fxFlex.lg="20" fxFlex.xl="16.6666" >
+                            <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px">
+                                <img-load fxFlex="100" [img]="profile.img.src"></img-load>
+                                <h6 fxFlex="100"><b>{{profile.name}}</b></h6>
+                                <P fxFlex="100">{{profile.email}}</P>
                             </mat-card>
                         </div>
-                        <div fxFlex.xs="100" fxFlex.sm="70" fxFlex.md="70" fxFlex.lg="80" fxFlex.xl="80">
+                        <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="66.6666" fxFlex.md="75" fxFlex.lg="80" fxFlex.xl="83.3333">
                             <mat-card class="margin8">
                                 <mat-card-content>
                                     <div fxLayout="row wrap" fxLayoutAlign="start start">

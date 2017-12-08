@@ -1,4 +1,5 @@
 import { Address } from './address.entity';
+import { Img } from './img.entity';
 export class Profile {
     id: String;
     name: String = 'Anonymous';
@@ -9,7 +10,7 @@ export class Profile {
     role: String = 'User';
     address: Address = new Address();
     branchId: any;
-    imgId: any;
+    img: Img = new Img();
     active: Boolean = true;
     grpcode: any;
 }
