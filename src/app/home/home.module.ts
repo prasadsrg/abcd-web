@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'profile/edit', component: ProfileEditComponent },
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
-  { path: 'menuaccess', component: MenuAccessComponent },
+  { path: 'menuaccess', component: MenuAccessSearchComponent },
   { path: 'masterdata',  component: AppDataComponent},
   { path: 'masterdata-edit',  component: AppdataEditComponent},
   { path: 'consumer',  component: ConsumerComponent},
