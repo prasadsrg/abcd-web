@@ -10,7 +10,6 @@
                         <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="33.3333" fxFlex.md="25" fxFlex.lg="20" fxFlex.xl="16.6666" >
                             <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px">
                                 <img-load fxFlex="100" [img]="profile.img.id"></img-load>
-                                <h6 fxFlex="100" style="text-align:center;"><b>{{profile.name}}</b></h6>
                                 <P fxFlex="100" style="text-align:center;" class="btn-img">
                                     <img-crop (outputEvent)="outputEvent($event)"></img-crop>
                                 </P>
