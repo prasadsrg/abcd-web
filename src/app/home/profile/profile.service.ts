@@ -14,6 +14,9 @@ export class ProfileService {
   getParamId(){
     return this.appService.getParam('id');
   }
+  getParamTabName() {
+    return this.appService.getParam('tabName');
+  }
   getCurrentProfileId(){
     return Storage.getSessionUser().id;
   }
@@ -36,7 +39,7 @@ export class ProfileService {
     this.url = this.host+"/profile/";
     return this.http.put(this.url, {data: data});
   }
-  getProfilesData(data: any){
+  getProfilesList(data: any){
     this.appService.showLoader(true);
     this.url = this.host+"/profile/";
     return this.http.post(this.url, {data: data});

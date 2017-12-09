@@ -24,12 +24,7 @@ import { MenuAccessSearchComponent } from './menu-access/menu-access-search/menu
 
 
 const routes: Routes = [
-  { path: 'profile/search', component: ProfileSearchComponent,
-    children: [
-      { path: '', component: ProfileSearchTableComponent },
-      { path: 'table', component: ProfileSearchTableComponent },
-    ]
-},
+  { path: 'profile/search', component: ProfileSearchComponent},
   { path: 'profile/edit', component: ProfileEditComponent },
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
