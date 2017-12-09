@@ -35,7 +35,7 @@ export class MenuAccessComponent implements OnInit {
 
   }
   dataLoadRoles() {
-    this.menuaccessservice.getMenuDataLoad().subscribe((data: any) => {
+    this.menuaccessservice.getRoles().subscribe((data: any) => {
       this.rolesList = data;
       if (this.rolesList.length > 0) {
         this.tabChanged(this.rolesList[0], 0);
