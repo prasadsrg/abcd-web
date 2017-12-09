@@ -6,11 +6,11 @@ import { Appdataservice } from '../../appdata.service';
 import { AppdataForm } from '../appdata.form';
 
 @Component({
-  selector: 'app-masterdata-edit',
-  templateUrl: './masterdata.edit.component.html',
+  selector: 'app-appdata-edit',
+  templateUrl: './appdata.edit.component.html',
 //   styleUrls: ['./profile-edit.component.scss']
 })
-export class MasterdataEditComponent implements OnInit {
+export class AppdataEditComponent implements OnInit {
   appdata: AppData = new AppData();
    myForm: any = AppdataForm.init();
    paramId: any;

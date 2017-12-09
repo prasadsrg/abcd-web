@@ -9,7 +9,7 @@ import { ApexData } from '../../../../apex/entities/apexdata';
   templateUrl: './appdata.component.html',
   styleUrls: ['./appdata.component.scss']
 })
-export class MasterDataComponent implements OnInit {
+export class AppDataComponent implements OnInit {
     masterData: any =  ApexData;
     masterDataList:any;
   
