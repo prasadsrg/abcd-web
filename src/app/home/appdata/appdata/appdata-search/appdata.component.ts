@@ -36,9 +36,9 @@ export class AppDataComponent implements OnInit {
     this.showSide = true;
     if (!item) {
       item = new AppData();
-    }else {
-      this.appdata = Object.assign({}, item);
     }
+    this.appdata = Object.assign({}, item);
+    
   }
   onClose(action: any) {
     this.showSide = false;
