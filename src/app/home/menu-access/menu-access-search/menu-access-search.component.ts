@@ -54,11 +54,13 @@ export class MenuAccessSearchComponent implements OnInit {
   //   }
 
   public tabChanged(tabChangeEvent: MatTabChangeEvent, index): void {
-  console.log(tabChangeEvent.tab.textLabel)
-    this.menuaccessservice.getRolesDataLoad(tabChangeEvent.tab.textLabel).subscribe((data: any) => {
-      this.menuList = data;
-      console.log(this.menuList);
-    })
+    if(tabChangeEvent.tab){
+      this.menuaccessservice.getRolesDataLoad(tabChangeEvent.tab.textLabel).subscribe((data: any) => {
+        this.menuList = data;
+        console.log(this.menuList);
+      })
+    }
+
   }
 
 
