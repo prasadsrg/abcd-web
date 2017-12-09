@@ -1,7 +1,7 @@
 import { FormGroup} from '@angular/forms';
 import { AppFormGroup } from '../../../shared/common/app.form';
 
-export class MasterdataForm extends AppFormGroup {
+export class AppdataForm extends AppFormGroup {
     static init() {
         return this.getFormGroup();
     }

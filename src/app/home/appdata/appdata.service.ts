@@ -6,7 +6,7 @@ import { Storage } from '../../shared/utils/storage';
 import { ApexService } from '../../shared/service/apex.service';
 
 @Injectable()
-export class MasterService {
+export class Appdataservice {
     private host = Props.API_END_POINT;
     private url: string = '';
 

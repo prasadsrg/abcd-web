@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileSearchComponent } from './profile/profile-search/profile-search.component';
+import { ProfileSearchTableComponent } from './profile/profile-search-table/profile-search-table.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { MyprofileComponent } from './profile/myprofile/myprofile.component';
 import { ProfileService} from './profile/profile.service';
@@ -11,16 +12,12 @@ import {MatTableModule} from '@angular/material/table';
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
 import { MenuAccessService } from './menuaccess/menuaccess.service';
-import { MasterService } from './masterdata/masterdata.service';
-import { ProfileAdminComponent } from './profile/profile-search/profile-admin.component';
-import { ProfileSuperAdminComponent} from './profile/profile-search/profile-superadmin.component';
-import { ProfileUserComponent } from './profile/profile-search/profile-user.component';
-import { ProfileAllUsersComponent } from './profile/profile-search/profile-allusers.component';
+import { Appdataservice } from './appdata/appdata.service';
 import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
 import { ConsumerEditComponent } from './consumer/consumer/consumer-edit/consumer-edit.component';
-import { MasterDataComponent } from './masterdata/masterdata/masterdata-search/masterdata.component';
-import { MasterdataEditComponent } from './masterdata/masterdata/masterdata-edit/masterdata.edit.component';
+import { AppDataComponent } from './appdata/appdata/appdata-search/appdata.component';
+import { AppdataEditComponent } from './appdata/appdata/appdata-edit/appdata.edit.component';
 
 
 
@@ -30,8 +27,8 @@ const routes: Routes = [
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessComponent },
-  { path: 'masterdata',  component: MasterDataComponent},
-  { path: 'masterdata-edit',  component: MasterdataEditComponent},
+  { path: 'masterdata',  component: AppDataComponent},
+  { path: 'masterdata-edit',  component: AppdataEditComponent},
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent}
 
@@ -46,20 +43,17 @@ const routes: Routes = [
   ],
   declarations: [
     ProfileSearchComponent,
+    ProfileSearchTableComponent,
     ProfileEditComponent,
     MyprofileComponent,
     SettingsComponent,
     MenuAccessComponent,
-    MasterDataComponent,
-    ProfileAdminComponent,
-    ProfileSuperAdminComponent,
-    ProfileUserComponent,
-    ProfileAllUsersComponent,
+    AppDataComponent,
     ConsumerComponent,
     ConsumerEditComponent,
-    MasterdataEditComponent
+    AppdataEditComponent
   ],
   exports: [RouterModule],
-  providers: [ ProfileService, SettingsService, MenuAccessService, MasterService, ConsumerService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService]
 })
 export class HomeModule { }

@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../../../shared/service/animation.service';
-import { MasterService } from './../../masterdata.service';
+import { Appdataservice } from './../../appdata.service';
 import { ApexData } from '../../../../apex/entities/apexdata';
 
 
 @Component({
-  selector: 'app-masterdata',
-  templateUrl: './masterdata.component.html',
-  styleUrls: ['./masterdata.component.scss']
+  selector: 'app-appdata',
+  templateUrl: './appdata.component.html',
+  styleUrls: ['./appdata.component.scss']
 })
-export class MasterDataComponent implements OnInit {
+export class AppDataComponent implements OnInit {
     masterData: any =  ApexData;
     masterDataList:any;
   
-  constructor(private masterService: MasterService) {
+  constructor(private appdataservice: Appdataservice) {
     this.searchMasterdata();
    
     // this.init();
@@ -26,7 +26,7 @@ export class MasterDataComponent implements OnInit {
   //   this.auth = new User();
   // }
   searchMasterdata() {
-    this.masterService.searchMasterdata(this.masterData).subscribe( data => {
+    this.appdataservice.searchMasterdata(this.masterData).subscribe( data => {
      this.masterDataList = data;
      console.log(this.masterDataList)
     })
@@ -34,9 +34,9 @@ export class MasterDataComponent implements OnInit {
   editMaster(item: ApexData){
     if (!item) {
       item = new ApexData();
-      this.masterService.navigateMasterEdit(null);
+      this.appdataservice.navigateMasterEdit(null);
     }else {
-      this.masterService.navigateMasterEdit(item);
+      this.appdataservice.navigateMasterEdit(item);
     }
   }
 }
