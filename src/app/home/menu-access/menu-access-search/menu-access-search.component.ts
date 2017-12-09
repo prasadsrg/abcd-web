@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, HostListener, Output, EventEmitter } from
 import { Menu } from '../../../shared/common/interfaces';
 import { AppMenuAccessForm } from './../../menu-access/menu-access-list-edit/menu-access.form';
 import { ApexService } from '../../../shared/service/apex.service';
-import { MenuAccessService } from './../../menuaccess/menuaccess.service';
+import { MenuAccessService } from './../menuaccess.service';
 import { Storage } from './../../../shared/utils/storage';
 import { AppMenu } from './../../../apex/entities/appmenu';
 import { MatTableDataSource, MatTabChangeEvent } from '@angular/material';

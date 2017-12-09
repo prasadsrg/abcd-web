@@ -1,4 +1,3 @@
-import { MenuAccessComponent } from './menuaccess/menuaccsess-search/menuaccess.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
@@ -11,7 +10,7 @@ import { ProfileService} from './profile/profile.service';
 import {MatTableModule} from '@angular/material/table';
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
-import { MenuAccessService } from './menuaccess/menuaccess.service';
+import { MenuAccessService } from './menu-access/menuaccess.service';
 import { Appdataservice } from './appdata/appdata.service';
 import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
@@ -48,7 +47,6 @@ const routes: Routes = [
     ProfileEditComponent,
     MyprofileComponent,
     SettingsComponent,
-    MenuAccessComponent,
     AppDataComponent,
     ConsumerComponent,
     ConsumerEditComponent,
