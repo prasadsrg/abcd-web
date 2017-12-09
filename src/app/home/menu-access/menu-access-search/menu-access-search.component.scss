@@ -1,15 +1,4 @@
-.mat-card {
-    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
-    display: block;
-    position: relative;
-    padding: 5px;
-    border-radius: 2px;
-    background-color: #fff;
-  }
-  
-  
-  
-  ::ng-deep .mat-tab-header {
+::ng-deep .mat-tab-header {
     height: 62px;
     .mat-tab-label-container {
       .mat-tab-list {

@@ -13,22 +13,12 @@
     <mat-tab-group (selectedTabChange)="tabChanged($event,index)">
 
       <mat-tab *ngFor="let item of rolesList; let i = index" label="{{item.name}}">
-
-        <div class="mat-elevation-z8">
-
-          <mat-list>
-            <app-menu-access-list-edit [(inputData)]="menuList"></app-menu-access-list-edit>
-
-
-          </mat-list>
-        </div>
+        <mat-list>
+          <app-menu-access-list-edit [(inputData)]="menuList"></app-menu-access-list-edit>
+        </mat-list>
       </mat-tab>
     </mat-tab-group>
 
   </main>
 
 </aside>
-
-
-
-
