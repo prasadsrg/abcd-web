@@ -57,7 +57,7 @@ export class ProfileSearchComponent implements OnInit {
   public tabChanged(item): void {
     console.log(item)
     // this.profileService.getProfilesData(item).subscribe((data: any) => {
-    })
+    // })
   }
   // editProfile(id:any){
   //     this.profileService.navigateProfileEdit(id);
