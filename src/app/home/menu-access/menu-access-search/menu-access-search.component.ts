@@ -6,7 +6,7 @@ import { ApexService } from '../../../shared/service/apex.service';
 import { MenuAccessService } from './../menuaccess.service';
 import { Storage } from './../../../shared/utils/storage';
 import { AppMenu } from './../../../apex/entities/appmenu';
-import { MatTableDataSource, MatTabChangeEvent } from '@angular/material';
+import { MatTabChangeEvent } from '@angular/material';
 
 
 @Component({
@@ -21,18 +21,15 @@ export class MenuAccessSearchComponent implements OnInit {
   rolesList: any[] = [];
   menuList: any[] = [];
   selectedIndex = 0;
-  displayedColumns = ['Name', 'Priority', 'Active'];
   myForm: any = AppMenuAccessForm.init();
   savedata = {
     data:null
   };
-  // dataSource = new MatTableDataSource(this.menuRoleslistData);
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent>
   constructor(private apexService: ApexService, private menuaccessservice: MenuAccessService) {
     this.sessionUser = Storage.getSessionUser();
     AppMenuAccessForm.edit(this.myForm);
     this.dataLoadRoles();
-    // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
 
   }
   dataLoadRoles() {
