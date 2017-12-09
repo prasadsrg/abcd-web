@@ -19,6 +19,9 @@ import { AppDataComponent } from './appdata/appdata/appdata-search/appdata.compo
 import { AppdataEditComponent } from './appdata/appdata/appdata-edit/appdata.edit.component';
 import { MenuAccessListEditComponent } from './menu-access/menu-access-list-edit/menu-access-list-edit.component';
 import { MenuAccessSearchComponent } from './menu-access/menu-access-search/menu-access-search.component';
+import { BranchesEditComponent } from './branches/branches-edit/branches-edit.component';
+import { BranchSearchComponent} from './branches/branches-search/branches-search.component';
+import { BranchService } from './branches/branches.service';
 
 
 
@@ -30,7 +33,10 @@ const routes: Routes = [
   { path: 'menuaccess', component: MenuAccessSearchComponent },
   { path: 'masterdata',  component: AppDataComponent},
   { path: 'consumer',  component: ConsumerComponent},
-  { path: 'consumer-edit',  component: ConsumerEditComponent}
+  { path: 'consumer-edit',  component: ConsumerEditComponent},
+  { path: 'branch',  component: BranchSearchComponent},
+  { path: 'branch-edit', component:BranchesEditComponent}
+
 
 ];
 
@@ -52,9 +58,11 @@ const routes: Routes = [
     ConsumerEditComponent,
     AppdataEditComponent,
     MenuAccessListEditComponent,
-    MenuAccessSearchComponent
+    MenuAccessSearchComponent,
+    BranchesEditComponent,
+    BranchSearchComponent
   ],
   exports: [RouterModule],
-  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService ,BranchService]
 })
 export class HomeModule { }

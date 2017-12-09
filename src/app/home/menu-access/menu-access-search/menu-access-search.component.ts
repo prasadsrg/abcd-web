@@ -29,6 +29,26 @@ export class MenuAccessSearchComponent implements OnInit {
   constructor(private apexService: ApexService, private menuaccessservice: MenuAccessService) {
     this.sessionUser = Storage.getSessionUser();
     AppMenuAccessForm.edit(this.myForm);
+<<<<<<< HEAD
+    // this.dataLoadRoles();
+    // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
+
+  }
+  // dataLoadRoles() {
+  //   this.menuaccessservice.getMenuDataLoad().subscribe((data: any) => {
+  //     this.rolesList = data;
+  //     if (this.rolesList.length > 0) {
+  //       this.tabChanged(this.rolesList[0], 0);
+  //     }
+  //     console.log(this.rolesList)
+  //   })
+  // }
+  // dataLoad(searchObj: any, index) {
+  //   this.selectedIndex = index;
+  //   searchObj = {};
+  //   searchObj.role = this.rolesList[this.selectedIndex].id;
+  //   console.log(searchObj.role);
+=======
     this.dataLoadRoles();
 
   }
@@ -41,6 +61,7 @@ export class MenuAccessSearchComponent implements OnInit {
       console.log(this.rolesList)
     })
   }
+>>>>>>> 796caed962899bd6d56e8d62f1f281104cb7cbb5
 
   ngOnInit() {
 

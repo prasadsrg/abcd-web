@@ -14,6 +14,8 @@ import { AppImgLoadComponent } from "./component/app.imgload.component";
 import { FormMessagesComponent } from "./component/form.messages.component";
 import { InfiniteListComponent } from './component/infinite.list.component';
 import { AppCropImgComponent } from "./component/app.imgcrop.component";
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './component/app.agmmaps.component';
 
 import { FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe } from './utils/pipes';
 
@@ -29,6 +31,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
+
 @NgModule({
     imports: [
         CommonModule, FlexLayoutModule, FormsModule, ReactiveFormsModule,
@@ -37,11 +40,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
-        InfiniteScrollModule,ImageCropperModule,
+        InfiniteScrollModule,ImageCropperModule, 
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDImiUijbMthWDVTsGSeCnKhpls0yoM4Yc'
+          })
     ],
     declarations: [ 
         FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe, 
-        FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, InfiniteListComponent, AppCropImgComponent
+        FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, InfiniteListComponent, AppCropImgComponent,MapComponent
     ],
     exports: [
         CommonModule,FormsModule, ReactiveFormsModule, FlexLayoutModule, 
@@ -51,7 +57,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
-        InfiniteListComponent, AppImgLoadComponent, AppCropImgComponent
+        InfiniteListComponent, AppImgLoadComponent, AppCropImgComponent,MapComponent
     
     ]
 
