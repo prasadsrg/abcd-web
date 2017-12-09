@@ -17,11 +17,9 @@ export class ProfileSearchComponent implements OnInit {
   user:any = [];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     this.search();
-
    }
 
   ngOnInit() {
-    // this.changeData(1000);
   };
 
   search() {
@@ -57,13 +55,4 @@ export class ProfileSearchComponent implements OnInit {
   editProfile(id:any){
       this.profileService.navigateProfileEdit(id);
   }
-  // changeData(maxLength){
-  //   this.dataList = [];
-  //   for(let i=0; i< maxLength; i++) {
-  //     this.dataList.push(i);
-  //   }
-  // }
-tab(){
-  console.log('jskdfk')
-}
 }

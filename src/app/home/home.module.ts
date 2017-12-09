@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileSearchComponent } from './profile/profile-search/profile-search.component';
+import { ProfileSearchTableComponent } from './profile/profile-search-table.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { MyprofileComponent } from './profile/myprofile/myprofile.component';
 import { ProfileService} from './profile/profile.service';
@@ -12,10 +13,6 @@ import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
 import { MenuAccessService } from './menuaccess/menuaccess.service';
 import { MasterService } from './masterdata/masterdata.service';
-import { ProfileAdminComponent } from './profile/profile-search/profile-admin.component';
-import { ProfileSuperAdminComponent} from './profile/profile-search/profile-superadmin.component';
-import { ProfileUserComponent } from './profile/profile-search/profile-user.component';
-import { ProfileAllUsersComponent } from './profile/profile-search/profile-allusers.component';
 import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
 import { ConsumerEditComponent } from './consumer/consumer/consumer-edit/consumer-edit.component';
@@ -46,15 +43,16 @@ const routes: Routes = [
   ],
   declarations: [
     ProfileSearchComponent,
+    ProfileSearchTableComponent,
     ProfileEditComponent,
     MyprofileComponent,
     SettingsComponent,
     MenuAccessComponent,
     MasterDataComponent,
-    ProfileAdminComponent,
-    ProfileSuperAdminComponent,
-    ProfileUserComponent,
-    ProfileAllUsersComponent,
+    // ProfileAdminComponent,
+    // ProfileSuperAdminComponent,
+    // ProfileUserComponent,
+    // ProfileAllUsersComponent,
     ConsumerComponent,
     ConsumerEditComponent,
     MasterdataEditComponent

@@ -6,29 +6,11 @@
         <div fxLayout="row">
             <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
                 <mat-tab-group>
-                    <mat-tab >
+                    <mat-tab>
                         <ng-template mat-tab-label style="background-color:lightblue !important">
                             <mat-icon class="tab-icon">supervisor_account</mat-icon> All Users <span class="user-count">{{dataList.length}}</span>
                         </ng-template>
-                        <app-profile-allusers [allusers]="dataList"></app-profile-allusers>
-                    </mat-tab>
-                    <mat-tab (click)="tab()">
-                        <ng-template mat-tab-label>
-                            <mat-icon class="tab-icon">supervisor_account</mat-icon> Super Admin <span class="user-count">{{superadmin.length}}</span>
-                        </ng-template>
-                        <app-profile-superadmin [superadmin]="superadmin"></app-profile-superadmin>
-                    </mat-tab>
-                    <mat-tab>
-                        <ng-template mat-tab-label>
-                            <mat-icon>supervisor_account</mat-icon> Admin <span class="user-count">{{admin.length}}</span>
-                        </ng-template>
-                        <app-profile-admin [admin]="admin"></app-profile-admin>
-                    </mat-tab>
-                    <mat-tab>
-                        <ng-template mat-tab-label>
-                            <mat-icon class="tab-icon">supervisor_account</mat-icon> Users <span class="user-count">{{user.length}}</span>
-                        </ng-template>
-                        <app-profile-user [user]="user"></app-profile-user>
+                        <app-profile-search-table></app-profile-search-table>
                     </mat-tab>
                 </mat-tab-group>
             </infinite-list>
