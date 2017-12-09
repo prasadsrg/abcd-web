@@ -22,7 +22,12 @@ import { AppdataEditComponent } from './appdata/appdata/appdata-edit/appdata.edi
 
 
 const routes: Routes = [
-  { path: 'profile/search', component: ProfileSearchComponent },
+  { path: 'profile/search', component: ProfileSearchComponent,
+    children: [
+      { path: '', component: ProfileSearchTableComponent },
+      { path: 'table', component: ProfileSearchTableComponent },
+    ]
+},
   { path: 'profile/edit', component: ProfileEditComponent },
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },

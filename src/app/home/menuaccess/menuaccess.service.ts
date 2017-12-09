@@ -19,7 +19,7 @@ export class MenuAccessService {
     
     return Storage.getSessionUser().id;
   }
-  getMenuDataLoad(){
+  getRoles(){
     this.url = this.host+"/dataload/roles";
     return this.http.get(this.url);
 
