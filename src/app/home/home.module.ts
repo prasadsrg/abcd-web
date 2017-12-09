@@ -49,10 +49,6 @@ const routes: Routes = [
     SettingsComponent,
     MenuAccessComponent,
     AppDataComponent,
-    // ProfileAdminComponent,
-    // ProfileSuperAdminComponent,
-    // ProfileUserComponent,
-    // ProfileAllUsersComponent,
     ConsumerComponent,
     ConsumerEditComponent,
     AppdataEditComponent
