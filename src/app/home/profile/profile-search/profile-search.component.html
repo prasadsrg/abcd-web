@@ -5,13 +5,22 @@
     <main>
         <div fxLayout="row">
             <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
-                <mat-tab-group>
+                <!-- <mat-tab-group>
                     <mat-tab>
                         <ng-template mat-tab-label style="background-color:lightblue !important">
                             <mat-icon class="tab-icon">supervisor_account</mat-icon> All Users <span class="user-count">{{dataList.length}}</span>
                         </ng-template>
                     </mat-tab>
-                </mat-tab-group>
+                </mat-tab-group> -->
+                <nav mat-tab-nav-bar>
+                    <span mat-tab-link *ngFor="let item of rolesList; let i = index;" (click)="tabChanged(item)">
+                        <mat-icon class="tab-icon">supervisor_account</mat-icon>
+                        <a [routerLink]="['./table']"  routerLinkActive #rla="routerLinkActive">
+                            {{item.name}}
+                        </a>
+                    </span>
+                </nav>
+                <router-outlet></router-outlet>
             </infinite-list>
         </div>
     </main>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../../../shared/service/animation.service';
 import { Appdataservice } from './../../appdata.service';
-import { ApexData } from '../../../../apex/entities/apexdata';
+import { AppData } from '../../../../apex/entities/appdata';
 
 
 @Component({
@@ -10,8 +10,9 @@ import { ApexData } from '../../../../apex/entities/apexdata';
   styleUrls: ['./appdata.component.scss']
 })
 export class AppDataComponent implements OnInit {
-    masterData: any =  ApexData;
+    appdata: any = {};
     masterDataList:any;
+    showSide: boolean = false;
   
   constructor(private appdataservice: Appdataservice) {
     this.searchMasterdata();
@@ -26,17 +27,20 @@ export class AppDataComponent implements OnInit {
   //   this.auth = new User();
   // }
   searchMasterdata() {
-    this.appdataservice.searchMasterdata(this.masterData).subscribe( data => {
+    this.appdataservice.searchMasterdata(this.appdata).subscribe( data => {
      this.masterDataList = data;
      console.log(this.masterDataList)
     })
   }
-  editMaster(item: ApexData){
+  editMaster(item: AppData) {
+    this.showSide = true;
     if (!item) {
-      item = new ApexData();
-      this.appdataservice.navigateMasterEdit(null);
+      item = new AppData();
     }else {
-      this.appdataservice.navigateMasterEdit(item);
+      this.appdata = Object.assign({}, item);
     }
+  }
+  onClose(action: any) {
+    this.showSide = false;
   }
 }
