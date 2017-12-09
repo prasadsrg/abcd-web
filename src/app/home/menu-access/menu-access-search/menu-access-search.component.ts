@@ -31,19 +31,19 @@ export class MenuAccessSearchComponent implements OnInit {
   constructor(private apexService: ApexService, private menuaccessservice: MenuAccessService) {
     this.sessionUser = Storage.getSessionUser();
     AppMenuAccessForm.edit(this.myForm);
-    this.dataLoadRoles();
+    // this.dataLoadRoles();
     // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
 
   }
-  dataLoadRoles() {
-    this.menuaccessservice.getMenuDataLoad().subscribe((data: any) => {
-      this.rolesList = data;
-      if (this.rolesList.length > 0) {
-        this.tabChanged(this.rolesList[0], 0);
-      }
-      console.log(this.rolesList)
-    })
-  }
+  // dataLoadRoles() {
+  //   this.menuaccessservice.getMenuDataLoad().subscribe((data: any) => {
+  //     this.rolesList = data;
+  //     if (this.rolesList.length > 0) {
+  //       this.tabChanged(this.rolesList[0], 0);
+  //     }
+  //     console.log(this.rolesList)
+  //   })
+  // }
   // dataLoad(searchObj: any, index) {
   //   this.selectedIndex = index;
   //   searchObj = {};

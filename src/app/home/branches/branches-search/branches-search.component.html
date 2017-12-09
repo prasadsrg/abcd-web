@@ -1,0 +1,43 @@
+<aside>
+    <article>
+         <div fxLayout="row" fxLayoutAlign="space-between center" >
+                 <h4 class="padding-side">Branch</h4>
+                  <button mat-mini-fab (click)="editBranch(null)" class="fab-placeholder">
+                      <mat-icon style="color:#fff">add</mat-icon>
+                  </button>
+                  </div>
+    </article>
+ 
+    <main class="padding">
+       <infinite-list [items]="branchDataList" (outputEvent)="scrollList = $event" style="height: 100%">
+           
+       <table >
+           <thead>
+               <tr>
+                   <th scope="col">Name</th>
+                   <th scope="col">Phone</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">City</th>
+                   <th scope="col">State</th>
+                   <th scope="col">Country</th>
+                   <th scope="col">Active</th>
+             
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editBranch(item)">
+                   <td data-label="Name">{{item.name}}</td>
+                   <td data-label="Phone">{{item.phone}}</td>
+                   <td data-label="City">{{}item.city}</td>
+                   <td data-label="Country">{{item.country}}</td>
+                   <td data-label="Active">{{item.active}}</td>
+               </tr>
+           </tbody>
+       </table>
+       </infinite-list>
+ 
+    </main>
+   </aside>
+   <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
+     <app-branches-edit [branch]="branch" (close)="onClose('reload')"></app-branches-edit>
+   </mat-sidenav>
