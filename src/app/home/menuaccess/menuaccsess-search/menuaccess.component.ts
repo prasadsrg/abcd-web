@@ -1,7 +1,7 @@
 import { SessionUser } from './../../../shared/common/interfaces';
 import { Component, OnInit, ViewChild, HostListener, Output, EventEmitter } from '@angular/core';
 import { Menu } from '../../../shared/common/interfaces';
-import { MenuAccessForm } from './../menuaccess.form';
+import { AppMenuAccessForm } from './../../menu-access/menu-access-list-edit/menu-access.form';
 import { ApexService } from '../../../shared/service/apex.service';
 import { MenuAccessService } from './../menuaccess.service';
 import { Storage } from './../../../shared/utils/storage';
@@ -21,7 +21,7 @@ export class MenuAccessComponent implements OnInit {
   menuList: any[] = [];
   selectedIndex = 0;
   displayedColumns = ['Name', 'Priority', 'Active'];
-  myForm: any = MenuAccessForm.init();
+  myForm: any = AppMenuAccessForm.init();
   savedata = {
     data:null
   };
@@ -29,7 +29,7 @@ export class MenuAccessComponent implements OnInit {
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent>
   constructor(private apexService: ApexService, private menuaccessservice: MenuAccessService) {
     this.sessionUser = Storage.getSessionUser();
-    MenuAccessForm.edit(this.myForm);
+    AppMenuAccessForm.edit(this.myForm);
     this.dataLoadRoles();
     // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
 

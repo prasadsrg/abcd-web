@@ -20,7 +20,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editMaster(item.id)">
+              <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editMaster(item)">
                   <td data-label="Name">{{item.name}}</td>
                   <td data-label="Code">{{item.code}}</td>
                   <td data-label="Active">{{item.active}}</td>
@@ -31,4 +31,8 @@
 
    </main>
   </aside>
+  <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
+    <app-appdata-edit [appdata]="appdata" (close)="onClose('reload')"></app-appdata-edit>
+  </mat-sidenav>
+
   
