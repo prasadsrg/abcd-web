@@ -43,18 +43,7 @@ export class MenuAccessComponent implements OnInit {
       console.log(this.rolesList)
     })
   }
-  // dataLoad(searchObj: any, index) {
-  //   this.selectedIndex = index;
-  //   searchObj = {};
-  //   searchObj.role = this.rolesList[this.selectedIndex].id;
-  //   console.log(searchObj.role);
 
-  //   this.menuaccessservice.getRolesDataLoad(searchObj.role).subscribe((data:any)=>{
-  //     this.menuRoleslistData = data;
-  //     this.dataSource = new MatTableDataSource(this.menuRoleslistData);
-  //     console.log(this.menuRoleslistData);
-  //   })
-  // }
   ngOnInit() {
 
   };
@@ -64,19 +53,17 @@ export class MenuAccessComponent implements OnInit {
   //   }
 
   public tabChanged(tabChangeEvent: MatTabChangeEvent, index): void {
-    console.log(tabChangeEvent.tab.textLabel);
-
+    if(tabChangeEvent.tab.textLabel){
+      
     this.menuaccessservice.getRolesDataLoad(tabChangeEvent.tab.textLabel).subscribe((data: any) => {
       this.menuList = data;
       // this.dataSource = new MatTableDataSource(this.menuRoleslistData);
       console.log(this.menuList);
     })
-    // this.dataLoad(tabChangeEvent.tab.textLabel, 0)
+    }
+
   }
-  // tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
-  //   console.log('tabChangeEvent => ', tabChangeEvent);
-  //   console.log('index => ', tabChangeEvent.index);
-  // }
+ 
   menusave(){
     
     console.log(this.menuList);
