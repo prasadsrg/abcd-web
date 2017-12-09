@@ -37,11 +37,11 @@ export class MyprofileComponent implements OnInit {
     })
   }
   saveEntity() {
-    this.profileService.saveProfile(this.profile).subscribe( (data) => {
-      console.log(data);
-      // const message = data.message
-      //this.apexservice.showMessage(data.message);
+    this.profileService.saveProfile(this.profile).subscribe( (data: any) => {
+      this.apexservice.showMessage(data.message);
     });
   }
-
+  outputEvent($event: any){
+    this.profile.img.src = $event;
+  }
 }

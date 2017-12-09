@@ -7,13 +7,13 @@ import { ApexService } from "./service/apex.service";
 import { ReportService } from "./service/report.service";
 import { AppService } from "./service/app.service";
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { AppImgUploadComponent } from "./component/app.imgupload.component";
 import { AppImgLoadComponent } from "./component/app.imgload.component";
 import { FormMessagesComponent } from "./component/form.messages.component";
 import { InfiniteListComponent } from './component/infinite.list.component';
-
+import { AppCropImgComponent } from "./component/app.imgcrop.component";
 
 import { FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe } from './utils/pipes';
 
@@ -37,11 +37,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
-        InfiniteScrollModule,
+        InfiniteScrollModule,ImageCropperModule,
     ],
     declarations: [ 
         FilterPipe, KeyValuesPipe, DecodeURIPipe, DatePipe, DateTimePipe, FlagPipe, CurrencyPipe, 
-        FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, InfiniteListComponent
+        FormMessagesComponent, AppImgUploadComponent, AppImgLoadComponent, InfiniteListComponent, AppCropImgComponent
     ],
     exports: [
         CommonModule,FormsModule, ReactiveFormsModule, FlexLayoutModule, 
@@ -51,7 +51,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule,  MatStepperModule, MatTabsModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule, MatProgressBarModule, 
         MatTooltipModule, MatSnackBarModule,
-        InfiniteScrollModule, InfiniteListComponent
+        InfiniteListComponent, AppImgLoadComponent, AppCropImgComponent
     
     ]
 

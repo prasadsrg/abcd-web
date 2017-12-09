@@ -4,6 +4,7 @@ import { HttpReq, ErrorMessage } from './../common/interfaces';
 import { Util } from "../utils/util";
 import { Storage } from "../utils/storage";
 import { ApexService } from "./apex.service";
+import { Props} from "../../apex/common/props";
 import 'rxjs/add/operator/map'
 
 @Injectable()
@@ -62,17 +63,14 @@ export class ReportService {
     getJwt() {
         return Storage.getJWT();
     }
-    imgload(httpReq: HttpReq) {
-        this.showLoader(true);
-        let paramString = Util.GetParamString(httpReq.body ? httpReq.body.data : {});
-        let url = this.API_ENDPOINT + httpReq.url + paramString;
+    imgload(id) {
+        let url = Props.API_END_POINT + '/img/' + id;
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();;
             xhr.open("GET", url);
             xhr.setRequestHeader("Content-type", this.CONTENT_TYPE);
             xhr.onreadystatechange = (() => {
                 if (xhr.readyState == 0 || xhr.readyState == 4) {
-                    this.showLoader(false);
                     var data = JSON.parse(xhr.response);
                     if (data.status == 1) {
                         resolve(data.data);

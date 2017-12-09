@@ -3,19 +3,17 @@
         <h4>My Profile</h4>
     </article>
     <main class="padding">
-        <mat-tab-group>
-            <mat-tab>
-                <ng-template mat-tab-label>
-                    update profile
-                </ng-template>
+
                 <form [formGroup]="myForm" novalidate autocomplete='off'>
                     <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
                         <!--class="row center-xs parent-container padding"-->
                         <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="33.3333" fxFlex.md="25" fxFlex.lg="20" fxFlex.xl="16.6666" >
                             <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px">
-                                <img-load fxFlex="100" [img]="profile.img.src"></img-load>
-                                <h6 fxFlex="100"><b>{{profile.name}}</b></h6>
-                                <P fxFlex="100">{{profile.email}}</P>
+                                <img-load fxFlex="100" [img]="profile.img.id"></img-load>
+                                <h6 fxFlex="100" style="text-align:center;"><b>{{profile.name}}</b></h6>
+                                <P fxFlex="100" style="text-align:center;" class="btn-img">
+                                    <img-crop (outputEvent)="outputEvent($event)"></img-crop>
+                                </P>
                             </mat-card>
                         </div>
                         <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="66.6666" fxFlex.md="75" fxFlex.lg="80" fxFlex.xl="83.3333">
@@ -113,15 +111,7 @@
                     </div>
 
                 </form>
-            </mat-tab>
-            <mat-tab>
-                <ng-template mat-tab-label>
-                    company
-                </ng-template>
-                <h1>Company</h1>
-                <p>...</p>
-            </mat-tab>
-        </mat-tab-group>
+
     </main>
     <footer></footer>
 </aside>
