@@ -15,9 +15,9 @@ export class ProfileSearchComponent implements OnInit {
   nonactive:any = [];
   active:any =[];
   rolesList: any[] = [];
+  tabList:any = ['All users', 'Active', 'Non Active']
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     this.search();
-    this.dataLoadRoles();
    }
 
   ngOnInit() {
@@ -46,20 +46,14 @@ export class ProfileSearchComponent implements OnInit {
     })
     })
   }
-  dataLoadRoles() {
-    this.profileService.getRoles().subscribe((data: any) => {
-      this.rolesList = data;
-      if (this.rolesList.length > 0) {
-        this.tabChanged(this.rolesList[0]);
-      }
-    })
+  public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    console.log(tabChangeEvent.tab.textLabel);
+    if (tabChangeEvent.tab.textLabel == 'Non Active'){
+      this.dataList = this.nonactive;
+    } else if (tabChangeEvent.tab.textLabel == 'Active'){
+      this.dataList = this.active;
+    }else{
+      this.search();
+    }
   }
-  public tabChanged(item): void {
-    console.log(item)
-    // this.profileService.getProfilesData(item).subscribe((data: any) => {
-    // })
-  }
-  // editProfile(id:any){
-  //     this.profileService.navigateProfileEdit(id);
-  // }
 }
