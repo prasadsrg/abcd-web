@@ -1,7 +1,7 @@
 import { FormGroup} from '@angular/forms';
-import { AppFormGroup } from '../../shared/common/app.form';
+import { AppFormGroup } from '../../../shared/common/app.form';
 
-export class MenuAccessForm extends AppFormGroup {
+export class AppMenuAccessForm extends AppFormGroup {
     static init() {
         return this.getFormGroup();
     }
