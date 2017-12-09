@@ -8,13 +8,14 @@
       </button>
     </div>
   </article>
-  <main>
+  <main >
 
     <mat-tab-group (selectedTabChange)="tabChanged($event,index)">
 
       <mat-tab *ngFor="let item of rolesList; let i = index" label="{{item.name}}">
         <mat-list>
           <app-menu-access-list-edit [(inputData)]="menuList"></app-menu-access-list-edit>
+        
         </mat-list>
       </mat-tab>
     </mat-tab-group>

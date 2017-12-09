@@ -7,4 +7,6 @@
     background-color: #fff;
   }
   
-  
+  ::ng-deep .mat-list, .mat-nav-list, .mat-selection-list{
+    padding-top:0px;
+  }
