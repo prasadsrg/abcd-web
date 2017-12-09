@@ -1,4 +1,3 @@
-import { MenuAccessComponent } from './menuaccess/menuaccsess-search/menuaccess.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import  { SharedModule } from '../shared/shared.module';
@@ -11,7 +10,7 @@ import { ProfileService} from './profile/profile.service';
 import {MatTableModule} from '@angular/material/table';
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
-import { MenuAccessService } from './menuaccess/menuaccess.service';
+import { MenuAccessService } from './menu-access/menuaccess.service';
 import { Appdataservice } from './appdata/appdata.service';
 import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
@@ -27,16 +26,11 @@ import { BranchService } from './branches/branches.service';
 
 
 const routes: Routes = [
-  { path: 'profile/search', component: ProfileSearchComponent,
-    children: [
-      { path: '', component: ProfileSearchTableComponent },
-      { path: 'table', component: ProfileSearchTableComponent },
-    ]
-},
+  { path: 'profile/search', component: ProfileSearchComponent},
   { path: 'profile/edit', component: ProfileEditComponent },
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
-  { path: 'menuaccess', component: MenuAccessComponent },
+  { path: 'menuaccess', component: MenuAccessSearchComponent },
   { path: 'masterdata',  component: AppDataComponent},
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent},
@@ -59,7 +53,6 @@ const routes: Routes = [
     ProfileEditComponent,
     MyprofileComponent,
     SettingsComponent,
-    MenuAccessComponent,
     AppDataComponent,
     ConsumerComponent,
     ConsumerEditComponent,
