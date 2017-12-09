@@ -4,17 +4,28 @@
     </article>
     <main>
         <div fxLayout="row">
-            <infinite-list [items]="dataList" (outputEvent)="scrollList = $event" style="height: 100%">
                 <mat-tab-group (selectedTabChange)="tabChanged($event)">
-                    <mat-tab *ngFor="let item of tabList; let i = index;" label="{{item}}">
-                        <ng-template mat-tab-label style="background-color:lightblue !important">
-                            <mat-icon class="tab-icon">supervisor_account</mat-icon>{{item}}<span class="user-count">{{dataList.length}}</span>
-                        </ng-template>
-                        <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
-                    </mat-tab>
+                        <mat-tab label="allUsers">
+                                <ng-template mat-tab-label style="background-color:lightblue !important">
+                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>All Users<span class="user-count">{{allUsers.length}}</span>
+                                </ng-template>
+                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                        </mat-tab>
+                        <mat-tab label="activeUsers">
+                                <ng-template mat-tab-label style="background-color:lightblue !important">
+                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>Active Users<span class="user-count">{{activeList.length}}</span>
+                                </ng-template>
+                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                        </mat-tab>
+                        <mat-tab label="nonActiveUsers">
+                                <ng-template mat-tab-label style="background-color:lightblue !important">
+                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>Non Active Users<span class="user-count">{{nonActiveList.length}}</span>
+                                </ng-template>
+                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                        </mat-tab>
                 </mat-tab-group>
-                <!-- <mat-tab-group> -->
-            </infinite-list>
+
+
         </div>
     </main>
 </aside>

@@ -12,48 +12,40 @@ import { MatTabChangeEvent } from '@angular/material';
 export class ProfileSearchComponent implements OnInit {
   dataList: Profile[] = [];
   profile: Profile = new Profile();
-  nonactive:any = [];
-  active:any =[];
-  rolesList: any[] = [];
-  tabList:any = ['All users', 'Active', 'Non Active']
+  allUsers: any = [];
+  activeList : any = [];
+  nonActiveList:any=[];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
-    this.search();
+   
    }
 
   ngOnInit() {
+    this.search();
   };
 
   search() {
-    let activeList : any = [];
-    let nonactiveList:any=[];
+
 
     this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
-      this.dataList = data;
-      console.log(this.dataList);
-      this.dataList.forEach((eachObject)=>{
+      this.allUsers = data;
+      this.allUsers.forEach((eachObject)=>{
           if(eachObject.active == true) {
-            activeList.push(eachObject);
-            console.log(activeList);
-            this.active = activeList;
+            this.activeList.push(eachObject);
+          } else {
+            this.nonActiveList.push(eachObject);
           }
-      })
-      this.dataList.forEach((eachObject)=>{
-        if(eachObject.active == false) {
-          nonactiveList.push(eachObject);
-          console.log(nonactiveList);
-          this.nonactive = nonactiveList;
-        }
-    })
+      });
+      this.dataList = this.allUsers;
     })
   }
   public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     console.log(tabChangeEvent.tab.textLabel);
-    if (tabChangeEvent.tab.textLabel == 'Non Active'){
-      this.dataList = this.nonactive;
-    } else if (tabChangeEvent.tab.textLabel == 'Active'){
-      this.dataList = this.active;
-    }else{
-      this.search();
-    }
+      if(tabChangeEvent.tab.textLabel == 'allUsers'){
+        this.dataList = this.allUsers;
+      } else if(tabChangeEvent.tab.textLabel == 'activeUsers'){
+        this.dataList = this.activeList;
+      } else {
+        this.dataList = this.nonActiveList;
+      }
   }
 }
