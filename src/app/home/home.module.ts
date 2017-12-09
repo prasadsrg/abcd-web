@@ -18,6 +18,8 @@ import { ConsumerService } from './consumer/consumer.service';
 import { ConsumerEditComponent } from './consumer/consumer/consumer-edit/consumer-edit.component';
 import { AppDataComponent } from './appdata/appdata/appdata-search/appdata.component';
 import { AppdataEditComponent } from './appdata/appdata/appdata-edit/appdata.edit.component';
+import { MenuAccessListEditComponent } from './menu-access/menu-access-list-edit/menu-access-list-edit.component';
+import { MenuAccessSearchComponent } from './menu-access/menu-access-search/menu-access-search.component';
 
 
 
@@ -51,7 +53,9 @@ const routes: Routes = [
     AppDataComponent,
     ConsumerComponent,
     ConsumerEditComponent,
-    AppdataEditComponent
+    AppdataEditComponent,
+    MenuAccessListEditComponent,
+    MenuAccessSearchComponent
   ],
   exports: [RouterModule],
   providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService]
