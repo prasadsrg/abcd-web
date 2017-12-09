@@ -12,9 +12,8 @@ import { Profile } from '../../../apex/entities/profile';
 export class ProfileSearchComponent implements OnInit {
   dataList: Profile[] = [];
   profile: Profile = new Profile();
-  admin:any = [];
-  superadmin:any =[];
-  user:any = [];
+  nonactive:any = [];
+  active:any =[];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     this.search();
    }
@@ -23,33 +22,26 @@ export class ProfileSearchComponent implements OnInit {
   };
 
   search() {
-    let superUserList : any = [];
-    let adminList:any=[];
-    let userList:any=[];
+    let activeList : any = [];
+    let nonactiveList:any=[];
+
     this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
       this.dataList = data;
       console.log(this.dataList);
       this.dataList.forEach((eachObject)=>{
-          if(eachObject.role.toLowerCase() === 'superadmin') {
-            superUserList.push(eachObject);
-            console.log(superUserList);
-            this.superadmin = superUserList;
+          if(eachObject.active == true) {
+            activeList.push(eachObject);
+            console.log(activeList);
+            this.active = activeList;
           }
       })
       this.dataList.forEach((eachObject)=>{
-        if(eachObject.role.toLowerCase() === 'admin') {
-          adminList.push(eachObject);
-          console.log(adminList);
-          this.admin = adminList;
+        if(eachObject.active == false) {
+          nonactiveList.push(eachObject);
+          console.log(nonactiveList);
+          this.nonactive = nonactiveList;
         }
     })
-    this.dataList.forEach((eachObject)=>{
-      if(eachObject.role.toLowerCase() === 'user') {
-        userList.push(eachObject);
-        console.log(userList);
-        this.user = userList;
-      }
-  })
     })
   }
   editProfile(id:any){

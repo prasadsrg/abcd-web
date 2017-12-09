@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AnimationService } from '../../../../shared/service/animation.service';
 import { ApexService } from './../../../../shared/service/apex.service';
 import { AppData } from '../../../../apex/entities/appdata';
-import { MasterService } from '../../masterdata.service';
-import { MasterdataForm } from '../masterdata.form';
+import { Appdataservice } from '../../appdata.service';
+import { AppdataForm } from '../appdata.form';
 
 @Component({
   selector: 'app-masterdata-edit',
@@ -12,11 +12,11 @@ import { MasterdataForm } from '../masterdata.form';
 })
 export class MasterdataEditComponent implements OnInit {
   appdata: AppData = new AppData();
-   myForm: any = MasterdataForm.init();
+   myForm: any = AppdataForm.init();
    paramId: any;
-  constructor(private masterService: MasterService, private apexservice: ApexService) {
-     MasterdataForm.edit(this.myForm);
-    this.paramId = this.masterService.getParamId();
+  constructor(private appdataservice: Appdataservice, private apexservice: ApexService) {
+    AppdataForm.edit(this.myForm);
+    this.paramId = this.appdataservice.getParamId();
     if(this.paramId != null) {
       this.entity(this.paramId);
     }
@@ -26,15 +26,15 @@ export class MasterdataEditComponent implements OnInit {
   ngOnInit() {
   }
   entity(id: string) {
-    this.masterService.getMasterdata(id).subscribe((data: AppData) => {
+    this.appdataservice.getMasterdata(id).subscribe((data: AppData) => {
       this.appdata = data;
     })
   }
   saveEntity() {
-    this.masterService.saveMasterdata(this.appdata).subscribe( (data) => {
+    this.appdataservice.saveMasterdata(this.appdata).subscribe( (data) => {
       console.log(data);
       //this.apexservice.showMessage(data.message);
-      this.masterService.navigateMaster();
+      this.appdataservice.navigateMaster();
     });
   }
   // init() {
