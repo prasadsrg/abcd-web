@@ -27,14 +27,13 @@
                                                     <form-messages [control]="myForm.controls.masterdata_code "> </form-messages>
                                                 </mat-hint>
                                             </mat-form-field>
-                                            <mat-checkbox  fxLayoutAlign="start center" fxFlex="100" class="margin8" [(ngModel)]="appdata.active" [ngModelOptions]="{standalone: true}">Check me!</mat-checkbox>
+                                            <mat-checkbox  fxLayoutAlign="start center" fxFlex="100" class="margin8" [(ngModel)]="appdata.active" [ngModelOptions]="{standalone: true}" value="end">Active</mat-checkbox>
                                         </div>
                                        
                                     </div>
-                                    <div fxLayout="row wrap " fxLayoutAlign="center center ">
-                                            <div fxFlex="100 "  fxLayoutAlign="center center ">
+                                    <div fxLayout="row wrap " fxLayoutAlign="end end ">
+                                            
                                                 <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">Save Details</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -35,7 +35,6 @@ const routes: Routes = [
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessComponent },
   { path: 'masterdata',  component: AppDataComponent},
-  { path: 'masterdata-edit',  component: AppdataEditComponent},
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent}
 
