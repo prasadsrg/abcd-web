@@ -46,18 +46,14 @@ export class ProfileSearchComponent implements OnInit {
     })
     })
   }
-  // dataLoadRoles() {
-  //   this.profileService.getRoles().subscribe((data: any) => {
-  //     this.rolesList = data;
-  //     if (this.rolesList.length > 0) {
-  //       this.tabChanged(this.rolesList[0]);
-  //     }
-  //   })
-  // }
-  // public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
-  //   this.profileService.getProfilesList(tabChangeEvent.tab.textLabel).subscribe((data: any) => {
-  //     this.dataList = data;
-  //     console.log(this.dataList);
-  //   })
-  // }
+  public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
+    console.log(tabChangeEvent.tab.textLabel);
+    if (tabChangeEvent.tab.textLabel == 'Non Active'){
+      this.dataList = this.nonactive;
+    } else if (tabChangeEvent.tab.textLabel == 'Active'){
+      this.dataList = this.active;
+    }else{
+      this.search();
+    }
+  }
 }
