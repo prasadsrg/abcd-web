@@ -12,11 +12,9 @@ export class Branch {
     address: any;
     city: string;
     state: string;
-    country: string = 'India';
+    country: string;
     zipcode: number;
-    isMain: boolean = false;
+    isMain: boolean = true;
     active: boolean = true;
     grpcode: string;
-    updatedBy: string = 'system';
-    updatedOn: Date;
 }

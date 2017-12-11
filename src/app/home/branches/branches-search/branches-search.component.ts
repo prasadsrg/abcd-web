@@ -32,15 +32,11 @@ export class BranchSearchComponent implements OnInit {
      console.log(this.branchDataList)
     })
   }
-  editBranch(item: Branch) {
-    this.showSide = true;
-    if (!item) {
-      item = new Branch();
-    }else {
-      this.branch = Object.assign({}, item);
+  editBranch(item:any){
+      this.branchService.navigateBranchEdit(item.id);
     }
-  }
-  onClose(action: any) {
-    this.showSide = false;
+
+  addBranch() {
+this.branchService.navigateaddBranch();
   }
 }
