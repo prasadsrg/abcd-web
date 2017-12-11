@@ -2,7 +2,7 @@
     <article>
          <div fxLayout="row" fxLayoutAlign="space-between center" >
                  <h4 class="padding-side">Branch</h4>
-                  <button mat-mini-fab (click)="editBranch(null)" class="fab-placeholder">
+                  <button mat-mini-fab (click)="addBranch()" class="fab-placeholder">
                       <mat-icon style="color:#fff">add</mat-icon>
                   </button>
                   </div>
@@ -27,8 +27,10 @@
            <tbody>
                <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editBranch(item)">
                    <td data-label="Name">{{item.name}}</td>
-                   <td data-label="Phone">{{item.phone}}</td>
-                   <td data-label="City">{{}item.city}</td>
+                   <td data-label="Phone">{{item.mobile}}</td>
+                   <td data-label="Email">{{item.email}}</td>
+                   <td data-label="City">{{item.city}}</td>
+                   <td data-label="State">{{item.state}}</td>
                    <td data-label="Country">{{item.country}}</td>
                    <td data-label="Active">{{item.active}}</td>
                </tr>
@@ -38,6 +40,3 @@
  
     </main>
    </aside>
-   <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
-     <app-branches-edit [branch]="branch" (close)="onClose('reload')"></app-branches-edit>
-   </mat-sidenav>

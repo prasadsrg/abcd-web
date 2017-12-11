@@ -2,10 +2,8 @@ import { Component, OnInit , Input , EventEmitter , Output, SimpleChanges} from 
 import { AnimationService } from '../../../shared/service/animation.service';
 import { ApexService } from './../../../shared/service/apex.service';
 import { BranchesForm } from '../branches.form';
-
-import { BranchService } from './../branches.service';
-
 import { Branch } from '../../../apex/entities/branch';
+import { BranchService } from '../branches.service';
 
 
 @Component({
@@ -18,46 +16,43 @@ export class BranchesEditComponent implements OnInit {
   myForm: any = BranchesForm.init();
   paramId: any;
   lat: number;
-  lng:number;
+  lng: number;
   items:{};
+  branch: Branch = new Branch();
+  map: any;
   
-  @Input() branch : Branch;
-  @Output() close: EventEmitter<any> =  new EventEmitter()
-  constructor(private branchService: BranchService, private apexservice: ApexService) {
+  constructor(private branchService: BranchService, private apexservice: ApexService ) {
     BranchesForm.edit(this.myForm);
+    this.mapData();
     this.paramId = this.branchService.getParamId();
-    if(this.paramId != null){
+    if(this.paramId != null) {
       this.entity(this.paramId);
     }
-   
-       this.lat = 51.678418;
-       this.lng = 7.809007;
+       this.lat = 17.3850;
+       this.lng = 78.4867;
 
    }
 
   ngOnInit() {
-  }  
-  ngOnChanges(changes: SimpleChanges) {
-          if(changes['branch']) {
-            this.branch = changes['branch'].currentValue;
-            console.log(this.branch);
-          }
-        }
+
+  }
 
 
   entity(id: string) {
     this.branchService.getBranchesData(id).subscribe((data: Branch) => {
       this.branch = data;
+    console.log(this.branch);
     })
   }
   saveEntity() {
     this.branchService.saveBranch(this.branch).subscribe( (data) => {
       console.log(data);
-    //   this.branchService.navigateConsumer();
+      this.branchService.navigateBranch();
     });
-    this.onClose();
   }
-  onClose() {
-    this.close.emit();
+  mapData(){
+    this.branchService.map()
+      .subscribe(data => this.map = data);
+      console.log(this.map);
   }
 }

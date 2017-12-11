@@ -22,6 +22,7 @@ import { MenuAccessSearchComponent } from './menu-access/menu-access-search/menu
 import { BranchesEditComponent } from './branches/branches-edit/branches-edit.component';
 import { BranchSearchComponent} from './branches/branches-search/branches-search.component';
 import { BranchService } from './branches/branches.service';
+import { BranchAddComponent } from './branches/branches-add/branches-add.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent},
   { path: 'branch',  component: BranchSearchComponent},
-  { path: 'branch-edit', component:BranchesEditComponent}
+  { path: 'branch-edit', component: BranchesEditComponent},
+  { path: 'branch-add', component: BranchAddComponent}
 
 
 ];
@@ -60,9 +62,10 @@ const routes: Routes = [
     MenuAccessListEditComponent,
     MenuAccessSearchComponent,
     BranchesEditComponent,
-    BranchSearchComponent
+    BranchSearchComponent,
+    BranchAddComponent
   ],
   exports: [RouterModule],
-  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService ,BranchService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService , BranchService]
 })
 export class HomeModule { }
