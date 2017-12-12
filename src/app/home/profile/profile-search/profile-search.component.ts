@@ -48,4 +48,9 @@ export class ProfileSearchComponent implements OnInit {
         this.dataList = this.nonActiveList;
       }
   }
+  add(item) {
+    if (!item) {
+      item = new Profile();
+  this.profileService.navigateProfileEdit(item.id);
+  }
 }

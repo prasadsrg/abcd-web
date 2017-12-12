@@ -8,7 +8,7 @@ export class ConsumerForm extends AppFormGroup {
     static edit(group: FormGroup) {
 
         group.addControl('consumer_name', this.getController(null, this.TYPE_DATA, null, 50));
-        group.addControl('consumer_mobile', this.getController(null, this.TYPE_DATA, null, 50));
+        group.addControl('consumer_mobile', this.getController(null, this.TYPE_DATA, null, 10));
         group.addControl('consumer_email', this.getController(null, this.TYPE_EMAIL, null, 50));
         //group.addControl('consumer_password', this.getController(null, this.TYPE_DATA, null, 50));
         group.addControl('consumer_aadhar', this.getController(null, this.TYPE_DATA, null, 50));

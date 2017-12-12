@@ -15,8 +15,10 @@ export class ProfileEditComponent implements OnInit {
   profile: Profile = new Profile();
   myForm: any = ProfileForm.init();
   paramId: any;
+  branches:any;
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     ProfileForm.edit(this.myForm);
+    this.getBranchesload();
     this.paramId = this.profileService.getParamId();
     if(this.paramId != null) {
       this.entity(this.paramId);
@@ -38,9 +40,15 @@ export class ProfileEditComponent implements OnInit {
       //this.apexservice.showMessage(data.message);
     });
   }
+  getBranchesload() {
+    this.profileService.getBranches().subscribe( (data) => {
+      this.branches = data;
+      console.log(data);
+  }
   // init() {
 
   //   this.auth = new User();
   // }
 
+}
 }

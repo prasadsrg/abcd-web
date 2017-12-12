@@ -32,8 +32,9 @@ export class ProfileSearchTableComponent {
   editProfile(item) {
     if (!item) {
       item = new Profile();
-  this.profileService.navigateProfileEdit(this.item);
+  this.profileService.navigateProfileEdit(item.id);
   }else {
-    this.profileService.navigateProfileEdit(item);
+    this.profileService.navigateProfileEdit(item.id);
   }
+
 }}

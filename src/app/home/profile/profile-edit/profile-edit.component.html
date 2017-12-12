@@ -1,8 +1,8 @@
 <aside>
         <article class="padding">
                 <div fxLayout="row" fxLayoutAlign="space-between center" >
-            <h4>Consumer</h4>
-             <button mat-mini-fab (click)="saveEntity()" class="fab-placeholder">
+            <h4>Profile</h4>
+             <button mat-mini-fab (click)="saveEntity()" class="fab-placeholder" [disabled]="!myForm.valid">
                  <mat-icon style="color:#fff">save</mat-icon>
              </button>
              </div>
@@ -59,7 +59,6 @@
             </div>
 
             <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
-                <!-- <div fxFlex.xs="0" fxFlex.sm="0" fxFlex.md="30" fxFlex.lg="20" fxFlex.xl="20"></div> -->
                 <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
                     <mat-card class="margin8">
                         <mat-card-content>
@@ -103,13 +102,16 @@
                                             <form-messages [control]="myForm.controls.profile_aadhar"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
+                                <mat-form-field fxFlex="30">
+                                    <mat-select placeholder="Branch"  name="branch" [(ngModel)]="profile.branch.id"  [ngModelOptions]="{standalone: true}">
+                                            <mat-option *ngFor="let branch of branches" [value]="branch.id" >
+                                              {{ branch.name }}
+                                            </mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
                                 </div>
                             </div>
-                            <mat-card-actions fxLayout="row wrap " fxLayoutAlign="center center ">
-                                <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                    <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">Save Details</button>
-                                </div>
-                            </mat-card-actions>
+                           
                         </mat-card-content>
                     </mat-card>
                 </div>

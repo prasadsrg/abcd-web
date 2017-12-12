@@ -39,10 +39,10 @@ export class ProfileService {
     this.url = this.host+"/profile/";
     return this.http.put(this.url, {data: data});
   }
-  getProfilesList(data: any){
+  getBranches() {
     this.appService.showLoader(true);
-    this.url = this.host+"/profile/";
-    return this.http.post(this.url, {data: data});
+    this.url = this.host+"/dataload/branchs";
+    return this.http.get(this.url);
   }
   navigateProfileEdit(id:any){
          this.appService.navigate(Props.PROFILE_EDIT_PAGE, [{id: id}]);
