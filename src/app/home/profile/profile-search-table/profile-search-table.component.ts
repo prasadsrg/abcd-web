@@ -10,22 +10,30 @@ import { Profile } from '../../../apex/entities/profile';
   templateUrl: './profile-search-table.component.html',
   styleUrls: ['./profile-search-table.component.scss']
 })
-export class ProfileSearchTableComponent implements OnChanges {
+export class ProfileSearchTableComponent {
   inputData : any
-  profile: Profile = new Profile();
+  profile: any;
   admin: any = [];
   superadmin: any = [];
   user: any = [];
+  item: any
   @Input() dataList: Profile[];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
+    this.init()
   }
 
-  ngOnChanges(changes: { [key: string]: SimpleChange }) {
-    if (changes.hasOwnProperty('inputData')) {
-      this.dataList = this.inputData;
-      console.log(this.dataList)
-    }
-  }
   ngOnInit() {
+
   };
-}
+ 
+  init() {
+    this.profile = new Profile();
+  }
+  editProfile(item) {
+    if (!item) {
+      item = new Profile();
+  this.profileService.navigateProfileEdit(this.item);
+  }else {
+    this.profileService.navigateProfileEdit(item);
+  }
+}}

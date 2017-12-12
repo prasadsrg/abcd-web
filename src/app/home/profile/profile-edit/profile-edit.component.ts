@@ -18,7 +18,9 @@ export class ProfileEditComponent implements OnInit {
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     ProfileForm.edit(this.myForm);
     this.paramId = this.profileService.getParamId();
-    this.entity(this.paramId);
+    if(this.paramId != null) {
+      this.entity(this.paramId);
+    }
     //this.init();
    }
 
@@ -27,6 +29,7 @@ export class ProfileEditComponent implements OnInit {
   entity(id: string) {
     this.profileService.getProfile(id).subscribe((data: Profile) => {
       this.profile = data;
+      console.log(this.profile);
     })
   }
   saveEntity() {

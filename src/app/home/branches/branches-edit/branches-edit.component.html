@@ -2,14 +2,15 @@
     <article>
             <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
                     <h4 class="padding" >MasterData Details</h4>
-                    <button mat-mini-fab class="fab-placeholder"  [disabled]="!myForm.valid" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">
+                    <button mat-mini-fab class="fab-placeholder"  [disabled]="!myForm.valid" (click)="saveEntity()" color="primary">
                         <mat-icon style="color:#fff">save</mat-icon>
                     </button>
             </div>
             
         </article>
     <main class="padding">
-        <form [formGroup]="myForm" novalidate autocomplete='off'>
+        <div fxLayout="row wrap" fxLayoutAlign="center center" class=" padding">
+        <form [formGroup]="myForm" novalidate autocomplete='off' fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
             <div fxLayout="row wrap" fxLayoutAlign="center center" class=" padding">
                 <div fxFlex="100">
                     <mat-card class="margin8">
@@ -41,13 +42,19 @@
                                             <form-messages [control]="myForm.controls.branch_pan "> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
+                                    <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                        <input matInput type="text" placeholder="Tan " required [formControl]="myForm.controls.branch_tan" [(ngModel)]="branch.tan">
+                                        <mat-hint>
+                                            <form-messages [control]="myForm.controls.branch_tan "> </form-messages>
+                                        </mat-hint>
+                                    </mat-form-field>
                                     <mat-checkbox fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" fxLayoutAlign="start start" [(ngModel)]="branch.active" [ngModelOptions]="{standalone: true}">Status</mat-checkbox>
                                 </div>
 
                         </mat-card-content>
                     </mat-card>
                 </div>
-            </div>
+           
 
             <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
                 <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100" fxFlex.xl="100">
@@ -101,8 +108,13 @@
                     </mat-card>
                 </div>
             </div>
+        </div>
         </form>
-        <app-map [lat]="lat" [lng]="lng" (click)="mapData()"></app-map>
+        <mat-card fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+                    <app-map [lat]="lat" [lng]="lng" (click)="mapData()" zoom="50"></app-map>
+        </mat-card>
+       
+    </div>
     </main>
      
            

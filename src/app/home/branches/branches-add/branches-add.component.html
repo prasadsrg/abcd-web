@@ -41,6 +41,12 @@
                                             <form-messages [control]="myForm.controls.branch_pan "> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
+                                    <mat-form-field fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" class="margin8">
+                                        <input matInput type="text" placeholder="Tan " required [formControl]="myForm.controls.branch_tan" [(ngModel)]="branch.tan">
+                                        <mat-hint>
+                                            <form-messages [control]="myForm.controls.branch_tan "> </form-messages>
+                                        </mat-hint>
+                                    </mat-form-field>
                                     <mat-checkbox fxFlex="30" fxFlex.xs="100" fxFlex.sm="45" fxLayoutAlign="start start" [(ngModel)]="branch.active" [ngModelOptions]="{standalone: true}">Status</mat-checkbox>
                                 </div>
 

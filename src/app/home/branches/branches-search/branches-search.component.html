@@ -8,35 +8,48 @@
                   </div>
     </article>
  
-    <main class="padding">
-       <infinite-list [items]="branchDataList" (outputEvent)="scrollList = $event" style="height: 100%">
-           
-       <table >
-           <thead>
-               <tr>
-                   <th scope="col">Name</th>
-                   <th scope="col">Phone</th>
-                   <th scope="col">Email</th>
-                   <th scope="col">City</th>
-                   <th scope="col">State</th>
-                   <th scope="col">Country</th>
-                   <th scope="col">Active</th>
-             
-               </tr>
-           </thead>
-           <tbody>
-               <tr *ngFor="let item of scrollList" style="cursor:pointer" (click)="editBranch(item)">
-                   <td data-label="Name">{{item.name}}</td>
-                   <td data-label="Phone">{{item.mobile}}</td>
-                   <td data-label="Email">{{item.email}}</td>
-                   <td data-label="City">{{item.city}}</td>
-                   <td data-label="State">{{item.state}}</td>
-                   <td data-label="Country">{{item.country}}</td>
-                   <td data-label="Active">{{item.active}}</td>
-               </tr>
-           </tbody>
-       </table>
-       </infinite-list>
- 
+    <main class="padding">          
+       <div  fxLayout="row wrap" fxLayoutAlign="start start">
+            <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.3333" fxFlex.lg="25" fxFlex.xl="20" *ngFor="let item of branchDataList" class="padding10">
+            <mat-card (click)="editBranch(item)" style="cursor:pointer">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between start" >
+                        <div >
+                                <h6 style="color:#5e42b0" >{{item.name}}</h6>
+                        </div>
+                        <div>
+                                <mat-checkbox [(ngModel)]="branch.active" readonly>Active</mat-checkbox>
+                        </div>
+                             
+                    </div>  
+                    <mat-card-content >
+                            <div fxLayout="column">
+                                    <div class="hpair">
+                                        <span>Email </span>
+                                        <span>{{item.email}}</span>
+                                    </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                            <div class="hpair">
+                                                <span>Mobile </span>
+                                                <span>{{item.mobile}}</span>
+                                            </div>
+                                            </div>
+                            <div fxLayout="column">
+                                    <div class="hpair">
+                                        <span>City </span>
+                                        <span>{{item.city}}</span>
+                                    </div>
+                                    </div>
+                                <div fxLayout="column">
+                                    <div class="hpair">
+                                        <span>Country </span>
+                                        <span>{{item.country}}</span>
+                                    </div>
+                                    </div>
+
+                    </mat-card-content>
+            </mat-card>
+       </div>
+       </div>
     </main>
    </aside>

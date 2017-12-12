@@ -45,6 +45,6 @@ export class ProfileService {
     return this.http.post(this.url, {data: data});
   }
   navigateProfileEdit(id:any){
-         this.appService.navigate(Props.PROFILE_EDIT_PAGE, [{id:id}]);
+         this.appService.navigate(Props.PROFILE_EDIT_PAGE, [{id: id}]);
      }
 }
