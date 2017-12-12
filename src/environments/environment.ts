@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  API_END_POINT: 'http://apnatankerrsc.yebbare.com/api'
+  API_END_POINT: 'http://abcd-prasadsrg.c9users.io/api'
 };

@@ -12,9 +12,9 @@ export class SettingsComponent implements OnInit {
   userId:any;
   branches:any;
   branchId:any;
-  elem:any;
-  branchstatus:any;
-  isActive:boolean;
+  brnchid:any;
+  selectedRow : Number;
+  
 
   branchData = {
       id:null,
@@ -29,32 +29,28 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {
   }
-  branchValue(value){
-    this.userId = Storage.getSessionUser().id;
-    this.branchData.id = this.userId
-    this.branchData.branch.id = value;
-    console.log(this.branchData); 
-  }
-  saveBranch(){
-    this.settingsservice.saveBranch(this.branchData).subscribe((data)=>{
-      // console.log(data)
-    })
-  }
+  // branchValue(value){
+  //   this.userId = Storage.getSessionUser().id;
+  //   this.branchData.id = this.userId
+  //   this.branchData.branch.id = value;
+  //   // console.log(this.branchData); 
+  // }
+ 
   branchesDataLoad(){
     this.settingsservice.getBranches().subscribe((data)=>{
-     this.branches = data
-     console.log(this.branches)
-    this.branchId = Storage.getBranch();
-    console.log(this.branchId)    
-     this.branches.forEach(element => {
-      this.elem = element.id;
-      this.branchstatus = this.branchId.id;
-      
-      this.isActive = this.elem == this.branchstatus;
-      console.log(this.isActive)
-      
-     });
-      
+     this.branches = data;
+    //  console.log(this.branches)
+     this.branchId = Storage.getBranch();
+     this.brnchid = this.branchId.id; 
+
+     
     })
+  }
+  setBranch(index,item){
+    Storage.setBranch(item);
+    // console.log(this.branchId)
+    this.selectedRow = index
+    this.branchesDataLoad();
+   
   }
 }
