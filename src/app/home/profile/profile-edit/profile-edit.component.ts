@@ -44,11 +44,11 @@ export class ProfileEditComponent implements OnInit {
     this.profileService.getBranches().subscribe( (data) => {
       this.branches = data;
       console.log(data);
+    });
+    // init() {
+
+    //   this.auth = new User();
+    // }
+
   }
-  // init() {
-
-  //   this.auth = new User();
-  // }
-
-}
 }
