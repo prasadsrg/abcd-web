@@ -13,7 +13,7 @@ export class BranchSearchComponent implements OnInit {
     branch: Branch = new Branch();
     branchDataList:any;
     showSide: boolean = false;
-  
+    isMain:boolean;
   constructor(private branchService: BranchService) {
     this.searchBranch();
    
@@ -30,6 +30,7 @@ export class BranchSearchComponent implements OnInit {
     this.branchService.searchBranch(this.branch).subscribe( data => {
      this.branchDataList = data;
      console.log(this.branchDataList)
+     
     })
   }
   editBranch(item:any){

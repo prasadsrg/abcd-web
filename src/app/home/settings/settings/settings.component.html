@@ -2,19 +2,14 @@
   <article class="padding">
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <h4>Settings</h4>
-      <button mat-mini-fab (click)="saveBranch(null)" class="fab-placeholder">
-        <mat-icon style="color:#fff">save</mat-icon>
-      </button>
     </div>
   </article>
   <main class="padding">
-      <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25"  style="padding:4px" *ngFor="let branch of branches" >
-        <mat-card class="course-card" [ngClass]="{'active-branch':isActive}">
-       
+      <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25"  style="padding:4px" *ngFor="let branch of branches; let i = index" >
+        <mat-card class="course-card" [ngClass]="{'active-branch':branch.id === brnchid}" style="cursor:pointer"  (click)="setBranch(i,branch)" [class.active-branchs]="i == selectedRow">
             <div fxLayout="row" fxLayoutAlign="space-between center">
-                <div style="cursor:pointer">{{branch.name}}</div> 
-                {{elem == branchstatus}}          
-            </div>   
+                <div >{{branch.name}}</div>  
+            </div>
         </mat-card>
     </div>
   </main>
