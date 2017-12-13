@@ -16,9 +16,11 @@ import { Img } from '../../../apex/entities/img';
 export class MyprofileComponent implements OnInit {
   profile: Profile = new Profile();
   myForm: any = MyProfileForm.init();
+  branches: any;
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
     MyProfileForm.edit(this.myForm);
     this.entity(this.profileService.getCurrentProfileId());
+    this.getBranchesload();
    }
 
   ngOnInit() {
@@ -43,5 +45,16 @@ export class MyprofileComponent implements OnInit {
   }
   outputEvent($event: any){
     this.profile.img.src = $event;
+  }
+  getBranchesload() {
+    this.profileService.getBranches().subscribe( (data) => {
+      this.branches = data;
+      console.log(data);
+    });
+    // init() {
+
+    //   this.auth = new User();
+    // }
+
   }
 }
