@@ -1,0 +1,30 @@
+<aside>
+    <article>
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
+            <h4 class="padding">Filter</h4>
+            <button mat-mini-fab (click)="onClose()" class="fab-placeholder">
+                    <mat-icon style="color:#fff">close</mat-icon>
+                </button>
+        </div>
+
+    </article>
+    <main class="padding">
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="padding">
+            <div fxFlex="100">
+                <mat-selection-list #shoes>
+                    <mat-list-option *ngFor="let item of rolesList">
+                        {{item.name}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="padding">
+            <div class="reset" fxFlex="50">
+                <button mat-raised-button class="button-container" color="warn" (click)="reset()">Reset</button>
+            </div>
+            <div class="apply" fxFlex="50">
+                <button mat-raised-button class="button-container" color="primary" (click)="applyFilter()">Apply</button>
+            </div>
+        </div>
+    </main>
+</aside>

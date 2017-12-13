@@ -1,0 +1,17 @@
+.filter-actions {
+    border: 1px solid black
+}
+
+.button-container {
+    width: 70%;
+    border-radius: 100px !important;
+    background-color: #a3b3c2 !important;
+    box-shadow: 0 6px 8px 0 rgba(212, 26, 48, 0.5) !important;
+    padding: 5px !important;
+    span {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+    }
+}
