@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Props } from '../../apex/common/props';
 import { AppService } from '../../shared/service/app.service';
 import { HttpClient } from '@angular/common/http';
-import { Storage } from '../../shared/utils/storage';
-import { ApexService } from '../../shared/service/apex.service';
+
 
 @Injectable()
-export class Appdataservice {
+export class AppdataService {
     private host = Props.API_END_POINT;
     private url: string = '';
 
@@ -36,5 +35,9 @@ export class Appdataservice {
     }
     navigateMaster(){
       this.appService.navigate(Props.MASTER_PAGE, []);
+    }
+    getCodes(){
+      this.url = this.host+"/dataload/codes";
+      return this.http.get(this.url);
     }
 }

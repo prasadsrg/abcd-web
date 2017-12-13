@@ -13,7 +13,7 @@ export class AppDataEditComponent {
 
   @Input()
   inputData: any;
-  appDataList: any;
+  appDataList: any[] = [];
   myForms: any[] = [];
   appData:AppData = new AppData();
   panelOpenState: boolean = false;
@@ -33,9 +33,12 @@ export class AppDataEditComponent {
       this.formsList();
   }
   private formsList() {
-      this.appDataList.forEach( item => {
-          this.myForms.push(this.getMyForm());
-      });
+    if(this.appDataList){
+        this.appDataList.forEach( item => {
+            this.myForms.push(this.getMyForm());
+        });
+    }
+
   }
   private getMyForm() {
       let myForm = AppdataForm.init();

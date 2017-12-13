@@ -1,0 +1,23 @@
+<aside>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <h4 class="padding-side">Masterdata</h4>
+    </div>
+  </article>
+
+  <main class="padding">
+
+    <ng-template ngFor let-item [ngForOf]="codeList" let-last=last let-index=index>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{item.name}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-app-data-list-form [inputdata] = "item.id"></app-app-data-list-form>
+        </mat-expansion-panel>    
+      </mat-accordion>
+      </ng-template>
+  </main>
+</aside>
