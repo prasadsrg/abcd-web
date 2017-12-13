@@ -14,6 +14,7 @@ export class BranchesForm extends AppFormGroup {
         //group.addControl('branch_password', this.getController(null, this.TYPE_DATA, null, 50));
         group.addControl('branch_pan', this.getController(null, this.TYPE_DATA, null, 11));
         group.addControl('branch_tan', this.getController(null, this.TYPE_DATA, null, 11));
+        group.addControl('branch_gstin', this.getController(null, this.TYPE_DATA, null, 11));
         group.addControl('branch_lat', this.getController(null, this.TYPE_DECIMAL, null, 50));
         group.addControl('branch_lng', this.getController(null, this.TYPE_DECIMAL, null, 50));
         group.addControl('branch_city', this.getController(null, this.TYPE_DATA, null, 50));
