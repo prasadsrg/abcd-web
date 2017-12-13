@@ -101,7 +101,7 @@ export class MenuComponent implements OnInit {
       {
         "id": 'Item12',
         "name": "Master Data",
-        "link": "/masterdata",
+        "link": "/appdata",
         "icon": "package_status"
       },
       {
