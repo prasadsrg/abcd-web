@@ -13,11 +13,11 @@ export class ProfileSearchComponent implements OnInit {
   dataList: Profile[] = [];
   profile: Profile = new Profile();
   allUsers: any = [];
-  activeList : any = [];
-  nonActiveList:any=[];
+  activeList: any = [];
+  nonActiveList: any = [];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
-   
-   }
+
+  }
 
   ngOnInit() {
     this.search();
@@ -28,29 +28,30 @@ export class ProfileSearchComponent implements OnInit {
 
     this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
       this.allUsers = data;
-      this.allUsers.forEach((eachObject)=>{
-          if(eachObject.active == true) {
-            this.activeList.push(eachObject);
-          } else {
-            this.nonActiveList.push(eachObject);
-          }
+      this.allUsers.forEach((eachObject) => {
+        if (eachObject.active == true) {
+          this.activeList.push(eachObject);
+        } else {
+          this.nonActiveList.push(eachObject);
+        }
       });
       this.dataList = this.allUsers;
     })
   }
   public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     console.log(tabChangeEvent.tab.textLabel);
-      if(tabChangeEvent.tab.textLabel == 'allUsers'){
-        this.dataList = this.allUsers;
-      } else if(tabChangeEvent.tab.textLabel == 'activeUsers'){
-        this.dataList = this.activeList;
-      } else {
-        this.dataList = this.nonActiveList;
-      }
+    if (tabChangeEvent.tab.textLabel == 'allUsers') {
+      this.dataList = this.allUsers;
+    } else if (tabChangeEvent.tab.textLabel == 'activeUsers') {
+      this.dataList = this.activeList;
+    } else {
+      this.dataList = this.nonActiveList;
+    }
   }
   add(item) {
     if (!item) {
       item = new Profile();
-  this.profileService.navigateProfileEdit(item.id);
+      this.profileService.navigateProfileEdit(item.id);
+    }
   }
 }
