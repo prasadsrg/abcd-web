@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessSearchComponent },
-  { path: 'masterdata',  component: AppDataComponent},
+  { path: 'appdata',  component: AppDataComponent},
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent},
   { path: 'branch',  component: BranchSearchComponent},

@@ -91,7 +91,7 @@ export class MenuComponent implements OnInit {
         "name": "Menu Access",
         "link": "/menuaccess",
         "icon": "menu_access"
-      }
+      },
       {
         "id": 'Item7',
         "name": "User Profiles",
@@ -101,7 +101,7 @@ export class MenuComponent implements OnInit {
       {
         "id": 'Item12',
         "name": "Master Data",
-        "link": "/masterdata",
+        "link": "/appdata",
         "icon": "package_status"
       },
       {
