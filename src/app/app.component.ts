@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   }  
   loadIcons(){
         this._iconRegistry.addSvgIconSetInNamespace('core',
-          this.apexService.bypassURL('/assets/icons/app-icons.svg'));    
+          this.apexService.bypassURL('/assets/icons/app-icons.svg'));
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {

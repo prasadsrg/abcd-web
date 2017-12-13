@@ -56,7 +56,7 @@ export class ProfileSearchComponent implements OnInit {
       this.profileService.navigateProfileEdit(item.id);
     }
   }
-  filter(){
+  filters(){
     this.showSide = true;
   }
   onClose(action: any) {

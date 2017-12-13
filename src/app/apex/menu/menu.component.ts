@@ -92,6 +92,25 @@ export class MenuComponent implements OnInit {
         "link": "/menuaccess",
         "icon": "menu_access"
       }
+      {
+        "id": 'Item7',
+        "name": "User Profiles",
+        "link": "/profile/search",
+        "icon": "profile"
+      },
+      {
+        "id": 'Item8',
+        "name": "Master Data",
+        "link": "/masterdata",
+        "icon": "perm_data_setting"
+      },
+      {
+        "id": 'Item9',
+        "name": "Consumers",
+        "link": "/consumer",
+        "icon": "supervisor_account"
+      }
+
     ]
   }
 }

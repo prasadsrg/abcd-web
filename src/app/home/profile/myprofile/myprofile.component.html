@@ -1,7 +1,12 @@
 <aside>
     <article>
-        <h4>My Profile</h4>
-    </article>
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
+                <h4 class="padding" >Profile Details</h4>
+                <button mat-mini-fab class="fab-placeholder" [disabled]="!myForm.valid" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">
+                    <mat-icon >save</mat-icon>
+                </button>
+        </div>
+</article>
     <main class="padding">
 
                 <form [formGroup]="myForm" novalidate autocomplete='off'>
@@ -99,11 +104,6 @@
                                         </mat-form-field>
                                     </div>
                                 </mat-card-content>
-                                <mat-card-actions fxLayout="row wrap " fxLayoutAlign="end end ">
-                                    <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
-                                        <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" style="background-color:#44c767;color:#fff">Save Details</button>
-                                    </div>
-                                </mat-card-actions>
                             </mat-card>
 
                         </div>
