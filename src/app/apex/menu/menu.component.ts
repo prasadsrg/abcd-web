@@ -91,7 +91,7 @@ export class MenuComponent implements OnInit {
         "name": "Menu Access",
         "link": "/menuaccess",
         "icon": "menu_access"
-      }
+      },
       {
         "id": 'Item7',
         "name": "User Profiles",
