@@ -47,4 +47,7 @@ export class ProfileService {
   navigateProfileEdit(id:any){
          this.appService.navigate(Props.PROFILE_EDIT_PAGE, [{id: id}]);
      }
+     navigateProfile(){
+       this.appService.navigate('profile/search',[])
+     }
 }

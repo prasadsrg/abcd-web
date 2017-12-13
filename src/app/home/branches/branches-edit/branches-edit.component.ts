@@ -55,4 +55,7 @@ export class BranchesEditComponent implements OnInit {
       .subscribe(data => this.map = data);
       console.log(this.map);
   }
+  back(){
+    this.branchService.navigateBranch();
+  }
 }

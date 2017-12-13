@@ -1,10 +1,17 @@
 <aside>
     <article class="padding">
         <div fxLayout="row" fxLayoutAlign="space-between center" >
-    <h4>Consumer</h4>
+           
+                    <h4>Consumer</h4>                   
+          
+            <div>
      <button mat-mini-fab (click)="saveEntity()" class="fab-placeholder" [disabled]="!myForm.valid" color="primary">
          <mat-icon >save</mat-icon>
      </button>
+     <button mat-mini-fab (click)="back()" class="fab-placeholder-left" color="warn">
+            <mat-icon >close</mat-icon>
+        </button>
+    </div>
      </div>
 </article>
     <main class="padding">

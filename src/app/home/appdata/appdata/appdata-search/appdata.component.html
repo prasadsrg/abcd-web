@@ -1,15 +1,15 @@
 <aside>
-   <article>
-        <div fxLayout="row" fxLayoutAlign="space-between center" >
-                <h4 class="padding-side">Masterdata</h4>
-                 <button mat-mini-fab (click)="editMaster(null)" class="fab-placeholder">
-                     <mat-icon style="color:#fff">add</mat-icon>
-                 </button>
-                 </div>
-   </article>
+  <article>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <h4 class="padding-side">Masterdata</h4>
+      <button mat-mini-fab (click)="editMaster(null)" class="fab-placeholder">
+        <mat-icon style="color:#fff">add</mat-icon>
+      </button>
+    </div>
+  </article>
 
-   <main class="padding">
-      <infinite-list [items]="masterDataList" (outputEvent)="scrollList = $event" style="height: 100%">
+  <main class="padding">
+    <!-- <infinite-list [items]="masterDataList" (outputEvent)="scrollList = $event" style="height: 100%">
           
       <table >
           <thead>
@@ -27,12 +27,11 @@
               </tr>
           </tbody>
       </table>
-      </infinite-list>
+      </infinite-list> -->
+        <app-data-edit [(inputData)]="dataList"></app-data-edit>
 
-   </main>
-  </aside>
-  <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
+  </main>
+</aside>
+<!-- <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
     <app-appdata-edit [appdata]="appdata" (close)="onClose('reload')"></app-appdata-edit>
-  </mat-sidenav>
-
-  
+  </mat-sidenav> -->
