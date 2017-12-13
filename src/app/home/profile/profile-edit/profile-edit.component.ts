@@ -51,4 +51,7 @@ export class ProfileEditComponent implements OnInit {
     // }
 
   }
+  back(){
+    this.profileService.navigateProfile();
+  }
 }

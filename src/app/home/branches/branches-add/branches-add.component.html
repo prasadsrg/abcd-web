@@ -2,9 +2,14 @@
     <article>
             <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
                     <h4 class="padding" >Branchs Details</h4>
+                    <div>
                     <button mat-mini-fab class="fab-placeholder"  [disabled]="!myForm.valid" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" color="primary">
                         <mat-icon style="color:#fff">save</mat-icon>
                     </button>
+                    <button mat-mini-fab (click)="back()" class="fab-placeholder-left" color="warn">
+                            <mat-icon >close</mat-icon>
+                        </button>
+                    </div>
             </div>
             
         </article>

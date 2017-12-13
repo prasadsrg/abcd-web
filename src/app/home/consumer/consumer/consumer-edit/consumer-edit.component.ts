@@ -36,4 +36,7 @@ export class ConsumerEditComponent implements OnInit {
       this.consumerService.navigateConsumer();
     });
   }
+  back(){
+    this.consumerService.navigateConsumer();
+  }
 }

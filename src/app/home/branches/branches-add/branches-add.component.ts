@@ -36,4 +36,7 @@ export class BranchAddComponent implements OnInit {
       this.branchService.navigateBranch();
     });
   }
+  back(){
+    this.branchService.navigateBranch();
+  }
 }
