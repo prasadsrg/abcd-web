@@ -70,6 +70,7 @@ export class MenuAccessSearchComponent implements OnInit {
     
     this.menuaccessservice.saveMenuAccess(this.savedata).subscribe((data:any)=>{
       console.log(data);
+      this.apexService.showMessage(data.message);
     })
   }
 

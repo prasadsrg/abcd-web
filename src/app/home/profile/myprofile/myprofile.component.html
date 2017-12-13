@@ -102,6 +102,13 @@
                                                 <form-messages [control]="myForm.controls.myprofile_aadhar"> </form-messages>
                                             </mat-hint>
                                         </mat-form-field>
+                                        <mat-form-field fxFlex="30">
+                                                <mat-select placeholder="Branch"  name="branch" [(ngModel)]="profile.branch.id"  [ngModelOptions]="{standalone: true}">
+                                                        <mat-option *ngFor="let branch of branches" [value]="branch.id" >
+                                                          {{ branch.name }}
+                                                        </mat-option>
+                                                      </mat-select>
+                                                    </mat-form-field>
                                     </div>
                                 </mat-card-content>
                             </mat-card>
