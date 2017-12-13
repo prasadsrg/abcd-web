@@ -8,22 +8,28 @@
         </div>
 
     </article>
-    <main class="padding">
-        <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="padding">
+    <main>
+        <!-- <div fxLayout="row wrap" fxLayoutAlign="space-around center" *ngFor="let item of rolesList">
             <div fxFlex="100">
-                <mat-selection-list #shoes>
-                    <mat-list-option *ngFor="let item of rolesList">
+                <mat-selection-list #rolesListItems>
+                    <mat-list-option>
                         {{item.name}}
                     </mat-list-option>
                 </mat-selection-list>
             </div>
+        </div> -->
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="padding" *ngFor="let item of rolesList">
+            <div fxFlex fxLayout="100">
+                <mat-checkbox [(ngModel)]="item.checked">{{item.name}}</mat-checkbox>
+            </div>
+            <mat-divider></mat-divider>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="space-around center" class="padding">
-            <div class="reset" fxFlex="50">
-                <button mat-raised-button class="button-container" color="warn" (click)="reset()">Reset</button>
+            <div class="reset">
+                <button mat-raised-button color="warn" (click)="reset()">Reset</button>
             </div>
-            <div class="apply" fxFlex="50">
-                <button mat-raised-button class="button-container" color="primary" (click)="applyFilter()">Apply</button>
+            <div class="apply">
+                <button mat-raised-button color="primary" (click)="applyFilter()">Apply</button>
             </div>
         </div>
     </main>

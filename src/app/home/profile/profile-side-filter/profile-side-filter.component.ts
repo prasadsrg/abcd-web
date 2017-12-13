@@ -1,9 +1,8 @@
-import { Component, OnInit , Input , EventEmitter , Output, SimpleChanges} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, SimpleChanges, ViewChild, ElementRef} from '@angular/core';
 import { AnimationService } from '../../../shared/service/animation.service';
 import { ApexService } from './../../../shared/service/apex.service';
-// import { AppData } from '../../../../apex/entities/appdata';
- import { ProfileService } from '../profile.service';
-// import { AppdataForm } from '../appdata.form';
+import { ProfileService } from '../profile.service';
+import { Profile } from '../../../apex/entities/profile';
 
 @Component({
   selector: 'app-profile-side-filter',
@@ -12,11 +11,16 @@ import { ApexService } from './../../../shared/service/apex.service';
 })
 export class ProfileSideFilterComponent implements OnInit {
    paramId: any;
+   profile: Profile = new Profile();
+   dataList: any = [];
    @Input() filter;
    @Output() close: EventEmitter<any> =  new EventEmitter()
-   rolesList: any[] = []
-  constructor(private profileservice: ProfileService, private apexservice: ApexService) {
+   rolesList: any[] = [];
+   @ViewChild('rolesListItems') rolelist : HTMLInputElement;
+  constructor(private profileService: ProfileService, private apexservice: ApexService) {
       this.dataLoadRoles();
+      this.search();
+
    }
 
   ngOnInit() {
@@ -27,17 +31,28 @@ export class ProfileSideFilterComponent implements OnInit {
   //           console.log(this.filter);
   //         }
   //       }
+  search() {
+    this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
+      this.dataList = data;
+      console.log(this.dataList)
+    })
+  }
   dataLoadRoles() {
-    this.profileservice.getRoles().subscribe((data: any) => {
+    this.profileService.getRoles().subscribe((data: any) => {
       this.rolesList = data;
-      console.log(this.rolesList)
     })
   }
   onClose() {
-          this.close.emit();
+      this.close.emit();
   }
-  applyFilter(){
-    
+  applyFilter() {
+    let selectedItems: any[] = [];
+    this.rolesList.forEach(element => {
+      if (element.checked) {
+        delete element.checked;
+        selectedItems.push(element)
+      }
+    });
+    this.close.emit(selectedItems);
   }
-
 }
