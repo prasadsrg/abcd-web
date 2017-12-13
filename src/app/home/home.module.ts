@@ -11,19 +11,24 @@ import {MatTableModule} from '@angular/material/table';
 import { SettingsComponent } from './settings/settings/settings.component';
 import { SettingsService} from './settings/settings.service';
 import { MenuAccessService } from './menu-access/menuaccess.service';
-import { Appdataservice } from './appdata/appdata.service';
+import { AppDataService } from './app-data/app-data.service';
 import { ConsumerComponent } from './consumer/consumer/consumer-search/consumer.component';
 import { ConsumerService } from './consumer/consumer.service';
 import { ConsumerEditComponent } from './consumer/consumer/consumer-edit/consumer-edit.component';
-import { AppDataComponent } from './appdata/appdata/appdata-search/appdata.component';
-import { AppdataEditComponent } from './appdata/appdata/appdata-edit/appdata.edit.component';
+
 import { MenuAccessListEditComponent } from './menu-access/menu-access-list-edit/menu-access-list-edit.component';
 import { MenuAccessSearchComponent } from './menu-access/menu-access-search/menu-access-search.component';
 import { BranchesEditComponent } from './branches/branches-edit/branches-edit.component';
 import { BranchSearchComponent} from './branches/branches-search/branches-search.component';
 import { BranchService } from './branches/branches.service';
 import { BranchAddComponent } from './branches/branches-add/branches-add.component';
+<<<<<<< HEAD
 import { ProfileSideFilterComponent } from './profile/profile-side-filter/profile-side-filter.component';
+=======
+import { ProfileSideFilterComponent } from './profile/profile-side-filter/profile.side.filter.component';
+import { AppDataListFormComponent } from './app-data/app-data-list-form/app-data-list-form.component';
+import { AppDataComponent } from './app-data/app-data/app-data.component';
+>>>>>>> 8eac46befc1f49a41238a49d7453b7efb2d0374d
 
 
 
@@ -34,7 +39,7 @@ const routes: Routes = [
   { path: 'profile/myprofile', component: MyprofileComponent },
   { path: 'my/settings', component: SettingsComponent },
   { path: 'menuaccess', component: MenuAccessSearchComponent },
-  { path: 'masterdata',  component: AppDataComponent},
+  { path: 'appdata',  component: AppDataComponent},
   { path: 'consumer',  component: ConsumerComponent},
   { path: 'consumer-edit',  component: ConsumerEditComponent},
   { path: 'branch',  component: BranchSearchComponent},
@@ -60,15 +65,15 @@ const routes: Routes = [
     AppDataComponent,
     ConsumerComponent,
     ConsumerEditComponent,
-    AppdataEditComponent,
     MenuAccessListEditComponent,
     MenuAccessSearchComponent,
     BranchesEditComponent,
     BranchSearchComponent,
     BranchAddComponent,
-    ProfileSideFilterComponent
+    ProfileSideFilterComponent,
+    AppDataListFormComponent
   ],
   exports: [RouterModule],
-  providers: [ ProfileService, SettingsService, MenuAccessService, Appdataservice, ConsumerService , BranchService]
+  providers: [ ProfileService, SettingsService, MenuAccessService, AppDataService, ConsumerService , BranchService]
 })
 export class HomeModule { }
