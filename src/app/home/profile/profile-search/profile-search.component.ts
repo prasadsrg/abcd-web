@@ -10,11 +10,13 @@ import { MatTabChangeEvent } from '@angular/material';
   styleUrls: ['./profile-search.component.scss']
 })
 export class ProfileSearchComponent implements OnInit {
+  filter:any;
   dataList: Profile[] = [];
   profile: Profile = new Profile();
   allUsers: any = [];
   activeList: any = [];
   nonActiveList: any = [];
+  showSide:boolean = false;
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
 
   }
@@ -53,5 +55,11 @@ export class ProfileSearchComponent implements OnInit {
       item = new Profile();
       this.profileService.navigateProfileEdit(item.id);
     }
+  }
+  filter(){
+    this.showSide = true;
+  }
+  onClose(action: any) {
+    this.showSide = false;
   }
 }
