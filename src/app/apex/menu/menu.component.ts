@@ -62,24 +62,24 @@ export class MenuComponent implements OnInit {
         "icon": "trip_activity"
       },
       
-      {
-        "id": 'Item3',
-        "name": "Package Status",
-        "link": "/dashboard/admindashboard",
-        "icon": "package_status"
-      },
-      {
-        "id": 'Item4',
-        "name": "Vechile Activity",
-        "link": "/dashboard/admindashboard",
-        "icon": "vechile_activity"
-      },
-      {
-        "id": 'Item5',
-        "name": "Density Map",
-        "link": "/dashboard/admindashboard",
-        "icon": "density_map"
-      },
+      // {
+      //   "id": 'Item3',
+      //   "name": "Package Status",
+      //   "link": "/dashboard/admindashboard",
+      //   "icon": "package_status"
+      // },
+      // {
+      //   "id": 'Item4',
+      //   "name": "Vechile Activity",
+      //   "link": "/dashboard/admindashboard",
+      //   "icon": "vechile_activity"
+      // },
+      // {
+      //   "id": 'Item5',
+      //   "name": "Density Map",
+      //   "link": "/dashboard/admindashboard",
+      //   "icon": "density_map"
+      // },
       {
         "id": 'Item7',
         "name": "User Profiles",
@@ -99,17 +99,24 @@ export class MenuComponent implements OnInit {
         "icon": "profile"
       },
       {
-        "id": 'Item8',
+        "id": 'Item12',
         "name": "Master Data",
         "link": "/masterdata",
-        "icon": "perm_data_setting"
+        "icon": "package_status"
       },
       {
         "id": 'Item9',
         "name": "Consumers",
         "link": "/consumer",
-        "icon": "supervisor_account"
-      }
+        "icon": "package_status"
+      },
+      {
+        "id": 'Item10',
+        "name": "Branch",
+        "link": "/branch",
+        "icon": "package_status"
+      },
+
 
     ]
   }
