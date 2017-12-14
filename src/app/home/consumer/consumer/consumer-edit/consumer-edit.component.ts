@@ -15,15 +15,18 @@ export class ConsumerEditComponent implements OnInit {
   consumer: Consumer = new Consumer();
   myForm: any = ConsumerForm.init();
   paramId: any;
-  constructor(private consumerService: ConsumerService, private apexservice: ApexService) {
+  branches:any;
+  constructor(private consumerService: ConsumerService, private apexService: ApexService) {
     ConsumerForm.edit(this.myForm);
+    // this.getBranchesload();
     this.paramId = this.consumerService.getParamId();
-    if(this.paramId != null){
+    if(this.paramId != null) {
       this.entity(this.paramId);
     }
    }
 
   ngOnInit() {
+    this.consumer = new Consumer();
   }
   entity(id: string) {
     this.consumerService.getConsumer(id).subscribe((data: Consumer) => {
@@ -34,9 +37,20 @@ export class ConsumerEditComponent implements OnInit {
     this.consumerService.saveConsumer(this.consumer).subscribe( (data) => {
       console.log(data);
       this.consumerService.navigateConsumer();
+      // this.apexService.showMessage(data.message);
     });
   }
   back(){
     this.consumerService.navigateConsumer();
+
   }
+  // getBranchesload() {
+  //   this.consumerService.getBranches().subscribe( (data) => {
+  //     this.branches = data;
+  //     console.log(data);
+  //   });
+    // init() {
+
+    //   this.auth = new User();
+    // }
 }

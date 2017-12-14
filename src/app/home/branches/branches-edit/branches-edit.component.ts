@@ -21,7 +21,7 @@ export class BranchesEditComponent implements OnInit {
   branch: Branch = new Branch();
   map: any;
   
-  constructor(private branchService: BranchService, private apexservice: ApexService ) {
+  constructor(private branchService: BranchService, private apexService: ApexService ) {
     BranchesForm.edit(this.myForm);
     this.mapData();
     this.paramId = this.branchService.getParamId();
@@ -46,7 +46,7 @@ export class BranchesEditComponent implements OnInit {
   }
   saveEntity() {
     this.branchService.saveBranch(this.branch).subscribe( (data) => {
-      console.log(data);
+      // this.apexService.showMessage(data.message);
       this.branchService.navigateBranch();
     });
   }
@@ -55,7 +55,7 @@ export class BranchesEditComponent implements OnInit {
       .subscribe(data => this.map = data);
       console.log(this.map);
   }
-  back(){
+  back() {
     this.branchService.navigateBranch();
   }
 }

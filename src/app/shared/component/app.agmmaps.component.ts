@@ -6,7 +6,7 @@ import { Component , Input} from '@angular/core';
   <agm-marker [latitude]="lat" [longitude]="lng" ></agm-marker>
 </agm-map>`,
   styles: [`agm-map {
-    height: 400px;
+    height: 420px;
   }`]
 })
 export class MapComponent {
