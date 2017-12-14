@@ -14,7 +14,7 @@ export class Branch {
     state: string;
     country: string;
     zipcode: number;
-    isMain: boolean = true;
-    active: boolean = true;
+    isMain: boolean;
+    active: boolean;
     grpcode: string;
 }

@@ -1,4 +1,5 @@
 import {Address} from './address';
+import { Branch } from './branch';
 export class Consumer {
     id:string;
     name:string;
@@ -6,6 +7,7 @@ export class Consumer {
     email:any;
     aadhar:any;
     address:Address =  new Address();
-    active:boolean = true;
+    branch: Branch = new Branch();
+    active:boolean;
     grpcode:any;
 }
