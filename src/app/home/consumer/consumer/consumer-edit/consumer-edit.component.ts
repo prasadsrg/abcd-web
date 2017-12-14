@@ -53,6 +53,4 @@ export class ConsumerEditComponent implements OnInit {
 
     //   this.auth = new User();
     // }
-
-  }
 }
