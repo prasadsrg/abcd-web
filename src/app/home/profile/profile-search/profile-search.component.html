@@ -1,43 +1,43 @@
 <aside>
-        <article>
-                <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
-                        <h4 class="padding" >Profile Details</h4>
-                        <div>
-                                <mat-icon color="primary" (click)="filters()" style="cursor:pointer">filter_list</mat-icon>
-                                <button mat-mini-fab class="fab-placeholder" (click)="add(null)" color="primary">
+    <article>
+        <div fxLayout="row wrap " fxLayoutAlign="space-between center ">
+            <h4 class="padding">Profile Details</h4>
+            <div>
+                <mat-icon color="primary" (click)="filters()" style="cursor:pointer">filter_list</mat-icon>
+                <button mat-mini-fab class="fab-placeholder" (click)="add(null)" color="primary">
                                     <mat-icon style="color:#fff">add</mat-icon>
                                 </button>
-                        </div>
-                       
-                </div>
+            </div>
+
+        </div>
     </article>
     <main>
         <div fxLayout="row">
-                <mat-tab-group (selectedTabChange)="tabChanged($event)">
-                        <mat-tab label="allUsers">
-                                <ng-template mat-tab-label style="background-color:lightblue !important">
-                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>All Users<span class="user-count">{{allUsers.length}}</span>
-                                </ng-template>
-                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
-                        </mat-tab>
-                        <mat-tab label="activeUsers">
-                                <ng-template mat-tab-label style="background-color:lightblue !important">
-                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>Active Users<span class="user-count">{{activeList.length}}</span>
-                                </ng-template>
-                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
-                        </mat-tab>
-                        <mat-tab label="nonActiveUsers">
-                                <ng-template mat-tab-label style="background-color:lightblue !important">
-                                    <mat-icon class="tab-icon">supervisor_account</mat-icon>Non Active Users<span class="user-count">{{nonActiveList.length}}</span>
-                                </ng-template>
-                                <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
-                        </mat-tab>
-                </mat-tab-group>
+            <mat-tab-group (selectedTabChange)="tabChanged($event)">
+                <mat-tab label="allUsers">
+                    <ng-template mat-tab-label style="background-color:lightblue !important">
+                        <mat-icon class="tab-icon">supervisor_account</mat-icon>All Users<span class="user-count">{{allUsers.length}}</span>
+                    </ng-template>
+                    <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                </mat-tab>
+                <mat-tab label="activeUsers">
+                    <ng-template mat-tab-label style="background-color:lightblue !important">
+                        <mat-icon class="tab-icon">supervisor_account</mat-icon>Active Users<span class="user-count">{{activeList.length}}</span>
+                    </ng-template>
+                    <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                </mat-tab>
+                <mat-tab label="nonActiveUsers">
+                    <ng-template mat-tab-label style="background-color:lightblue !important">
+                        <mat-icon class="tab-icon">supervisor_account</mat-icon>Non Active Users<span class="user-count">{{nonActiveList.length}}</span>
+                    </ng-template>
+                    <app-profile-search-table [dataList]="dataList"></app-profile-search-table>
+                </mat-tab>
+            </mat-tab-group>
 
 
         </div>
     </main>
 </aside>
 <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
-        <app-profile-side-filter [filter]="filter" (close)="onClose('reload')"></app-profile-side-filter>
-      </mat-sidenav>
+    <app-profile-side-filter [filter]="filter" (close)="onClose($event)"></app-profile-side-filter>
+</mat-sidenav>

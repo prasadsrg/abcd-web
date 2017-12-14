@@ -22,7 +22,8 @@ import { BranchesEditComponent } from './branches/branches-edit/branches-edit.co
 import { BranchSearchComponent} from './branches/branches-search/branches-search.component';
 import { BranchService } from './branches/branches.service';
 import { BranchAddComponent } from './branches/branches-add/branches-add.component';
-import { ProfileSideFilterComponent } from './profile/profile-side-filter/profile.side.filter.component';
+
+import { ProfileSideFilterComponent } from './profile/profile-side-filter/profile-side-filter.component';
 import { AppDataListFormComponent } from './app-data/app-data-list-form/app-data-list-form.component';
 import { AppDataComponent } from './app-data/app-data/app-data.component';
 
