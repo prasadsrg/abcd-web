@@ -17,6 +17,7 @@ export class ProfileSearchComponent implements OnInit {
   activeList: any = [];
   nonActiveList: any = [];
   showSide:boolean = false;
+  list:any = [];
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
 
   }
@@ -26,21 +27,29 @@ export class ProfileSearchComponent implements OnInit {
  ngOnChanges(changes: SimpleChanges) {
     if(changes['dataList']) {
             this.dataList = changes['dataList'].currentValue;
-            console.log(this.filter);
+            console.log(this.dataList);
           }
         }
   search() {
     this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
-      this.allUsers = data;
-      this.allUsers.forEach((eachObject) => {
-        if (eachObject.active == true) {
-          this.activeList.push(eachObject);
-        } else {
-          this.nonActiveList.push(eachObject);
-        }
-      });
-      this.dataList = this.allUsers;
+      this.list = data;
+      this.userSeperation(this.list);
     })
+  }
+  userSeperation(userList){
+    this.activeList = [];
+    this.nonActiveList = [];
+    userList.forEach((eachObject) => {
+      if (eachObject.active == true) {
+        this.activeList.push(eachObject);
+        console.log(this.activeList)
+      } else {
+        this.nonActiveList.push(eachObject);
+        console.log(this.nonActiveList)
+      }
+    });
+    this.dataList = userList;
+    this.allUsers = userList;
   }
   public tabChanged(tabChangeEvent: MatTabChangeEvent): void {
     console.log(tabChangeEvent.tab.textLabel);
@@ -61,42 +70,29 @@ export class ProfileSearchComponent implements OnInit {
   filters(){
     this.showSide = true;
   }
-  // onClose(action: any) {
-  //   this.showSide = false;
-  // }
   onClose($event: any) {
     this.showSide = false;
     if (!$event) { return; }
-    let roleList: any = [];
+    let filteredList: any = [];
     console.log($event);
     $event.forEach(element => {
       let isFound = false;
       console.log(this.allUsers);
-      this.dataList.forEach(item => {
+      this.list.forEach(item => {
         if (item.role.toLowerCase() === element.name.replace(' ', '').toLowerCase()) {
-          roleList.push(item);
-          console.log(roleList);
+          filteredList.push(item);
+          console.log(filteredList);
         }
+        this.dataList = filteredList;
+        this.userSeperation(filteredList);
       });
-      if (!isFound) {
-        isFound = true;
-        this.dataList = roleList;
-        this.dataList.forEach((eachObject) => {
-          if (eachObject.active == true) {
-            this.activeList.push(eachObject);
-          } else {
-            this.nonActiveList.push(eachObject);
-          }
-        });
-        this.dataList = this.allUsers;
-
-        console.log(roleList);
-      }
+      // if (!isFound) {
+      //   isFound = true;
+      //   this.dataList = roleList;
+      //   this.userSeperation(roleList);
+      // }
     });
-    // if (roleList.length > 0) {
-    //   let obj: any = Object.assign({}, this.menu);
-    //   obj.link = menuList;
-    //   console.log(obj);
-    // }
+    console.log(filteredList)
+    //this.allUsers = this.dataList;    
   }
 }

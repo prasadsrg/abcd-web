@@ -12,15 +12,11 @@ import { Profile } from '../../../apex/entities/profile';
 export class ProfileSideFilterComponent implements OnInit {
    paramId: any;
    profile: Profile = new Profile();
-   dataList: any = [];
-   @Input() filter;
    @Output() close: EventEmitter<any> =  new EventEmitter()
    rolesList: any[] = [];
    @ViewChild('rolesListItems') rolelist : HTMLInputElement;
   constructor(private profileService: ProfileService, private apexservice: ApexService) {
       this.dataLoadRoles();
-      this.search();
-
    }
 
   ngOnInit() {
@@ -31,12 +27,6 @@ export class ProfileSideFilterComponent implements OnInit {
   //           console.log(this.filter);
   //         }
   //       }
-  search() {
-    this.profileService.searchProfile({}).subscribe((data: Profile[]) => {
-      this.dataList = data;
-      console.log(this.dataList)
-    })
-  }
   dataLoadRoles() {
     this.profileService.getRoles().subscribe((data: any) => {
       this.rolesList = data;
@@ -49,10 +39,19 @@ export class ProfileSideFilterComponent implements OnInit {
     let selectedItems: any[] = [];
     this.rolesList.forEach(element => {
       if (element.checked) {
-        delete element.checked;
+        // delete element.checked;
         selectedItems.push(element)
       }
     });
     this.close.emit(selectedItems);
+  }
+  reset(){
+    this.rolesList.forEach(element => {
+      if (element.checked) {
+        // delete element.checked;
+        console.log(element)
+        
+      }
+    });
   }
 }

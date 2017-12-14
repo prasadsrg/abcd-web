@@ -39,5 +39,5 @@
     </main>
 </aside>
 <mat-sidenav #sidenav align="end" mode="over" [opened]="showSide" (close)="onClose(null)" style="width:320px">
-    <app-profile-side-filter [filter]="filter" (close)="onClose($event)"></app-profile-side-filter>
+    <app-profile-side-filter (close)="onClose($event)"></app-profile-side-filter>
 </mat-sidenav>
