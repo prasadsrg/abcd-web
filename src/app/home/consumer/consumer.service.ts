@@ -37,4 +37,9 @@ export class ConsumerService {
     navigateConsumer(){
       this.appService.navigate(Props.CONSUMER_PAGE, []);
     }
+    getBranches() {
+      this.appService.showLoader(true);
+      this.url = this.host+"/dataload/branchs";
+      return this.http.get(this.url);
+    }
 }

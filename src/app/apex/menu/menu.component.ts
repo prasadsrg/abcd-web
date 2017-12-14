@@ -57,67 +57,64 @@ export class MenuComponent implements OnInit {
       },
       {
         "id": 'Item2',
-        "name": "Trip Activity",
-        "link": "/dashboard/admindashboard",
-        "icon": "trip_activity"
+        "name": "Masterdata",
+        "link": "/appdata",
+        "icon": "masterdata"
       },
-      
+      {
+        "id": 'Item3',
+        "name": "Profile",
+        "link": "/profile/search",
+        "icon": "profile"
+      },
+      {
+        "id": 'Item4',
+        "name": "Consumers",
+        "link": "/consumer",
+        "icon": "consumers"
+      },
+      {
+        "id": 'Item5',
+        "name": "Settings",
+        "link": "/my/settings",
+        "icon": "settings"
+      },
+      {
+        "id": 'Item6',
+        "name": "Branch",
+        "link": "/branch",
+        "icon": "branches"
+      },
+      {
+        "id": 'Item7',
+        "name": "Menu Access",
+        "link": "/menuaccess",
+        "icon": "menu_lock"
+      },
       // {
-      //   "id": 'Item3',
-      //   "name": "Package Status",
-      //   "link": "/dashboard/admindashboard",
+      //   "id": 'Item8',
+      //   "name": "User Profiles",
+      //   "link": "/profile/search",
+      //   "icon": "profile"
+      // },
+      // {
+      //   "id": 'Item9',
+      //   "name": "Master Data",
+      //   "link": "/appdata",
       //   "icon": "package_status"
       // },
       // {
-      //   "id": 'Item4',
-      //   "name": "Vechile Activity",
-      //   "link": "/dashboard/admindashboard",
-      //   "icon": "vechile_activity"
+      //   "id": 'Item10',
+      //   "name": "Consumers",
+      //   "link": "/consumer",
+      //   "icon": "package_status"
       // },
       // {
-      //   "id": 'Item5',
-      //   "name": "Density Map",
-      //   "link": "/dashboard/admindashboard",
-      //   "icon": "density_map"
-      // },
-      {
-        "id": 'Item7',
-        "name": "User Profiles",
-        "link": "/profile/search",
-        "icon": "profile"
-      },
-      {
-        "id": 'Item8',
-        "name": "Menu Access",
-        "link": "/menuaccess",
-        "icon": "menu_access"
-      },
-      {
-        "id": 'Item7',
-        "name": "User Profiles",
-        "link": "/profile/search",
-        "icon": "profile"
-      },
-      {
-        "id": 'Item12',
-        "name": "Master Data",
-        "link": "/appdata",
-        "icon": "package_status"
-      },
-      {
-        "id": 'Item9',
-        "name": "Consumers",
-        "link": "/consumer",
-        "icon": "package_status"
-      },
-      {
-        "id": 'Item10',
-        "name": "Branch",
-        "link": "/branch",
-        "icon": "package_status"
-      },
-
-
+      //   "id": 'Item11',
+      //   "name": "Branch",
+      //   "link": "/branch",
+      //   "icon": "package_status"
+      // }
     ]
   }
 }

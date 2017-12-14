@@ -5,7 +5,7 @@
                     <h4>Consumer</h4>                   
           
             <div>
-     <button mat-mini-fab (click)="saveEntity()" class="fab-placeholder" [disabled]="!myForm.valid" color="primary">
+     <button mat-mini-fab (click)="saveEntity()" class="fab-placeholder" [disabled]="!myForm.valid" style="background-color:#343a54">
          <mat-icon >save</mat-icon>
      </button>
      <button mat-mini-fab (click)="back()" class="fab-placeholder-left" color="warn">
@@ -52,6 +52,7 @@
                                             <form-messages [control]="myForm.controls.consumer_mobile"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
+                                    
                                     <!-- <mat-form-field fxFlex="45" class="margin8">
                                         <input matInput type="text" placeholder="Password " required [formControl]="myForm.controls.consumer_password" [(ngModel)]="consumer.password">
                                         <mat-hint>
@@ -103,12 +104,14 @@
                                             <form-messages [control]="myForm.controls.consumer_zipcode"> </form-messages>
                                         </mat-hint>
                                     </mat-form-field>
-                                    <mat-form-field fxFlex="30" fxFlex.xs="100" class="margin8">
-                                        <input matInput type="text" placeholder="Aadhar Number" required [formControl]="myForm.controls.consumer_aadhar" [(ngModel)]="consumer.aadhar">
-                                        <mat-hint>
-                                            <form-messages [control]="myForm.controls.consumer_aadhar"> </form-messages>
-                                        </mat-hint>
-                                    </mat-form-field>
+
+                                    <!-- <mat-form-field fxFlex="30">
+                                        <mat-select placeholder="Branch"  name="branch" [(ngModel)]="consumer.branch.id"  [ngModelOptions]="{standalone: true}">
+                                                <mat-option *ngFor="let branch of branches" [value]="branch.id" >
+                                                  {{ branch.name }}
+                                                </mat-option>
+                                              </mat-select>
+                                            </mat-form-field> -->
                                 </div>
                             </div>
                         </mat-card-content>
