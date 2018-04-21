@@ -1,17 +1,17 @@
-<mat-progress-bar mode="indeterminate" *ngIf="showLoader" color="warn" style="position: fixed; width: 100%"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" *ngIf="showLoader" color="warn" style="position: fixed; width: 100%; z-index: 999999999;"></mat-progress-bar>
 <div *ngIf="sessionUser">
-    <mat-toolbar color="primary" class="header" style="background-color:#343957;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-toolbar color="primary" class="header" style="background-color:white;height:60px !important; border-bottom: 1px solid #c6d0da;" fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="row" fxLayoutAlign="start start">
             <span>
             <button mat-icon-button (click)="sidenav.toggle()" style="width:60px;height:60px;margin-left:-16px;border-bottom:1px solid #c6d0da;border-right:1px solid #c6d0da;border-radius:0%">
             <mat-icon class="md-24" style="color:#5f6f81">menu</mat-icon>
             </button>
-            <img src="../assets/images/APNATANKER.png" alt="logo-brand" sty>
+            <img src="../assets/icons/logo.svg" alt="logo-brand" style="position: absolute; height: 48px; top: 5px;">
         </span>
         </div>
         <div fxLayout="row" fxLayoutAlign="center center">
-            <span fxLayoutAlign="center center" class="my-profile" [matMenuTriggerFor]="menu"  >{{menuLetter}}</span>
-            <mat-menu #menu="matMenu" [overlapTrigger]="false" >
+            <span mat-button [matMenuTriggerFor]="profile_menu" class="pointer myProfile">AT</span>
+            <mat-menu #profile_menu="matMenu" [overlapTrigger]="false">
                 <button mat-menu-item (click)=myProfile()>My Profile</button>
                 <button mat-menu-item (click)="logout()">Log Out</button>
             </mat-menu>

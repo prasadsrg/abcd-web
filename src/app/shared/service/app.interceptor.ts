@@ -14,8 +14,8 @@ import { Storage } from '../utils/storage';
 import { ApexService } from './apex.service';
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
-  CONTENT_TYPE: string = "application/x-www-form-urlencoded";
-  // CONTENT_TYPE : string = "application/json";
+  //CONTENT_TYPE: string = "application/x-www-form-urlencoded";
+  CONTENT_TYPE : string = "application/json";
   constructor(private apexService: ApexService) {
 
   }
@@ -23,28 +23,34 @@ export class AppInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         'Content-Type': this.CONTENT_TYPE,
-        'Authorization': `${this.getToken()}`
+        'Authorization': `JWT ${this.getToken()}`
       }
     });
     return next.handle(request).map(
-      (resp: HttpResponse<any>) => {
-        if (resp && resp.type == 4) {
-          this.apexService.showLoader(false);
-          if (resp.body) {
-            if (resp.body.status == 1) {
-              return resp.clone({
-                body: resp.body.data
-              });
-            } else if (resp.body.status == 0) {
-              this.errorMessage(resp.body.error);
-              return null;
+      (resp: any) => {
+        if(resp instanceof HttpResponse) {
+          if (resp && resp.type == 4) {
+            this.apexService.showLoader(false);
+            if (resp.body) {
+              if (resp.body.status == 1) {
+                return resp.clone({
+                  body: resp.body.data
+                });
+              } else if (resp.body.status == 0) {
+                this.errorMessage(resp.body.error);
+                return null;
+              } else {
+                return resp;
+              }
             } else {
               return resp;
             }
-          } else {
-            return resp;
           }
+        } else if(resp instanceof HttpErrorResponse){
+          this.apexService.showLoader(false);
+          this.errorMessage('Please check internet or Contact Admin');
         }
+
       });
   }
 

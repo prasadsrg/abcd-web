@@ -1,0 +1,20 @@
+<aside>
+  <article>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <mat-toolbar color="primary"> 
+                    <span>App Data</span>
+                    <span class="mat-spacer"></span>
+                    <mat-icon (click)="add()">save</mat-icon>
+                </mat-toolbar>
+      </div>
+  </article>
+  <main >
+      <mat-tab-group (selectedTabChange)="tabChanged($event)">
+          <mat-tab *ngFor="let item of codeList" label="{{item.id}}">
+              <mat-list>
+                  <app-data-list-form [inputData]="txnList"></app-data-list-form>
+              </mat-list>
+          </mat-tab>
+      </mat-tab-group>
+  </main>
+</aside>

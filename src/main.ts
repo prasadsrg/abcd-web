@@ -1,14 +1,13 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import 'hammerjs';
+
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-
-import {Props} from './app/apex/common/props';
-
+import 'hammerjs';
 if (environment.production) {
   enableProdMode();
 }
+import { Props } from './app/common/props';
 Props.API_END_POINT = environment.API_END_POINT;
 
 platformBrowserDynamic().bootstrapModule(AppModule)

@@ -1,0 +1,128 @@
+<aside>
+    <article class="alternative">
+        <mat-toolbar color="primary"> My Profile</mat-toolbar>
+    </article>
+    <main class="padding">
+        <mat-tab-group>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    update profile
+                </ng-template>
+                <form [formGroup]="myForm" novalidate autocomplete='off'>
+                    <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
+                        <!--class="row center-xs parent-container padding"-->
+                        <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="33.3333" fxFlex.md="25" fxFlex.lg="20" fxFlex.xl="16.6666" >
+                            <mat-card class="margin8" fxLayout="row wrap" fxLayoutAlign="center center" style="height: 213px">
+                                <img-load fxFlex="100" [img]="profile.img.src"></img-load>
+                                <h6 fxFlex="100"><b>{{profile.name}}</b></h6>
+                                <P fxFlex="100">{{profile.email}}</P>
+                            </mat-card>
+                        </div>
+                        <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="66.6666" fxFlex.md="75" fxFlex.lg="80" fxFlex.xl="83.3333">
+                            <mat-card class="margin8">
+                                <mat-card-content>
+                                    <div fxLayout="row wrap" fxLayoutAlign="start start">
+                                        <h5 fxFlex="100 " style="text-align: left;">Personal Details</h5>
+                                        <div fxLayout="row wrap" fxFlex="100 ">
+                                            <mat-form-field fxFlex="45" class="margin8">
+                                                <input matInput placeholder="Name" required [formControl]="myForm.controls.myprofile_name" [(ngModel)]="profile.name">
+                                                <mat-hint>
+                                                    <form-messages [control]="myForm.controls.myprofile_name"> </form-messages>
+                                                </mat-hint>
+                                            </mat-form-field>
+                                            <mat-form-field fxFlex="45" class="margin8">
+                                                <input matInput type="text" placeholder="Email" required [formControl]="myForm.controls.myprofile_email" [(ngModel)]="profile.email">
+                                                <mat-hint>
+                                                    <form-messages [control]="myForm.controls.myprofile_email "> </form-messages>
+                                                </mat-hint>
+                                            </mat-form-field>
+
+                                            <mat-form-field fxFlex="45" class="margin8">
+                                                <input matInput placeholder="Mobile" required [formControl]="myForm.controls.myprofile_mobile" [(ngModel)]="profile.mobile">
+                                                <mat-hint>
+                                                    <form-messages [control]="myForm.controls.myprofile_mobile"> </form-messages>
+                                                </mat-hint>
+                                            </mat-form-field>
+                                            <mat-form-field fxFlex="45" class="margin8">
+                                                    <input matInput type="text" placeholder="Aadhar Number" required [formControl]="myForm.controls.myprofile_aadhar" [(ngModel)]="profile.aadhar">
+                                                    <mat-hint>
+                                                        <form-messages [control]="myForm.controls.myprofile_aadhar"> </form-messages>
+                                                    </mat-hint>
+                                                </mat-form-field>
+                                        </div>
+                                    </div>
+
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutAlign="start start" class=" padding">
+                        <div fxFlex="100">
+
+                            <mat-card class="margin8">
+                                <mat-card-content>
+                                    <div fxLayout="row wrap" fxLayoutAlign="start start">
+                                        <h5 fxFlex="100 " style="text-align: left;">Address Details</h5>
+
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                            <input matInput placeholder="Lane" required [formControl]="myForm.controls.myprofile_lane" [(ngModel)]="profile.address.lane">
+                                            <mat-hint>
+                                                <form-messages [control]="myForm.controls.myprofile_lane"> </form-messages>
+                                            </mat-hint>
+                                        </mat-form-field>
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                                <input matInput placeholder="Landmark" [formControl]="myForm.controls.myprofile_land_mark" [(ngModel)]="profile.address.landMark">
+                                                <mat-hint>
+                                                    <form-messages [control]="myForm.controls.myprofile_land_mark"> </form-messages>
+                                                </mat-hint>
+                                            </mat-form-field>
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                            <input matInput type="text" placeholder="city" required [formControl]="myForm.controls.myprofile_city" [(ngModel)]="profile.address.city">
+                                            <mat-hint>
+                                                <form-messages [control]="myForm.controls.myprofile_city"> </form-messages>
+                                            </mat-hint>
+                                        </mat-form-field>
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                            <input matInput placeholder="state" required [formControl]="myForm.controls.myprofile_state" [(ngModel)]="profile.address.state">
+                                            <mat-hint>
+                                                <form-messages [control]="myForm.controls.myprofile_state"> </form-messages>
+                                            </mat-hint>
+                                        </mat-form-field>
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                            <input matInput type="text" placeholder="country" required [formControl]="myForm.controls.myprofile_country" [(ngModel)]="profile.address.country">
+                                            <mat-hint>
+                                                <form-messages [control]="myForm.controls.myprofile_country"> </form-messages>
+                                            </mat-hint>
+                                        </mat-form-field>
+                                        <mat-form-field fxFlex="30" class="margin8">
+                                            <input matInput placeholder="zipcode" required [formControl]="myForm.controls.myprofile_zipcode" [(ngModel)]="profile.address.zipcode">
+                                            <mat-hint>
+                                                <form-messages [control]="myForm.controls.myprofile_zipcode"> </form-messages>
+                                            </mat-hint>
+                                        </mat-form-field>
+
+                                    </div>
+                                </mat-card-content>
+                                <mat-card-actions fxLayout="row wrap " fxLayoutAlign="end end ">
+                                    <div fxFlex.xs="100 " fxFlex.sm="100 " fxFlex.mat="100 " fxFlex.lg="100 " fxLayoutAlign="center center ">
+                                        <button mat-raised-button [disabled]="!myForm.valid" class="button-container" [ngClass]="{disabled : !myForm.valid}" (click)="saveEntity()" >Save Details</button>
+                                    </div>
+                                </mat-card-actions>
+                            </mat-card>
+
+                        </div>
+                    </div>
+
+                </form>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Change Password
+                </ng-template>
+                <h1>Company</h1>
+                <p>Change Password</p>
+            </mat-tab>
+        </mat-tab-group>
+    </main>
+    <footer></footer>
+</aside>

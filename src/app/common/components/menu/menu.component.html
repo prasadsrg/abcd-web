@@ -1,0 +1,26 @@
+<!-- <mat-nav-list style="padding-top:0px;">
+    <ng-template let-item ngFor [ngForOf]="menuList">
+        <mat-list-item disableRipple="true">
+            <mat-icon matTooltip="{{item.name}}" matTooltipPosition="right" class="md-18" md-list-icon svgIcon="core:{{item.icon}}" routerLink="{{item.link}}" class="inactive menu-icon" [ngClass]="{'active': item.id == states.activeItem}" (click)="states.activeItem=item.id">
+            </mat-icon>
+        </mat-list-item>
+    </ng-template>
+
+</mat-nav-list> -->
+
+<mat-grid-list cols="1" rowHeight="1:1">
+    <ng-template let-item ngFor [ngForOf]="menuList">
+        <mat-grid-tile style="border-bottom: 1px solid #c6d0da;">
+            <mat-icon 
+                matTooltip="{{item.name}}" 
+                matTooltipPosition="right" 
+                class="md-18" 
+                svgIcon="core:{{item.icon}}" 
+                routerLink="{{item.link}}" 
+                class="inactive menu-icon" 
+                [ngClass]="{'active': item.id == states.activeItem}" 
+                (click)="doActiveMenu(item.id)">
+            </mat-icon>
+        </mat-grid-tile>
+    </ng-template>
+</mat-grid-list>

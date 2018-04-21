@@ -22,9 +22,39 @@ a {
     color: white !important;
 }
 
-.spacer {
-    flex: 1 1 auto;
+mat-sidenav {
+    // width: 58px;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+  }
+.header {
+  height: 58px !important;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
 }
+.mat-drawer-container {
+  background-color: #f6f9fc;
+  color: rgba(0,0,0,.87);
+}
+.mat-toolbar {
+  color: white;
+}
+
+.sidenav-fab-container .mat-sidenav-content,
+.sidenav-fab-container md-sidenav {
+    display: flex !important;
+    overflow: hidden;
+}
+.myProfile{
+      border-radius: 50%;
+    border: 1px solid #512da8;
+    width: 50px;
+    height: 50px;
+    padding: 9px 0px 0px 13px;
+    -webkit-transform: translate(0%, 20%);
+    transform: translate(0%, 20%);
+    color: #512da8;
+    margin-top: -20px;
+}
+
 
 sub {
     color: darkorange!important;
@@ -55,7 +85,7 @@ table tr {
 table td,
 table th {
     padding: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #ffffff;
 }
 
@@ -123,8 +153,4 @@ infinite-list {
 
 .padding10 {
     padding: 10px;
-}
-
-.mat-card-height{
-    height: 260px;
 }

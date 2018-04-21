@@ -1,12 +1,62 @@
+
+@import '~material-design-icons/iconfont/material-icons.css';
 @import '~@angular/material/theming';
 @include mat-core();
-$my-app-primary: mat-palette($mat-deep-purple, 700, 800, 900);
-$my-app-accent: mat-palette($mat-orange, 700, 800, 900);
-$my-app-warn: mat-palette($mat-deep-orange);
-$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
-@include angular-material-theme($my-app-theme);
+
+$mat-primary: mat-palette($mat-teal, 600);
+$mat-accent:  mat-palette($mat-deep-orange, 900);
+$mat-warn:    mat-palette($mat-red);
+
+$mat-theme: mat-light-theme($mat-primary, $mat-accent, $mat-warn);
+@include angular-material-theme($mat-theme);
+
+$alt-primary: mat-palette($mat-blue-grey, 100);
+$alt-accent:  mat-palette($mat-amber, 200);
+
+$alt-theme: mat-dark-theme($alt-primary, $alt-accent);
+
+.alternative {
+    @include angular-material-theme($alt-theme);
+}
+
+$custom-typography: mat-typography-config(
+
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(14px, 24px, 400)
+);
+@include angular-material-typography($custom-typography);
 
 
+.mat-spacer {
+    flex: 1 1 auto;
+    }
+
+.material-icons {
+      vertical-align: middle;
+      cursor: pointer;
+}
+mat-icon{
+    cursor:  pointer !important;
+}
+.material-icons.md-14 {
+  font-size: 14px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
 
 md-divider {
     display: block;
@@ -37,22 +87,14 @@ md-divider {
 .mat-drawer {
     min-width: unset !important;
 }
-.mat-tab-group{
-    width: 100%;
-}
 .fab-bottom-right {
     bottom: 1rem;
-    right: 8px;
+    right: 2rem;
     position: absolute;
 }
 .fab-placeholder {
-    top: 40px !important;
-    right: 6px; 
+    top: 24px !important;
+    right: 2rem;
     position: absolute;
-    
-}
-.fab-placeholder-left{
-    top: 40px !important;
-    right: 2px; 
-    position: absolute;
+
 }

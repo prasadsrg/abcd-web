@@ -7,10 +7,15 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AnonymousModule } from './anonymous/anonymous.module';
-import { HomeModule } from './home/home.module';
-import { MenuComponent} from './apex/menu/menu.component';
-import { ReportsModule } from './reports/reports.module';
+import { MenuComponent } from './common/components/menu/menu.component';
+
+import { ReportsModule } from './modules/reports/reports.module';
+import { AnonymousModule } from './modules/anonymous/anonymous.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import { ConsumerModule } from './modules/consumer/consumer.module';
+import { AppDataModule } from './modules/app-data/app-data.module';
+import { AccessMenuModule } from './modules/access-menu/access-menu.module';
+import { SettingModule } from './modules/settings/setting.module';
 
 
 
@@ -26,8 +31,12 @@ import { ReportsModule } from './reports/reports.module';
     SharedModule.forRoot(),
     HttpClientModule,
     AnonymousModule,
-    HomeModule,
     ReportsModule,
+    ProfileModule,
+    ConsumerModule,
+    AppDataModule,
+    AccessMenuModule,
+    SettingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

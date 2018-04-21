@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  API_END_POINT: 'http://abcd-prasadsrg.c9users.io/api'
+  API_END_POINT: 'http://qa.dfftech.com:2001'
 };

@@ -5,7 +5,7 @@ import { ValidationService } from '../service/validation.service';
 @Component({
     selector: 'form-messages',
     template: `<div class='error-message' *ngIf="errorMessage !== null">{{errorMessage}}</div>`,
-    styles: ['.error-message { color: red; font-size: 100% !important}']
+    styles: ['.error-message { margin-top: 0px; color: red; font-size: 100% !important}']
 })
 export class FormMessagesComponent {
     @Input() control: FormControl;

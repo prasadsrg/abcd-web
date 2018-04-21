@@ -8,8 +8,7 @@ import { Storage } from './shared/utils/storage';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   
@@ -18,7 +17,6 @@ export class AppComponent implements OnInit {
   private _loaderSubscription: any;
   concat:string;
   @ViewChild('sidenav') sidenav: MatSidenav;
-  menuLetter: string = 'A';
   navMode = 'side';
   showMenu = true;
   sessionUser: any;
@@ -26,6 +24,9 @@ export class AppComponent implements OnInit {
   concatString : any = '';
   constructor(private apexService: ApexService,  private _iconRegistry: MatIconRegistry, private appService:AppService) {
       this.loadIcons();
+      this.sessionUser = Storage.getSessionUser();
+      console.log(this.sessionUser);
+
    }
 
   ngOnInit() {
@@ -37,30 +38,31 @@ export class AppComponent implements OnInit {
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       console.log(data);
       this.sessionUser = Storage.getSessionUser();
-      if(this.sessionUser){
-        this.menuLetter = this.sessionUser.name.charAt(0);
-      }
-      
     });
     if (window.innerWidth < 768) {
       this.navMode = 'over';
     }
-     this.apexService.sessionUserEmit(Storage.getSessionUser());
+    if(Storage.getSessionUser()){
+        this.apexService.sessionUserEmit(Storage.getSessionUser());
+    }
   }  
   loadIcons(){
         this._iconRegistry.addSvgIconSetInNamespace('core',
-          this.apexService.bypassURL('/assets/icons/app-icons.svg'));
+          this.apexService.bypassURL('/assets/icons/app-icons.svg'));    
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
+      if(this.sidenav){
         if (event.target.innerWidth < 768) {
-            this.navMode = 'over';
-            this.sidenav.close();
-        }
-        if (event.target.innerWidth > 768) {
-           this.navMode = 'side';
-           this.sidenav.open();
-        }
+          this.navMode = 'over';
+          this.sidenav.close();
+      }
+      if (event.target.innerWidth > 768) {
+         this.navMode = 'side';
+         this.sidenav.open();
+      }
+      }
+
   }
   logout(){
     Storage.clearSession();

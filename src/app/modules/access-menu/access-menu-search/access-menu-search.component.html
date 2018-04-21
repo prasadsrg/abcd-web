@@ -1,0 +1,18 @@
+<aside>
+    <article class="alternative">
+        <mat-toolbar color="primary"> 
+            <span>Menu</span>
+            <span class="mat-spacer"></span>
+            <mat-icon (click)="menusave()">save</mat-icon>
+        </mat-toolbar>
+    </article>
+    <main>
+        <mat-tab-group (selectedTabChange)="tabChanged($event)">
+            <mat-tab *ngFor="let item of rolesList" label="{{item.name}}">
+                <mat-list>
+                    <app-access-menu-list-edit [inputData]="menuList"></app-access-menu-list-edit>
+                </mat-list>
+            </mat-tab>
+        </mat-tab-group>
+    </main>
+</aside>

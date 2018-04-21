@@ -34,17 +34,11 @@ export class Storage {
          key = this.pid+'-'+key;
 
         if(val) {
-             console.log(key);
-            console.log(val);
-            console.log(Array.isArray(val));
             if(typeof val === 'object'){
                 val = JSON.stringify(val);
             } else if(Array.isArray(val)){
-                console.log(val);
                 val = JSON.stringify(val);   
-                 console.log(val);    
             }
-
             sessionStorage.setItem(key, val);
             console.log(sessionStorage.getItem(key));
         }
@@ -82,7 +76,7 @@ export class Storage {
     static getJWT(){
         return sessionStorage.getItem(this.pid+'-jwt');
     }
-    static setSessionUser(val : string){
+    static setSessionUser(val : any){
         if(val){
            this.setSessionItem('user', val);
         }
@@ -90,13 +84,12 @@ export class Storage {
     static getSessionUser(): any {
         return this.getSessionItem('user');
     }
-    static setMenuList(val : string){
+    static setMenuList(val : any){
         if(val){
            this.setSessionItem('menu', val);
         }
     }
     static getMenuList(): any {
-        console.log(this.getSessionItem('menu'));
         return this.getSessionItem('menu');
     }
 
@@ -104,7 +97,7 @@ export class Storage {
         return this.getSessionItem('branch');
     }
 
-    static setBranch(val : string){
+    static setBranch(val : any){
         if(val){
            this.setSessionItem('branch', val);
         }

@@ -3,8 +3,8 @@ import {Injectable} from '@angular/core';
 import {Router, ActivatedRoute, NavigationExtras} from "@angular/router";
 import {ApexService} from "./apex.service";
 import {Storage} from "../utils/storage";
-
-
+import { HttpClient } from '@angular/common/http';
+import { Props } from '../../common/props';
 
 //import {DomSanitizer} from '@angular/platform-browser';
 
@@ -63,6 +63,16 @@ export class AppService {
     //    }
     //    return returnValue;
     //}
+    dataLoad(http: HttpClient, code: string, key: string, param: string ){
+        let url = Props.API_END_POINT+'/access_data?code='+code;
+        if(key){
+            url =  url + '&key='+key;
+        }
+        if(param ){
+            url = url + '&param='+param;
+        }
+        return http.get(url);
+    }
      getLocalItem(key: string){
         return Storage.getLocalItem(key);
     }
